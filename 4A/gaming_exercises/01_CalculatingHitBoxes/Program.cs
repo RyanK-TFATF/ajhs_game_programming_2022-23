@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Calculating Hit Boxes, Ryan Kelley, 11/04/22, 1:53PM, v0.0
+using System;
 
 namespace _01_CalculatingHitBoxes
 {
@@ -6,7 +7,9 @@ namespace _01_CalculatingHitBoxes
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+
+
         }
     }
 }
