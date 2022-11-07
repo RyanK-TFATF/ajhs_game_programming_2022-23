@@ -23,8 +23,18 @@ namespace ListsArrays
             int[] testScores = {95, 100, 25, 15, 27, 35};
             float[] GPA = {3.14f, 2.25f, 1.74f, 1.99f, 0.99f, 4.25f};
             
+            // Print First Element v0.2a
+            Console.WriteLine(breakfastFoods[0]);
+            Console.WriteLine(testScores[0]);
+            Console.WriteLine(GPA[0]);
+
+            // Print First Element v0.2b
             
 
+            // Print Array Length v0.3 
+            Console.WriteLine(breakfastFoods.Length);
+            Console.WriteLine(testScores.Length);
+            Console.WriteLine(GPA.Length);
         }
     }
 }
