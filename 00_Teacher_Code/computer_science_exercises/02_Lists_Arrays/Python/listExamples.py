@@ -1,1 +1,0 @@
-# List Examples, Ryan Kelley, 11/07/22, 10:26AM, v0.0
