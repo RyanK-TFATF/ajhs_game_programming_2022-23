@@ -1,4 +1,4 @@
-# Calc. Hit Boxes, Ryan Kelley, v0.2 7B 
+# Calc. Hit Boxes, Ryan Kelley, v0.3 7B 
 
 # Hit Box Type
 hitBoxType = 0 # 2D Box = 1, 3D Box = 2 
@@ -20,4 +20,13 @@ boxB2DArea = boxBLength * boxBWidth
 # 3D Hit Box Area 
 boxA3DArea = boxALength * boxAWidth * boxAHeight
 boxB3DArea = boxBLength * boxBWidth * boxBHeight
+
+# Input Hit Box Measurements
+boxALength = int(input("Please enter the LENGTH of box A.\n")) 
+boxAWidth = int(input("Please enter the WIDTH of box A.\n")) 
+boxAHeight = int(input("Please enter the HEIGHT of box A.\n")) 
+
+boxBLength = int(input("Please enter the LENGTH of box B.\n")) 
+boxBWidth = int(input("Please enter the WIDTH of box B.\n")) 
+boxBHeight = int(input("Please enter the HEIGHT of box B.\n")) 
 
