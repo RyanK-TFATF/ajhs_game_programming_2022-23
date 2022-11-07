@@ -1,4 +1,4 @@
-﻿// Calc. Hit Boxes, Ryan KElley, 11/07/22, v0.1 
+﻿// Calc. Hit Boxes, Ryan KElley, 11/07/22, v0.2 
 using System;
 
 namespace _01_CalculatingHitBoxes
@@ -21,6 +21,13 @@ namespace _01_CalculatingHitBoxes
             int hitBoxBWidth = 0; 
             int hitBoxBHeight = 0;
 
+            // 2D Hit Box Calculations 
+            int hitBoxA2Darea = hitBoxALength * hitBoxAWidth; 
+            int hitBoxB2Darea = hitBoxBLength * hitBoxBWidth; 
+
+            // 3D Hit Box Calculations 
+            int hitBoxA3Darea = hitBoxALength * hitBoxAWidth * hitBoxAHeight; 
+            int hitBoxB3Darea = hitBoxBLength * hitBoxBWidth * hitBoxBHeight; 
 
 
         }
