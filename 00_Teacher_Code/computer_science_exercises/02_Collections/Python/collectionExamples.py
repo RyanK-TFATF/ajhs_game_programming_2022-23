@@ -7,9 +7,9 @@
 
 # List Examples -- Integer, Float, and String Examples v0.1a
 
-testScores = [15, 25, 99, 73, 25] # Integers
-gradePointAvg = [1.99, 2.5, 3.75, 4.0, 0.99] # Floats
-courseOptions = ["Math", "Science", "Reading", "Gym"]
+testScores = [15, 25, 99, 73, 25, 82] # Integers
+gradePointAvg = [1.99, 2.5, 3.75, 4.0, 0.99, 2.76] # Floats
+courseOptions = ["Math", "Science", "Reading", "Gym", "Art"]
 
 # Print List Contents v0.1b
 print(testScores)
@@ -26,27 +26,31 @@ print(f"The courseOptions list contains {len(courseOptions)} items.\n")
 print("Accessing the first item in each list:")
 print(testScores[0]) # Print the first item in the list. 
 print(gradePointAvg[0]) # Print the first item in the list. 
-print(courseOptions[0] + "\n") # Print the first item in the list. 
+print(courseOptions[0]) # Print the first item in the list. 
 
 # PAUSE VIDEO -- Print the Third List Item from Each List -- v0.3b 
-print("Accessing the third item in each list:\n")
+print("\nAccessing the third item in each list:\n")
 print(testScores[2]) # Print the first item in the list. 
 print(gradePointAvg[2]) # Print the first item in the list. 
-print(courseOptions[2] + "\n") # Print the first item in the list. 
+print(courseOptions[2]) # Print the first item in the list. 
 
 # Python ONLY -- Negative Indexing -- v0.3c 
-print("Accessing the last item in each list:\n")
+print("\nAccessing the last item in each list:\n")
 print(testScores[-1]) # Print the last item in the list. 
 print(gradePointAvg[-1]) # Print the last item in the list. 
-print(courseOptions[-1] + "\n") # Print the last item in the list. 
+print(courseOptions[-1]) # Print the last item in the list. 
 
 # PAUSE VIDEO -- Print the Third From Last List Item from Each List -- v0.3d
-print("Accessing the third from last item in each list:\n")
+print("\nAccessing the third from last item in each list:\n")
 print(testScores[-3]) # Print the last item in the list. 
 print(gradePointAvg[-3]) # Print the last item in the list. 
-print(courseOptions[-3] + "\n") # Print the last item in the list. 
+print(courseOptions[-3]) # Print the last item in the list. 
 
 # Accessing List Ranges -- v0.3e 
+print("The following lines will print a range from each list.")
+print(f"The list items from index 2 to 5 from the gradePointAvg list are {gradePointAvg[2:5]}.\n") # Print index 2 through 5. 
+print(f"The list items from the first index to index 4 in the testScores lists are {testScores[:4]}.\n") # Print from index 0 through 4. 
+print(f"The list items from index 3 to the end of the courseOptions list are {courseOptions[3:]}.\n") # Print from index 3 through end of list. 
 
 # Changing List Items -- v0.4a 
 testScores[0] = 75
