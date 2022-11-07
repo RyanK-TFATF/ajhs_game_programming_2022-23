@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Calc. Hit Boxes, Ryan KElley, 11/07/22, v0.0 
+using System;
 
 namespace _01_CalculatingHitBoxes
 {
