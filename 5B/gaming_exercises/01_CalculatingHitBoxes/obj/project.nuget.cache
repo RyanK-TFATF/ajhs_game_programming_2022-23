@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "M6JQqhv0Ls5RK/MLSqpzq0R219pGxmZdzoue584ZVwDli7wpVU8B2z7M5LK7fnET0smmlAU8KYOSayKAOmhrQA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kelleyr\\OneDrive - Duval County Public Schools\\Downloads\\GitHub\\ajhs_game_programming_2022-23\\5B\\gaming_exercises\\01_CalculatingHitBoxes\\01_CalculatingHitBoxes.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kelleyr\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
