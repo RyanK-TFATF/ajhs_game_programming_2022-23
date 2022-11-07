@@ -13,3 +13,28 @@ boxBLength = 0
 boxBWidth = 0 
 boxBHeight = 0 
 
+# Box A Area Calcs. 
+boxA2D = boxAWidth * boxALength
+boxA3D = boxAWidth * boxALength * boxAHeight
+
+# Box B Area Calcs. 
+boxB2D = boxBWidth * boxBLength
+boxB3D = boxBWidth * boxBLength * boxBHeight
+
+# Determine Hit Box Type 
+boxType = int(input("Please select a hit box type.  1 = 2D box, 2 = 3D box.\n"))
+
+if boxType == 1:
+    print("You have chosen a 2D hit box.\n")
+elif boxType == 2:
+    print("You have chosen a 3D hit box.\n")
+else:
+    print("Invalid box selection, please restart the program.\n")
+
+# Box A Measurements 
+boxALength = int(input("Please enter an integer value for Box A Length.\n"))
+
+
+# Box B Measurements 
+
+
