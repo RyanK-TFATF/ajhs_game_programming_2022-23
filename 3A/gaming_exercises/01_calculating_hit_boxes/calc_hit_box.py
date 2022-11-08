@@ -29,7 +29,8 @@ if hitBoxType == 1:
 elif hitBoxType == 2: 
     print("You have selected a 3D hit box.\n")
 else: 
-    print("ERROR: Invalid Hit Box Selection, Please Restart Program\n")
+    print("ERROR: Invalid Hit Box Selection. Please Retry. \n")
+    hitBoxType = int(input("Which type of hit box do you need to calculate? 1 = 2D or 2 = 3D\n"))
 
 # Input Hit Box A Measurements 
 hitBoxAHeight = int(input("Please enter an integer value for hit box A height:\n"))
@@ -45,7 +46,15 @@ hitBoxBLength = int(input("Please enter an integer value for hit box B length:\n
 print(f"Box A -- Length: {hitBoxALength} Height: {hitBoxAHeight} Width: {hitBoxAWidth}\n")
 print(f"Box B -- Length: {hitBoxBLength} Height: {hitBoxBHeight} Width: {hitBoxBWidth}\n")
 
-
+# Print Areas on the Screen 
+if hitBoxType == 1: 
+    print(f"The area for 2D Hit Box A is {hitBoxA2DArea} pixels square.\n")
+    print(f"The area for 2D Hit Box B is {hitBoxB2DArea} pixels square.\n")
+elif hitBoxType == 2: 
+    print(f"The area for 3D Hit Box A is {hitBoxA3DArea} pixels cubed.\n")
+    print(f"The area for 3D Hit Box B is {hitBoxB3DArea} pixels cubed.\n")
+else:
+    print("ERROR: Could not calculate hit box area.\n")
 
 
 
