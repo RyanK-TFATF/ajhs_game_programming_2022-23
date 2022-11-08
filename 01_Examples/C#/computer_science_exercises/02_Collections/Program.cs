@@ -1,4 +1,5 @@
-﻿using System;
+﻿// 02_Collections, Ryan Kelley, 11-08-2022 v0.0 
+using System;
 
 namespace _02_Collections
 {
@@ -6,7 +7,7 @@ namespace _02_Collections
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
