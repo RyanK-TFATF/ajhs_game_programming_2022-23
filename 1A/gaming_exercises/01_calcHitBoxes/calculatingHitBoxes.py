@@ -20,4 +20,11 @@ boxA3DArea = boxALength * boxAWidth * boxAHeight
 boxB2DArea = boxBLength * boxBWidth
 boxB3DArea = boxBLength * boxBWidth * boxBHeight
 
+# Hit Box Choice Selection 
+hitBoxType = int(input("Select the hit box type: 1 = 2D, 2 = 3D.\n"))
 
+# Box A Measurements Input 
+
+
+
+# Box B Measurements Input 
