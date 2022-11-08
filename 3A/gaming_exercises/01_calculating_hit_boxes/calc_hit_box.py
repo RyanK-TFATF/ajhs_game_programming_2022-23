@@ -59,13 +59,21 @@ else:
 # Determine Which Box Is Larger 
 if hitBoxType == 1 and hitBoxA2DArea > hitBoxB2DArea: 
     print("2D Hit Box A is larger than 2D Hit Box B.\n")
+    # Print the % difference in size.
 elif hitBoxType == 1 and hitBoxA2DArea < hitBoxB2DArea: 
     print("2D Hit Box B is larger than 2D Hit Box A.\n")
+    # Print the % difference in size.
 elif hitBoxType == 1 and hitBoxA2DArea == hitBoxB2DArea:     
     print("2D Hit Box A is equal to 2D Hit Box B.\n")
+    # Print the % difference in size.
 # elif for 3D Hit Box A is larger. 
+    # Print 3D Box A is larger. 
+    # Print the % difference in size.
 # elif for 3D Hit Box B is larger. 
+    # Print 3D Box B is larger. 
+    # Print the % difference in size.
 # elif for 3D Hit Box A is equal to Hit Box B. 
+    # Print they are equal. 
 else:
     print("ERROR: Could not calculate hit box area.\n")
 
