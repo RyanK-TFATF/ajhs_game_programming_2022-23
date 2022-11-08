@@ -1,4 +1,4 @@
-﻿// 02_Collections, Ryan Kelley, 11-08-2022 v0.1a
+﻿// 02_Collections, Ryan Kelley, 11-08-2022 v0.2a
 using System;
 
 namespace _02_Collections
@@ -22,6 +22,44 @@ namespace _02_Collections
             string[] breakfastFoods = {"Bacon", "Waffles", "Pancakes", "Cereal", "Parfait"};
             int[] testScores = {95, 100, 25, 15, 27, 35};
             float[] GPA = {3.14f, 2.25f, 1.74f, 1.99f, 099f, 4.25f};
+
+            // Print Array Contents -- All Elements on Single Line 
+            Console.WriteLine("The elements for each array are:\n"); 
+            Console.WriteLine("breakfastFoods: \n" + String.Join(", ", breakfastFoods));
+            Console.WriteLine();
+            Console.WriteLine("testScores: \n" + String.Join(", ", testScores));
+            Console.WriteLine();
+            Console.WriteLine("GPA: \n" + String.Join(", ", GPA));
+            Console.WriteLine();
+
+            /* Print Array Contents -- Each Element on Separate Line 
+            Console.WriteLine("The elements for each array are:\n"); 
+            Console.WriteLine("breakfastFoods: \n" + String.Join("\n", breakfastFoods));
+            Console.WriteLine();
+            Console.WriteLine("testScores: \n" + String.Join("\n", testScores));
+            Console.WriteLine();
+            Console.WriteLine("GPA: \n" + String.Join("\n", GPA));
+            Console.WriteLine();
+            */
+
+            // Determining Array Length 
+            Console.WriteLine("The length of each array is:\n");
+            Console.WriteLine("breakfastFoods: " + breakfastFoods.Length);
+            Console.WriteLine("testScores: " + testScores.Length);
+            Console.WriteLine("GPA: " + GPA.Length);
+
+            // Accessing Array Elements -- use the index! 
+            Console.WriteLine("The first element in each array is:\n");
+            Console.WriteLine("breakfastFoods: " + breakfastFoods[0]);
+            Console.WriteLine("testScores: " + testScores[0]);
+            Console.WriteLine("GPA: " + GPA[0]);
+
+            // Access Last Element 
+            Console.WriteLine("The last element in each array is:\n");
+            Console.WriteLine("breakfastFoods: " + breakfastFoods[breakfastFoods.Length - 1]);
+            Console.WriteLine("testScores: " + testScores[testScores.Length - 1]);
+            Console.WriteLine("GPA: " + GPA[GPA.Length -1]);
+
 
 
 
