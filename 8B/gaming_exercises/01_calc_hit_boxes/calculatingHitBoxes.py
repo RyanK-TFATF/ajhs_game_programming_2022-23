@@ -55,4 +55,7 @@ else:
     print("Something has gone terribly wrong, please restart the program.\n")
     quit()
 
+# Compare Which Is Larger, Print the % Difference 
+
+
 
