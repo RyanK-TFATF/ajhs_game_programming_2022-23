@@ -95,8 +95,10 @@ namespace _02_Collections
             // Index Out of Bounds -- Accessing an element that does not exist. 
             // Console.WriteLine(breakFastFoods[5]); 
 
-            // Incorrect Data Types 
+            // Incorrect Data Types -- 0.4b
             // testScores[0] = "Billy";
+
+            // ArrayList Examples -- 0.5a
 
 
 
