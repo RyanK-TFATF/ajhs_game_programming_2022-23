@@ -67,7 +67,7 @@ if hitBoxType == 1 and hitBoxA2DArea > hitBoxB2DArea:
     # Divide Difference By Average Area 
     divideDiffByAvg = sizeDifference / boxAvg
     percentDiff = divideDiffByAvg * 100 
-    print(f"Box A is {percentDiff}% larger than Box B.")
+    print(f"Box A is {percentDiff:.2f}% larger than Box B.")
 elif hitBoxType == 1 and hitBoxA2DArea < hitBoxB2DArea: 
     print("2D Hit Box B is larger than 2D Hit Box A.\n")
     # Print the % difference in size.
