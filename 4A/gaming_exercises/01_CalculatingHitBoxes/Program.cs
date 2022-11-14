@@ -31,16 +31,7 @@ namespace _01_CalculatingHitBoxes
             int boxBWidth = 0; 
             int boxBHeight = 0; 
 
-            // Hit Box Area Calculations 
-            // Box A 
-            int boxA2DArea = boxALength * boxAWidth; 
-            int boxA3DArea = boxALength * boxAWidth * boxAHeight; 
-
-            // Box B
-            int boxB2DArea = boxBLength * boxBWidth; 
-            int boxB3DArea = boxBLength * boxBWidth * boxBHeight; 
-
-            // Hit Box A Measurments 
+             // Hit Box A Measurments 
             Console.WriteLine("Please enter the LENGTH of Hit Box A:\n");
             boxALength = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Please enter the WIDTH of Hit Box A:\n");
@@ -56,9 +47,31 @@ namespace _01_CalculatingHitBoxes
             Console.WriteLine("Please enter the HEIGHT of Hit Box B:\n");
             boxBHeight = Convert.ToInt32(Console.ReadLine());
 
+            // Hit Box Area Calculations 
+            // Box A 
+            int boxA2DArea = boxALength * boxAWidth; 
+            int boxA3DArea = boxALength * boxAWidth * boxAHeight; 
+
+            // Box B
+            int boxB2DArea = boxBLength * boxBWidth; 
+            int boxB3DArea = boxBLength * boxBWidth * boxBHeight;                 
+
             // Verify Measurements
             Console.WriteLine(String.Format("Box A -- Length: {0} Width: {1} Height: {2}", boxALength, boxAWidth, boxAHeight));
+            Console.WriteLine(String.Format("Box B -- Length: {0} Width: {1} Height: {2}", boxBLength, boxBWidth, boxBHeight));
 
+            // Print Area Calculations 
+            if (hitBoxType == 1) {
+                Console.WriteLine(String.Format("The Box A 2D area is {0} and the Box B 2D area is {1}.", boxA2DArea, boxB2DArea));
+            } else if (hitBoxType == 2) {
+                Console.WriteLine(String.Format("The Box A 3D area is {0} and the Box B 3D area is {1}.", boxA3DArea, boxB3DArea));
+            } else {
+                Console.WriteLine("You still did not select the correct hit box type.\n");
+                Console.WriteLine("Everyone in this room is now dumber for having seen this.  I award you no points.\n");
+                Console.WriteLine("May God have mercy upon your soul.\n");
+            }
+            
+            // Calculate % Difference and Print to Screen 
 
 
 
