@@ -80,6 +80,19 @@ namespace _02_Collections
             Console.WriteLine("GPA: \n" + String.Join(", ", GPA));
             Console.WriteLine();
 
+            // PWYOC -- Update Fifth Element from Each Array 
+            breakfastFoods[4] = "Corn Pops Cereal";
+            testScores[4] = 0; 
+            GPA[4] = 2.75f; 
+            Console.WriteLine("The elements for each array are:\n"); 
+            Console.WriteLine("breakfastFoods: \n" + String.Join(", ", breakfastFoods));
+            Console.WriteLine();
+            Console.WriteLine("testScores: \n" + String.Join(", ", testScores));
+            Console.WriteLine();
+            Console.WriteLine("GPA: \n" + String.Join(", ", GPA));
+            Console.WriteLine();
+
+
 
 
         }
