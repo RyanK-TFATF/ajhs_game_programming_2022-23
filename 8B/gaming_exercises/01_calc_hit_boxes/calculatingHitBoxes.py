@@ -56,6 +56,29 @@ else:
     quit()
 
 # Compare Which Is Larger, Print the % Difference 
+if boxType == 1 and boxA2D > boxB2D:
+    print("Box A 2D is larger than Box B 2D.")
+    # Determine the Difference Between Larger Hit Box and Smaller Hit Box
+    boxDiff = boxA2D - boxB2D
+    # Calculate Average Area 
+    avgArea = (boxA2D + boxB2D) / 2 
+    # Divide Difference by Average
+    diffDivByAvg = boxDiff / avgArea 
+    # Convert to a Percentage
+    percentDiff = diffDivByAvg * 100 
+    print(f"Box A 2D is {percentDiff:.2f}% larger than Box B.")
 
+elif boxType == 1 and boxB2D > boxA2D:
+    print("Box B 2D is larger than Box A 2D.")
+elif boxType == 1 and boxA2D == boxB2D:
+    print("Box A 2D is equal to Box B 2D.")
+elif boxType == 2 and boxA3D > boxB3D:
+    print("Box A 3D is larger than Box B 3D.")
+elif boxType == 2 and boxB3D > boxA3D:
+    print("Box B 3D is larger than Box B 3D.")
+elif boxType == 2 and boxA3D == boxB3D:
+    print("Box A 3D is equal to Box B 3D.")
+else: 
+    print("Hit Box Type still not identified correctly.  Please restart the program.")
 
 
