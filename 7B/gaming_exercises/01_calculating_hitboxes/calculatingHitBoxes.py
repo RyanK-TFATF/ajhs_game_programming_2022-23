@@ -50,3 +50,32 @@ print(f"Box B Length: {boxBLength} Width: {boxBWidth} Height: {boxBHeight}\n")
 print(f"Box A -- 2D Area: {boxA2DArea} 3D Area: {boxA3DArea} \n")
 print(f"Box B -- 2D Area: {boxB2DArea} 3D Area: {boxB3DArea} \n")
 
+# Determine Which Box Is Larger 
+if boxType == 1 and boxA2DArea > boxB2DArea:
+    print("Box A 2D area is greater than Box B 2D area.\n")
+    # Determine Difference Between Boxes
+    sizeDiff =  boxA2DArea - boxB2DArea
+    # Determine the Average 
+    avgArea = (boxA2DArea + boxB2DArea) / 2
+    # Divide the Difference by the Average 
+    divideDiffByAvg = sizeDiff / avgArea
+    percentDiff = divideDiffByAvg * 100
+    print(f"Box A is {percentDiff:.2f}% larger than Box B.")
+
+elif boxType == 1 and boxB2DArea > boxA2DArea:
+    print("Box B 2D area is greater than Box A 2D area.\n")
+
+elif boxType == 1 and boxA2DArea == boxB2DArea:
+    print("Box A and Box B have the same 2D area.")
+
+elif boxType == 2 and boxA3DArea > boxB3DArea:
+    print("Box A 3D area is greater than Box B 3D area.\n")
+
+elif boxType == 2 and boxB3DArea > boxA3DArea:
+    print("Box B 3D area is greater than Box A 3D area.\n")
+
+elif boxType == 2 and boxB3DArea == boxA3DArea:
+    print("Box A and Box B have the same 3D area.")
+
+else: 
+    print("There was an error determining the hit box area calculations.  This program will self destruct.") 
