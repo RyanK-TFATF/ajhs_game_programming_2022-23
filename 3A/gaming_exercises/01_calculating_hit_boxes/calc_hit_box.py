@@ -39,8 +39,8 @@ hitBoxA2DArea = hitBoxALength * hitBoxAWidth
 hitBoxB2DArea = hitBoxBLength * hitBoxBWidth
 
 # Hit Box 3D Area Calculations 
-hitBoxA3DArea = hitBoxALength * hitBoxAWidth * hitBoxAHeight
-hitBoxB3DArea = hitBoxBLength * hitBoxBWidth * hitBoxBHeight
+boxAVolume = hitBoxALength * hitBoxAWidth * hitBoxAHeight
+boxBVolume = hitBoxBLength * hitBoxBWidth * hitBoxBHeight
 
 # Verify Measurements
 print(f"Box A -- Length: {hitBoxALength} Height: {hitBoxAHeight} Width: {hitBoxAWidth}\n")
@@ -51,8 +51,8 @@ if hitBoxType == 1:
     print(f"The area for 2D Hit Box A is {hitBoxA2DArea} pixels square.\n")
     print(f"The area for 2D Hit Box B is {hitBoxB2DArea} pixels square.\n")
 elif hitBoxType == 2: 
-    print(f"The area for 3D Hit Box A is {hitBoxA3DArea} pixels cubed.\n")
-    print(f"The area for 3D Hit Box B is {hitBoxB3DArea} pixels cubed.\n")
+    print(f"The volume for Hit Box A is {boxAVolume} pixels cubed.\n")
+    print(f"The volume for Hit Box B is {boxBVolume} pixels cubed.\n")
 else:
     print("ERROR: Could not calculate hit box area.\n")
 
