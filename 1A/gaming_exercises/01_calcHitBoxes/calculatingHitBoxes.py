@@ -66,16 +66,16 @@ if hitBoxType == 1 and boxA2DArea > boxB2DArea:
 
 elif hitBoxType == 1 and boxB2DArea > boxA2DArea:
     print("Box B 2D area is greater than Box A 2D area.") 
-
+    # Calc. % Diff Using Above Code As Example
 elif hitBoxType == 1 and boxB2DArea == boxA2DArea:
     print("Box B 2D area is equal to Box A 2D area.") 
 
 elif hitBoxType == 2 and boxA3DVol > boxB3DVol:
     print("Box A volume is greater than Box B volume.") 
-
+    # Calc. % Diff Using Above Code As Example
 elif hitBoxType == 2 and boxB3DVol > boxA3DVol:
     print("Box B volume is greater than Box A volume.") 
-
+    # Calc. % Diff Using Above Code As Example
 elif hitBoxType == 2 and boxB3DVol == boxA3DVol:
     print("Box B volume is equal to Box A volume.") 
 else: 
