@@ -1,4 +1,5 @@
-# Calc. Hit Boxes, ryan kelley, 11-08-22 v0.2
+# Calculating 2D and 3D Hit Boxes, Ryan Kelley, v1.0a
+import time
 
 # Hit Box Type 
 hitBoxType = 0 # 2D Box = 1, 3D Box = 2 
@@ -22,62 +23,78 @@ boxBLength = 0
 boxBWidth = 0
 boxBHeight = 0
 
+print("Hit Box Measurements are done using pixels as the unit.")
+time.sleep(2)
 # Box A Measurements Input 
 boxALength = int(input("Please enter the LENGTH for Box A.\n"))
 boxAWidth = int(input("Please enter the WIDTH for Box A.\n"))
-boxAHeight = int(input("Please enter the HEIGHT for Box A.\n"))
+boxAHeight = int(input("Please enter the HEIGHT for Box A.  Enter 0 if 2D hit box.\n"))
 # Box B Measurements Input 
 boxBLength = int(input("Please enter the LENGTH for Box B.\n"))
 boxBWidth = int(input("Please enter the WIDTH for Box B.\n"))
-boxBHeight = int(input("Please enter the HEIGHT for Box B.\n"))
+boxBHeight = int(input("Please enter the HEIGHT for Box B. Enter 0 if 2D hit box.\n"))
 
 # Box A Area Calculations 
-boxA2DArea = boxALength * boxAWidth
-boxA3DVol = boxALength * boxAWidth * boxAHeight
+boxAArea = boxALength * boxAWidth
+boxAVolume = boxALength * boxAWidth * boxAHeight
 # Box B Area Calculations 
-boxB2DArea = boxBLength * boxBWidth
-boxB3DVol = boxBLength * boxBWidth * boxBHeight
+boxBArea = boxBLength * boxBWidth
+boxBVolume = boxBLength * boxBWidth * boxBHeight
 
 # Verify Measurements 
 print(f"Box A Measurements -- Length: {boxALength} Width: {boxAWidth} Height: {boxAHeight}\n")
 print(f"Box B Measurements -- Length: {boxBLength} Width: {boxBWidth} Height: {boxBHeight}\n")
+time.sleep(2)
 
-# Print Area Calculations 
+# Print Area or Volume Calculations 
 if hitBoxType == 1:
-    print(f"Hit Box A 2D Area: {boxA2DArea}")
-    print(f"Hit Box B 2D Area: {boxB2DArea}")
+    print(f"Hit Box A Area: {boxAArea} pixels squared.")
+    print(f"Hit Box B Area: {boxBArea} pixels squared.")
 elif hitBoxType == 2:
-    print(f"Hit Box A Volume: {boxA3DVol}")
-    print(f"Hit Box B Volume: {boxB3DVol}")
+    print(f"Hit Box A Volume: {boxAVolume} pixels cubed.")
+    print(f"Hit Box B Volume: {boxBVolume} pixels cubed.")
 else:
     print("Error calculating hit box. Please restart the program.\n")
+time.sleep(2)
 
 # Which box is larger?  If if / elif / else and determine which. 
-if hitBoxType == 1 and boxA2DArea > boxB2DArea:
-    print("Box A 2D area is greater than Box B 2D area.") 
+if hitBoxType == 1 and boxAArea > boxBArea:
+    print("Box A area is greater than Box B area.") 
     # Calculate the Difference Between Hit Boxes 
-    boxDiff = boxA2DArea - boxB2DArea
+    boxDiff = boxAArea - boxBArea
     # Calculate the Average of the Box Areas 
-    avgArea = (boxA2DArea + boxB2DArea) / 2 
+    avgArea = (boxAArea + boxBArea) / 2 
     # Divide Average by Difference 
     diffDivByAvg = boxDiff / avgArea
     percentDiff = diffDivByAvg * 100 
     print(f"Box A is {percentDiff:.2f}% larger than Box B.")
-
-elif hitBoxType == 1 and boxB2DArea > boxA2DArea:
-    print("Box B 2D area is greater than Box A 2D area.") 
-    # Calc. % Diff Using Above Code As Example
-elif hitBoxType == 1 and boxB2DArea == boxA2DArea:
-    print("Box B 2D area is equal to Box A 2D area.") 
-
-elif hitBoxType == 2 and boxA3DVol > boxB3DVol:
+elif hitBoxType == 1 and boxBArea > boxAArea:
+    print("Box B area is greater than Box A area.") 
+    boxDiff = boxBArea - boxAArea
+    avgArea = (boxAArea + boxBArea) / 2 
+    diffDivByAvg = boxDiff / avgArea
+    percentDiff = diffDivByAvg * 100 
+    print(f"Box B is {percentDiff:.2f}% larger than Box A.")
+elif hitBoxType == 1 and boxBArea == boxAArea:
+    print("Box B area is equal to Box A area.") 
+    # Boxes are equal no need to calculate difference. 
+elif hitBoxType == 2 and boxAVolume > boxBVolume:
     print("Box A volume is greater than Box B volume.") 
-    # Calc. % Diff Using Above Code As Example
-elif hitBoxType == 2 and boxB3DVol > boxA3DVol:
+    boxDiff = boxAVolume - boxBVolume
+    avgArea = (boxAVolume + boxBVolume) / 2 
+    diffDivByAvg = boxDiff / avgArea
+    percentDiff = diffDivByAvg * 100 
+    print(f"Box A is {percentDiff:.2f}% larger than Box B.")
+elif hitBoxType == 2 and boxBVolume > boxAVolume:
     print("Box B volume is greater than Box A volume.") 
-    # Calc. % Diff Using Above Code As Example
-elif hitBoxType == 2 and boxB3DVol == boxA3DVol:
+    boxDiff = boxBVolume - boxAVolume
+    avgArea = (boxAVolume + boxBVolume) / 2 
+    diffDivByAvg = boxDiff / avgArea
+    percentDiff = diffDivByAvg * 100 
+    print(f"Box A is {percentDiff:.2f}% larger than Box B.")    
+elif hitBoxType == 2 and boxBVolume == boxAVolume:
     print("Box B volume is equal to Box A volume.") 
+    # Boxes are equal, no need to calculate difference. 
 else: 
     print("ERROR: Unable to complete calculations. Please restart and try again.")
 
