@@ -88,6 +88,11 @@ namespace _01_CalculatingHitBoxes
                 Console.WriteLine(String.Format("Box A is {0}% larger than Box B.", percentDiff));
             } else if (hitBoxType == 1 && hitBoxB2Darea > hitBoxA2Darea) {
                 Console.WriteLine("Box B is larger than Box A.");
+                 diff = hitBoxA2Darea - hitBoxB2Darea;
+                avg = (hitBoxA2Darea + hitBoxB2Darea) / 2; 
+                diffDivAvg = diff / avg;
+                percentDiff = diffDivAvg * 100; 
+                Console.WriteLine(String.Format("Box A is {0}% larger than Box B.", percentDiff));
             } else if (hitBoxType == 1 && hitBoxB2Darea == hitBoxA2Darea) { 
                 Console.WriteLine("Box B is equal to Box A.");
             } else if (hitBoxType == 2 && hitBoxAVolume > hitBoxBVolume) {
