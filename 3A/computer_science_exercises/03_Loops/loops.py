@@ -1,4 +1,4 @@
-# Loops, Ryan Kelley, v0.2b
+# Loops, Ryan Kelley, v0.2c
 
 # while loop -- Best used when the number of loops needed is NOT KNOWN 
 '''
@@ -22,7 +22,7 @@ while loopCounterThree > 0:
         continue
 '''    
 # for loops -- Used for iterating through lists and objects. 
-
+'''
 exampleFoods = ["bacon", "eggs", "waffles", "bagels", "coffee"]
 for eachItem in exampleFoods: 
     print(eachItem)
@@ -33,6 +33,23 @@ for z in exampleNumbers:
         print(f"{z} is even.")
     else:
         print(f"{z} is odd.")
+
+for x in "archaeology":
+    print(x)
+
+for x in range(100): 
+    print(x)
+
+for y in range(-10, 10): # SPECIFY START AND STOP VALUES. 
+    print(y)
+
+for z in range(-100, 100, 10): # THIRD VALUE IS INCREMENT VALUE 
+    print(z) 
+''' 
+
+
+
+
 
 
 
