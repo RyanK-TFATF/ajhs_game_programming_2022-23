@@ -1,4 +1,4 @@
-# Loops, Ryan Kelley, v0.2a
+# Loops, Ryan Kelley, v0.2b
 
 # while loop -- Best used when the number of loops needed is NOT KNOWN 
 '''
@@ -29,7 +29,10 @@ for eachItem in exampleFoods:
 
 exampleNumbers = [1, 2, -1, -2, 5, -5, 0, -10, 27, -99]
 for z in exampleNumbers:
-    print(z)
+    if z % 2 == 0:
+        print(f"{z} is even.")
+    else:
+        print(f"{z} is odd.")
 
 
 
