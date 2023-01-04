@@ -1,6 +1,7 @@
-# Loops, Ryan Kelley, v0.1c
+# Loops, Ryan Kelley, v0.2a
 
 # while loop -- Best used when the number of loops needed is NOT KNOWN 
+'''
 loopCounter = 0 
 while loopCounter < 100: 
     print(f"This is iteration number {loopCounter}.")
@@ -19,7 +20,16 @@ while loopCounterThree > 0:
     loopCounterThree += -1 
     if loopCounterThree == 70:
         continue
-    
+'''    
+# for loops -- Used for iterating through lists and objects. 
+
+exampleFoods = ["bacon", "eggs", "waffles", "bagels", "coffee"]
+for eachItem in exampleFoods: 
+    print(eachItem)
+
+exampleNumbers = [1, 2, -1, -2, 5, -5, 0, -10, 27, -99]
+for z in exampleNumbers:
+    print(z)
 
 
 
