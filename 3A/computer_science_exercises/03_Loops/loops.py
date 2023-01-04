@@ -1,4 +1,4 @@
-# Loops, Ryan Kelley, v0.2c
+# Loops, Ryan Kelley, v0.3a
 
 # while loop -- Best used when the number of loops needed is NOT KNOWN 
 '''
@@ -47,6 +47,23 @@ for z in range(-100, 100, 10): # THIRD VALUE IS INCREMENT VALUE
     print(z) 
 ''' 
 
+# Nested Loops 
+colors = ["garnet", "gold", "green", "blue", "purple"]
+animals = ["cobra", "chicken", "platypus", "horse", "lemur"]
+outerLoop = 0
+innerLoop = 0 
+
+# Outer Loop 
+for x in colors: 
+    # Inner Loop     
+    print(f"Outer Loop Count: {outerLoop}")
+    for z in animals: 
+        print(x, z)
+        innerLoop += 1
+        print(f"Inner Loop Count: {innerLoop}")
+    outerLoop += 1 
+    
+    
 
 
 
