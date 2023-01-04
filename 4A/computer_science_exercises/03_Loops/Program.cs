@@ -1,4 +1,4 @@
-﻿// Loops, Ryan Kelley, v0.2a
+﻿// Loops, Ryan Kelley, v0.3a
 using System;
 
 namespace _03_Loops
@@ -35,10 +35,28 @@ namespace _03_Loops
             {
             doCodeStuffHere; 
             }
-            */
-            for (int i = 0; i < 500; i++)
+            
+            for (int i = 0; i < 100; i++)
             {
                 Console.WriteLine(i);
+                if (i % 2 == 0) {
+                    Console.WriteLine("That number is even.\n");
+                } else {
+                    Console.WriteLine("That number is odd.\n");
+                }
+            }
+            */
+
+            // Nested For Loops 
+            // Outer Loop 
+            for (int i = 0; i < 1000; i++) 
+            {
+                Console.WriteLine("Outer Loop Counter:" + i);
+                // Inner Loop 
+                for (int j = 1; j < 500; j++)
+                {
+                    Console.WriteLine("Inner Loop Counter:" + j);
+                }
             }
 
         }
