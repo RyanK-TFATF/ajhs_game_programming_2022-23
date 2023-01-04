@@ -25,6 +25,7 @@
 exampleFoods = ["bacon", "eggs", "waffles", "pancakes"]
 exampleNumbers = [1, 5, -10, 0, 3, -2, 16, -33, 25, -74]
 
+'''
 for eachFood in exampleFoods: # Variable to use when looping. 
     print(f"We're having {eachFood} for breakfast!")
     if eachFood == "bacon":
@@ -44,10 +45,19 @@ for x in exampleNumbers:
         print(f"{x} is negative!")
     else: 
         print(f"{x} is zero.")
+'''
+# Using Range 
+for y in range(101):
+    print(y)
 
+# Provide Start / Ending Range 
+for y in range(5, 100):
+    print(y)
 
+# Provide Start/End and Increment Value
+for y in range(100, 1000, 10):  # Third value is increment value. 
+    print(y)
 
-    
 
 
 
