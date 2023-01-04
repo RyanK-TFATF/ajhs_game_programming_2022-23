@@ -1,4 +1,4 @@
-# Loops, Ryan Kelley, v0.1b 
+# Loops, Ryan Kelley, v0.1c
 
 # while loop -- Best used when the number of loops needed is NOT KNOWN 
 loopCounter = 0 
@@ -12,4 +12,14 @@ while loopCounterTwo < 100:
         break
     print(loopCounterTwo)
     loopCounterTwo += 1
+
+loopCounterThree = 100 
+while loopCounterThree > 0:
+    print(loopCounterThree)
+    loopCounterThree += -1 
+    if loopCounterThree == 70:
+        continue
+    
+
+
 
