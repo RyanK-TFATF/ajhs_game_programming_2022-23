@@ -1,11 +1,32 @@
 ﻿// 03_Inventory, Ryan Kelley, v0.0 
 using System;
+using System.Collections; 
 
 namespace _03_Inventory
 {
     class Program
     {
-        
+        // Method Declarations 
+        // Method Signature defines the return types, parameters, and name.
+        static void DisplayInventory(ArrayList inventory) 
+        {
+            Console.WriteLine("You peek into your backpack and find:");
+            foreach (string item in inventory)   {
+                Console.WriteLine(item);
+            }
+        }
+
+        static void DisplayWeapons(Array weapons)
+        {
+            int weaponCounter = 0; 
+            while (weaponCounter < weapons.Length)
+            {
+                if (weaponCounter == 0 && weaponList[weaponCounter] == true) {
+                    Console.WriteLine("You are equipped with the chainsaw.");
+                }
+
+            }
+        }
         static void Main(string[] args)
         {
             var playerInventory = new ArrayList()
@@ -21,6 +42,16 @@ namespace _03_Inventory
                 "beef jerky", 
                 "lantern"
             }; 
+            // Call Method 
+            DisplayInventory(playerInventory); 
+
+            bool weaponList[] = {
+                true, // chainsaw
+                false, // pistol
+                true, // shotgun 
+                false, // rocket launcher
+                false // alien blaster 
+            };  
 
         }
     }
