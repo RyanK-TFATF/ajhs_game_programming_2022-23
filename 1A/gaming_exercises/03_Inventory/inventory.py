@@ -42,9 +42,10 @@ rangedWeapons = [
     True, # rocket launcher
     False # flame thrower 
 ]
-''' 
-weaponCounter = 0 
-def dispWeapons(weapons, weaponCounter): 
+
+
+def dispWeapons(weapons): 
+    weaponCounter = 0 
     while weaponCounter < len(rangedWeapons):
         if weaponCounter == 0 and rangedWeapons[weaponCounter] == True:
             print("You are equipped with a pisol.")
@@ -56,9 +57,9 @@ def dispWeapons(weapons, weaponCounter):
             print("You are equipped with a rocket launcher.")
         if weaponCounter == 4 and rangedWeapons[weaponCounter] == True:
             print("You are equipped with a flamethrower.")
-    weaponCounter += 1
-dispWeapons(rangedWeapons, weaponCounter)
-'''         
+        weaponCounter += 1
+
+dispWeapons(rangedWeapons)
 
 # Check If Item Exists in Inventory 
 player3Inventory = [
