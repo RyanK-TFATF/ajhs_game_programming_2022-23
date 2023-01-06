@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "9R8iGwyJaIVSsXQC8JaTU2USt9Db99WlPOORtIOrbdFHW7+rs8d0ux+nqdwQphO/XLAtPCkGhWZ/9x0m7aRC0Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kelleyr\\OneDrive - Duval County Public Schools\\Downloads\\GitHub\\ajhs_game_programming_2022-23\\4A\\gaming_exercises\\03_Inventory\\03_Inventory.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kelleyr\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
