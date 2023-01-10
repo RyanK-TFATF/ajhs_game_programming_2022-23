@@ -16,15 +16,15 @@ namespace _03_Inventory
             }
         }
 
-        static void DisplayWeapons(Array weapons)
+        static void DisplayWeapons(List<bool[]> weapons)
         {
             int weaponCounter = 0; 
             while (weaponCounter < weapons.Length)
             {
-                if (weaponCounter == 0 && weaponList[weaponCounter] == true) {
+                if (weaponCounter == 0 && weapons[weaponCounter] == true) {
                     Console.WriteLine("You are equipped with the chainsaw.");
                 }
-
+                weaponCounter++; 
             }
         }
         static void Main(string[] args)
@@ -43,15 +43,9 @@ namespace _03_Inventory
                 "lantern"
             }; 
             // Call Method 
-            DisplayInventory(playerInventory); 
+            //DisplayInventory(playerInventory); 
 
-            bool weaponList[] = {
-                true, // chainsaw
-                false, // pistol
-                true, // shotgun 
-                false, // rocket launcher
-                false // alien blaster 
-            };  
+           
 
         }
     }

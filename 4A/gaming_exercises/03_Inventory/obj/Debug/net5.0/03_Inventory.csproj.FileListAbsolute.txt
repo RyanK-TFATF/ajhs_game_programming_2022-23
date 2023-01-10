@@ -1,0 +1,16 @@
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\obj\Debug\net5.0\03_Inventory.csprojAssemblyReference.cache
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\obj\Debug\net5.0\03_Inventory.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\obj\Debug\net5.0\03_Inventory.AssemblyInfoInputs.cache
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\obj\Debug\net5.0\03_Inventory.AssemblyInfo.cs
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\obj\Debug\net5.0\03_Inventory.csproj.CoreCompileInputs.cache
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\bin\Debug\net5.0\03_Inventory.exe
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\bin\Debug\net5.0\03_Inventory.deps.json
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\bin\Debug\net5.0\03_Inventory.runtimeconfig.json
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\bin\Debug\net5.0\03_Inventory.runtimeconfig.dev.json
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\bin\Debug\net5.0\03_Inventory.dll
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\bin\Debug\net5.0\ref\03_Inventory.dll
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\bin\Debug\net5.0\03_Inventory.pdb
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\obj\Debug\net5.0\03_Inventory.dll
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\obj\Debug\net5.0\ref\03_Inventory.dll
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\obj\Debug\net5.0\03_Inventory.pdb
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\03_Inventory\obj\Debug\net5.0\03_Inventory.genruntimeconfig.cache
