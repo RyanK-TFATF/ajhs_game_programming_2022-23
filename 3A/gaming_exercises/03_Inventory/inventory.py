@@ -69,12 +69,24 @@ doorKeys = [
 
 def hasItem(item, inventory):
     if item in inventory: 
-        print(f"You have the {item} key!  You may proceed.")
+        return True 
     else:
-        print(f"You must continue searching for the {item} key.")
+        return False 
     
 # call the hasItem() function for one item that IS in inventory
 # and one that is NOT in the inventory. 
 #hasItem("blue", doorKeys)
 #hasItem("purple", doorKeys)
 
+def useItem(item, inventory): 
+    if hasItem(item, inventory) == True: 
+        print(f"You open your backpack, remove the {item} and use it.")
+        # Remove the first instance of the object from the inventory. 
+        inventory.remove(item)
+    else: 
+        print(f"You cannot seem to find the {item} in your bag.")
+
+#dispInventory(p1Inventory)
+#useItem("blue mana potion", p1Inventory)
+#dispInventory(p1Inventory)
+#useItem("purple mana potion", p1Inventory)
