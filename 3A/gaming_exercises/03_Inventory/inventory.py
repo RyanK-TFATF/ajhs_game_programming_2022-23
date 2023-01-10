@@ -107,3 +107,10 @@ def sortItems(inventory):
 #dispInventory(p1Inventory)
 #sortItems(p1Inventory)
 #dispInventory(p1Inventory)
+
+def deleteInventory(inventory):
+    inventory.clear()
+
+#dispInventory(p1Inventory)
+#deleteInventory(p1Inventory)
+#dispInventory(p1Inventory)
