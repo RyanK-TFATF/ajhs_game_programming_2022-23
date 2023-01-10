@@ -1,4 +1,4 @@
-# 03_Inventory, Ryan Kelley, v0.2a
+# 03_Inventory, Ryan Kelley, v0.3a
 
 '''
 player1Inventory = [
@@ -34,7 +34,7 @@ def dispInventory(inventory): # Parameters are data needed for function.
 # Call the Function 
 dispInventory(player1Inventory)
 dispInventory(player2Inventory)
-''' 
+
 rangedWeapons = [
     True, # pistol 
     False, # shotgun 
@@ -60,7 +60,7 @@ def dispWeapons(weapons):
         weaponCounter += 1
 
 dispWeapons(rangedWeapons)
-
+'''
 # Check If Item Exists in Inventory 
 player3Inventory = [
     "holy water", 
@@ -78,3 +78,20 @@ def hasItem(item, inventory):
 hasItem("garlic clove", player3Inventory)
 # Add two more function calls for different items. 
 
+# Using Item 
+def useItem(item, inventory): 
+    inventory.remove(item)
+    print(f"You open your bag, pull out the {item} and use it.")
+
+#print(player3Inventory)
+useItem("holy water", player3Inventory)
+#print(player3Inventory)
+
+# Picking Up Items 
+def pickupItem(item, inventory): 
+    inventory.append(item)
+    print(f"You pickup the {item} and put it in your bag.")
+
+print(player3Inventory)
+pickupItem("potato", player3Inventory)
+print(player3Inventory)
