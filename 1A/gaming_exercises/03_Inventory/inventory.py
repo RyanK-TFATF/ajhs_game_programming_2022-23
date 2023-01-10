@@ -82,6 +82,7 @@ hasItem("garlic clove", player3Inventory)
 def useItem(item, inventory): 
     inventory.remove(item)
     print(f"You open your bag, pull out the {item} and use it.")
+    
 
 #print(player3Inventory)
 useItem("holy water", player3Inventory)
