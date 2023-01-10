@@ -72,20 +72,26 @@ player3Inventory = [
 def hasItem(item, inventory): 
     if item in inventory:
         print("Great, you have the required item!")
+        
     else:
         print("You are missing the required item.")
+        
 
 #hasItem("garlic clove", player3Inventory)
 # Add two more function calls for different items. 
 
 # Using Item 
 def useItem(item, inventory): 
-    inventory.remove(item)
-    print(f"You open your bag, pull out the {item} and use it.")
+    if item in inventory:
+        inventory.remove(item)
+        print(f"You open your bag, pull out the {item} and use it.")
+    else:
+        print(f"You do not have the {item} to use.")
     
 
 #print(player3Inventory)
-#useItem("holy water", player3Inventory)
+useItem("holy water", player3Inventory)
+useItem("potato", player3Inventory)
 #print(player3Inventory)
 
 # Picking Up Items 
@@ -101,8 +107,8 @@ def deathInventory(inventory):
     print(f"The cold darkness of death slowly washes over you...")
     inventory.clear()
 
-print(player3Inventory)
-deathInventory(player3Inventory)
-print(player3Inventory)
+#print(player3Inventory)
+#deathInventory(player3Inventory)
+#print(player3Inventory)
 
 
