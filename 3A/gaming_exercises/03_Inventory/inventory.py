@@ -1,4 +1,4 @@
-# 03_Inventory, Ryan Kelley, v0.0 
+# 03_Inventory, Ryan Kelley, v0.4b
 
 p1Inventory = [    
     "silver health potion",     
@@ -90,3 +90,20 @@ def useItem(item, inventory):
 #useItem("blue mana potion", p1Inventory)
 #dispInventory(p1Inventory)
 #useItem("purple mana potion", p1Inventory)
+
+# Add Items to Inventory 
+def addItem(item, inventory): 
+    print(f"You have picked up the {item} and put into your bag.")
+    inventory.append(item)
+
+#dispInventory(p1Inventory)
+#addItem("gallon of milk", p1Inventory)
+#dispInventory(p1Inventory)
+
+def sortItems(inventory): 
+    # Sort Alphabetically 
+    inventory.sort()
+
+#dispInventory(p1Inventory)
+#sortItems(p1Inventory)
+#dispInventory(p1Inventory)
