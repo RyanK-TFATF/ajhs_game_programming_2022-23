@@ -34,7 +34,7 @@ namespace _04_RockPaperScissors
         static int CPUChoice()
         {
             Random r = new Random(); 
-            int randChoice = r.Next(0, 2);    
+            int randChoice = r.Next(0, 3);    
             return randChoice;      
         }
         static void Main(string[] args)
@@ -52,10 +52,10 @@ namespace _04_RockPaperScissors
                 "paper",
                 "scissors"
             }; 
-
+            
             int loop = 0; 
             while (loop < 100) {
-                Console.WriteLine(CPUChoice());
+                Console.WriteLine(choices[CPUChoice()]);
                 loop++; 
             }
         
