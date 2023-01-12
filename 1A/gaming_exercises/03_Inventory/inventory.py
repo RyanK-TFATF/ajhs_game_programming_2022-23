@@ -1,6 +1,6 @@
 # 03_Inventory, Ryan Kelley, v0.3a
 
-'''
+
 player1Inventory = [
     "red health potion", 
     "red health potion",
@@ -32,8 +32,8 @@ def dispInventory(inventory): # Parameters are data needed for function.
         print(x)
 
 # Call the Function 
-dispInventory(player1Inventory)
-dispInventory(player2Inventory)
+#dispInventory(player1Inventory)
+#dispInventory(player2Inventory)
 
 rangedWeapons = [
     True, # pistol 
@@ -42,7 +42,6 @@ rangedWeapons = [
     True, # rocket launcher
     False # flame thrower 
 ]
-
 
 def dispWeapons(weapons): 
     weaponCounter = 0 
@@ -59,8 +58,8 @@ def dispWeapons(weapons):
             print("You are equipped with a flamethrower.")
         weaponCounter += 1
 
-dispWeapons(rangedWeapons)
-'''
+#dispWeapons(rangedWeapons)
+
 # Check If Item Exists in Inventory 
 player3Inventory = [
     "holy water", 
@@ -87,11 +86,11 @@ def useItem(item, inventory):
         print(f"You open your bag, pull out the {item} and use it.")
     else:
         print(f"You do not have the {item} to use.")
-    
+  
 
 #print(player3Inventory)
-useItem("holy water", player3Inventory)
-useItem("potato", player3Inventory)
+#useItem("holy water", player3Inventory)
+#useItem("potato", player3Inventory)
 #print(player3Inventory)
 
 # Picking Up Items 
