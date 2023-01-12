@@ -38,9 +38,53 @@ def displayInstructions():
 def cpuChoice(): 
     return choices[random.randint(0, 2)]
 
-# x = 0 
-# while x <= 50: 
-#     print(cpuChoice())
-#     x += 1
+cpuChoice = cpuChoice()
+
+# Player Choice 
+def playerChoice(): 
+    print("Ok, let's get down to business and play rock, paper, scissors!")
+    playerChoice = input("Please type Rock, Paper, or Scissors and press [ENTER].\n")
+    print(f"You have chosen {playerChoice}.\n")
+    while True: 
+        isCorrect = input("Is this correct? Yes / No\n")
+        if isCorrect == "Yes":
+            break
+        else: 
+            playerChoice = input("Please type Rock, Paper, or Scissors and press [ENTER].\n")
+    return playerChoice
+
+#playerChoice = cpuChoice()
+
+def roundWinner(playerChoice, cpuChoice):
+    print(f"You have chosen {playerChoice}.\n")
+    print(f"The CPU has chosen {cpuChoice}.\n")
+    if playerChoice == "Rock" and cpuChoice == "Rock": 
+        print("That is a draw.  Womp womp.\n")
+    elif playerChoice == "Rock" and cpuChoice == "Paper": 
+        print("The CPU wins, you scrub.\n")
+    elif playerChoice == "Rock" and cpuChoice == "Scissors": 
+        print("You win! Much wow.\n")
+    elif playerChoice == "Paper" and cpuChoice == "Rock": 
+        print("You win! Much wow.\n")
+    elif playerChoice == "Paper" and cpuChoice == "Paper": 
+        print("That is a draw.  Womp womp.\n")
+    elif playerChoice == "Paper" and cpuChoice == "Scissors": 
+        print("The CPU wins, you scrub.\n")
+    elif playerChoice == "Scissors" and cpuChoice == "Rock": 
+        print("The CPU wins, you scrub.\n")
+    elif playerChoice == "Scissors" and cpuChoice == "Paper": 
+        print("You win! Much wow.\n")
+    elif playerChoice == "Scissors" and cpuChoice == "Scissors": 
+        print("That is a draw.  Womp womp.\n")
+    else:
+        print("Unable to determine a winner.  Please restart.") 
+        exit()
+
+x = 0 
+while x <= 500: 
+   playerChoice = cpuChoice()
+   cpuChoice = cpuChoice()
+   roundWinner(playerChoice, cpuChoice)
+   x += 1
 
 
