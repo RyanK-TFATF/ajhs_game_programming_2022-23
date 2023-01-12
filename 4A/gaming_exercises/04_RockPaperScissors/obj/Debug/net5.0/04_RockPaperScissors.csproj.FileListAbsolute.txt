@@ -1,0 +1,16 @@
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\bin\Debug\net5.0\04_RockPaperScissors.exe
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\bin\Debug\net5.0\04_RockPaperScissors.deps.json
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\bin\Debug\net5.0\04_RockPaperScissors.runtimeconfig.json
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\bin\Debug\net5.0\04_RockPaperScissors.runtimeconfig.dev.json
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\bin\Debug\net5.0\04_RockPaperScissors.dll
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\bin\Debug\net5.0\ref\04_RockPaperScissors.dll
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\bin\Debug\net5.0\04_RockPaperScissors.pdb
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\obj\Debug\net5.0\04_RockPaperScissors.csprojAssemblyReference.cache
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\obj\Debug\net5.0\04_RockPaperScissors.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\obj\Debug\net5.0\04_RockPaperScissors.AssemblyInfoInputs.cache
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\obj\Debug\net5.0\04_RockPaperScissors.AssemblyInfo.cs
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\obj\Debug\net5.0\04_RockPaperScissors.csproj.CoreCompileInputs.cache
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\obj\Debug\net5.0\04_RockPaperScissors.dll
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\obj\Debug\net5.0\ref\04_RockPaperScissors.dll
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\obj\Debug\net5.0\04_RockPaperScissors.pdb
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\4A\gaming_exercises\04_RockPaperScissors\obj\Debug\net5.0\04_RockPaperScissors.genruntimeconfig.cache
