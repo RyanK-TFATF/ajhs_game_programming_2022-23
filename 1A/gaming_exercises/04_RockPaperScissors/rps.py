@@ -60,7 +60,7 @@ def determineWinner(p1Choice, cpuChoice):
         p1Score += 1
     elif p1Choice == "rock" and cpuChoice == "rock":        
         print(f"This is a draw!\n")
-    if p1Choice == "paper" and cpuChoice == "paper":
+    elif p1Choice == "paper" and cpuChoice == "paper":
         print(f"This is a draw!\n")        
     elif p1Choice == "paper" and cpuChoice == "scissors":        
         print(f"Scissors beats paper, so you have lost!\n")
@@ -68,7 +68,7 @@ def determineWinner(p1Choice, cpuChoice):
     elif p1Choice == "paper" and cpuChoice == "rock":        
         print(f"Paper beats rock, so you have won!\n")
         p1Score += 1
-    if p1Choice == "scissors" and cpuChoice == "paper":
+    elif p1Choice == "scissors" and cpuChoice == "paper":
         print(f"Scissors beats paper, so you have won!\n")        
         p1Choice += 1
     elif p1Choice == "scissors" and cpuChoice == "scissors":        
