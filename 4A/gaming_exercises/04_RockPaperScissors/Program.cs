@@ -29,6 +29,14 @@ namespace _04_RockPaperScissors
             Console.WriteLine("+ will win the match.                 +");
             Console.WriteLine("+*************************************+");
         }
+
+        // CPU Pick Random Choice 
+        static int CPUChoice()
+        {
+            Random r = new Random(); 
+            int randChoice = r.Next(0, 2);    
+            return randChoice;      
+        }
         static void Main(string[] args)
         {
             // DisplayMenu();
@@ -45,7 +53,12 @@ namespace _04_RockPaperScissors
                 "scissors"
             }; 
 
-            
+            int loop = 0; 
+            while (loop < 100) {
+                Console.WriteLine(CPUChoice());
+                loop++; 
+            }
+        
 
         }
     }
