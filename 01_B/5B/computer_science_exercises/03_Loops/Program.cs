@@ -53,6 +53,40 @@ namespace _03_Loops
                 }
             }
 
+            int[] grades = {
+                55, 
+                75, 
+                68,
+                15, 
+                100, 
+                0,
+                99, 
+                50,
+                86, 
+                65
+            }; 
+
+            foreach (int i in grades) {
+                if (i >= 90) {
+                    Console.WriteLine(i);
+                    Console.WriteLine("This is an A.");
+                } else if (i >= 80) {
+                    Console.WriteLine(i);
+                    Console.WriteLine("This is a B.");
+                } else if (i >= 70) {
+                    Console.WriteLine(i);
+                    Console.WriteLine("This is a C.");
+                } else if (i >= 60) {
+                    Console.WriteLine(i);
+                    Console.WriteLine("This is a D.");
+                } else if (i >= 0) {
+                    Console.WriteLine(i);
+                    Console.WriteLine("This is a F.");
+                } else {
+                    Console.WriteLine("Error calculating grade.  Please verify data.");
+                }
+            }
+
             
 
            
