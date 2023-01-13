@@ -52,3 +52,47 @@ def cpuRPS():
 # while x < 100:     
 #     print(cpuRPS())
 #     x += 1
+
+def playerRPS(): 
+    print("Let's get ready to RRRRRRRUUUUUUMMMMMBLE!\n")
+    choice = input("Please choose Rock, Paper, or Scissors and push ENTER.\n")
+    print(f"You have entered {choice}.\n")
+    while True: 
+        correct = input("Is that correct? Yes or No, then ENTER.\n")
+        if correct == "Yes": 
+            break 
+        else: 
+            choice = input("Please choose Rock, Paper, or Scissors and push ENTER.\n")
+
+#playerRPS()
+
+def determineWinner(playerChoice, cpuChoice):
+    print(f"You have chosen {playerChoice}.\n")
+    print(f"The CPU has chosen {cpuChoice}.\n")
+    if playerChoice == "Rock" and cpuChoice == "Rock": 
+        print("It is a draw. Womp womp.\n")
+    elif playerChoice == "Rock" and cpuChoice == "Paper": 
+        print("The CPU wins, scrub.\n")
+    elif playerChoice == "Rock" and cpuChoice == "Scissors": 
+        print("A winner is you!\n")
+    elif playerChoice == "Paper" and cpuChoice == "Rock": 
+        print("A winner is you!\n")
+    elif playerChoice == "Paper" and cpuChoice == "Paper": 
+        print("It is a draw. Womp womp.\n")        
+    elif playerChoice == "Paper" and cpuChoice == "Scissors": 
+        print("The CPU wins, scrub.\n")
+
+    
+
+
+
+
+    else: 
+        print("There is a fatal error and winner cannot be determined.\n")
+        print("Your computer will now explode.  Good luck.\n")
+        exit()
+
+    
+    
+
+    
