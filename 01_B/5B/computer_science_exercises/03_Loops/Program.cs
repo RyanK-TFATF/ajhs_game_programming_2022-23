@@ -42,6 +42,7 @@ namespace _03_Loops
             // STATEMENT 2 -- CONDITIONAL statement, checked each time after 1st loop
             // STATEMENT 3 -- executes EVERY TIME after loop completes 
             // for (statement1; statement2; statement3)
+            /*
             for (int i = 0; i <= 250; i++)
             {
                 Console.WriteLine(i);
@@ -52,7 +53,7 @@ namespace _03_Loops
                     Console.WriteLine("This number is odd."); 
                 }
             }
-
+            */ 
             int[] grades = {
                 55, 
                 75, 

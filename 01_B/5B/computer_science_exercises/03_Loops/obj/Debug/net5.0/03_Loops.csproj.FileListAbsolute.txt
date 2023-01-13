@@ -1,0 +1,16 @@
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\bin\Debug\net5.0\03_Loops.exe
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\bin\Debug\net5.0\03_Loops.deps.json
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\bin\Debug\net5.0\03_Loops.runtimeconfig.json
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\bin\Debug\net5.0\03_Loops.runtimeconfig.dev.json
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\bin\Debug\net5.0\03_Loops.dll
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\bin\Debug\net5.0\ref\03_Loops.dll
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\bin\Debug\net5.0\03_Loops.pdb
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\obj\Debug\net5.0\03_Loops.csprojAssemblyReference.cache
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\obj\Debug\net5.0\03_Loops.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\obj\Debug\net5.0\03_Loops.AssemblyInfoInputs.cache
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\obj\Debug\net5.0\03_Loops.AssemblyInfo.cs
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\obj\Debug\net5.0\03_Loops.csproj.CoreCompileInputs.cache
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\obj\Debug\net5.0\03_Loops.dll
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\obj\Debug\net5.0\ref\03_Loops.dll
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\obj\Debug\net5.0\03_Loops.pdb
+C:\Users\kelleyr\OneDrive - Duval County Public Schools\Downloads\GitHub\ajhs_game_programming_2022-23\01_B\5B\computer_science_exercises\03_Loops\obj\Debug\net5.0\03_Loops.genruntimeconfig.cache
