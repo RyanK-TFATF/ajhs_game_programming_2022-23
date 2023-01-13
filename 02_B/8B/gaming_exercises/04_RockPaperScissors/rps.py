@@ -1,4 +1,5 @@
 # Rock Paper Scissors, Ryan Kelley, v0.0 
+import random 
 
 # Declare Variables 
 playerChoice = ""
@@ -42,3 +43,12 @@ def displayMenu():
     print("+==============================+")
 
 #displayMenu()
+
+# CPU Choice 
+def cpuRPS(): 
+    return choices[random.randint(0, 2)]
+
+# x = 0 
+# while x < 100:     
+#     print(cpuRPS())
+#     x += 1
