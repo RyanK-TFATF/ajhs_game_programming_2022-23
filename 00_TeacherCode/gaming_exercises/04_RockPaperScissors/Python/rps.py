@@ -1,4 +1,4 @@
-# 04_RockPaperScissors, Ryan Kelley, v0.1a
+# 04_RockPaperScissors, Ryan Kelley, v1.1b
 import random 
 
 # Declare Variables 
@@ -6,6 +6,7 @@ p1Choice = ""
 cpuChoice = ""
 p1Score = 0
 cpuScore = 0 
+draws = 0
 
 choices = [
     "r",
@@ -29,12 +30,8 @@ def displayInstructions():
     print("+ The first player to score 3 points will win!     +")
     print("+**************************************************+")
 
-# displayInstructions()
-
 def cpuRPS(): 
     return choices[random.randint(0, 2)]
-
-#print(cpuChoice())
 
 def playerRPS():
     print("Ok, it's time to play Rock, Paper Scissors!")
@@ -50,45 +47,78 @@ def playerRPS():
     choice = choice[0].lower()    
     return choice 
 
-#print(playerRPS()) 
-
-def determineWinner(p1Choice, cpuChoice):
+def determineRoundWinner(p1Choice, cpuChoice):
     print(f"You have chosen {p1Choice}.  The CPU chose {cpuChoice}.")
     if p1Choice == "r" and cpuChoice == "p":
         print(f"Paper beats rock, so you have lost!\n")
-        winner = "cpu"
+        roundWinner = "cpu"
     elif p1Choice == "r" and cpuChoice == "s":        
         print(f"Rock beats scissors, so you have won!\n")
-        winner = "player"
+        roundWinner = "player"
     elif p1Choice == "r" and cpuChoice == "r":        
         print(f"This is a draw!\n")
-        winner = "draw"
+        roundWinner = "draw"
     elif p1Choice == "p" and cpuChoice == "p":
         print(f"This is a draw!\n")        
-        winner = "draw"
+        roundWinner = "draw"
     elif p1Choice == "p" and cpuChoice == "s":        
         print(f"Scissors beats paper, so you have lost!\n")
-        winner = "cpu"
+        roundWinner = "cpu"
     elif p1Choice == "p" and cpuChoice == "r":        
         print(f"Paper beats rock, so you have won!\n")
-        winner = "player"
+        roundWinner = "player"
     elif p1Choice == "s" and cpuChoice == "p":
         print(f"Scissors beats paper, so you have won!\n")        
-        winner = "winner"
+        roundWinner = "player"
     elif p1Choice == "s" and cpuChoice == "s":        
         print(f"This is a draw!\n")          
-        winner = "draw"
+        roundWinner = "draw"
     elif p1Choice == "s" and cpuChoice == "r":        
         print(f"Rock beats scissors, so you have lost!\n")
-        winner = "cpu"
+        roundWinner = "cpu"
     else:
         print("Something terrible has happened!  Please restart.\n")
         exit()
-    return winner 
+    return roundWinner 
         
-x = 0 
-while x < 100:    
-    cpuChoice = cpuRPS()
-    p1Choice = cpuRPS()
-    determineWinner(p1Choice, cpuChoice)
-    x += 1 
+def calcScore(roundWinner):
+    if roundWinner == "player":   
+        p1Score = 1     
+        return p1Score 
+    elif roundWinner == "cpu":        
+        cpuScore = 1
+        return cpuScore
+    else: 
+        draws = 1 
+        return draws 
+
+def matchWinner(p1Score, cpuScore):
+    if p1Score >= 5:
+        print("Congratulations, you have won the match!")
+        return True        
+    elif cpuScore >= 5:
+        print("Unfortunately, you have lost to the CPU.\n")        
+        return True
+    else:
+        return False
+
+def playGame(p1Score, cpuScore, draws):    
+    while True:    
+        cpuChoice = cpuRPS()
+        p1Choice = cpuRPS()
+        roundWinner = determineRoundWinner(p1Choice, cpuChoice)
+        if roundWinner == "player":
+            p1Score += calcScore(roundWinner) #, p1Score, cpuScore, draws)    
+        if roundWinner == "cpu":
+            cpuScore += calcScore(roundWinner) #, p1Score, cpuScore, draws)
+        if roundWinner == "draw":
+            draws += calcScore(roundWinner) #, p1Score, cpuScore, draws)
+    
+        print(f"Player 1 Score: {p1Score}\n")
+        print(f"CPU Score: {cpuScore}\n")
+        print(f"Draws: {draws}\n")
+
+        if matchWinner(p1Score, cpuScore) == True:            
+            break
+      
+playGame(p1Score, cpuScore, draws)
