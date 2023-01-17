@@ -3,8 +3,7 @@ using System;
 
 namespace _04_RockPaperScissors
 {
-
-    
+ 
     class Program
     {
         static void DisplayMenu()
@@ -38,6 +37,44 @@ namespace _04_RockPaperScissors
             return randChoice;      
         }
         
+        static string PlayerRPS()
+        {
+            Console.WriteLine("Please type Rock, Paper, or Scissors and press ENTER.\n");
+            string choice; 
+            choice = Console.ReadLine(); 
+            choice = choice[0].ToString();
+            choice = choice.ToLower(); 
+            if (choice == "r") {
+                choice = "rock";
+            } else if (choice == "p") {
+                choice = "paper";
+            } else if (choice == "s") {
+                choice = "scissors"; 
+            } else {
+                Console.WriteLine("Error: Warning Terminal File");
+            }
+            Console.WriteLine(choice);
+            return choice; 
+        }
+        
+        static string DetermineRoundWinner(playerPick, cpuPick)
+        {
+            Console.WriteLine("You have chosen " + playerPick);
+            Console.WriteLine("The CPU has chosen " + cpuPick);
+            if (playerPick == "rock" && cpuPick == "rock") {
+                Console.WriteLine("That is a draw.\n");
+                return "draw"; 
+            }
+            if (playerPick == "rock" && cpuPick == "scissors") {
+                Console.WriteLine("You win.\n");
+                return "player"; 
+            }
+            if (playerPick == "rock" && cpuPick == "paper") {
+                Console.WriteLine("You lose.\n");
+                return "cpu"; 
+            }
+        }
+        
         static void Main(string[] args)
         {
             // DisplayMenu();
@@ -53,14 +90,12 @@ namespace _04_RockPaperScissors
                 "paper",
                 "scissors"
             }; 
-            
-            int loop = 0; 
-            while (loop < 100) {
-                Console.WriteLine(choices[CPUChoice()]);
-                loop++; 
-            }
-        
-
+            PlayerRPS(); 
+            // int loop = 0; 
+            // while (loop < 100) {
+            //     Console.WriteLine(choices[CPUChoice()]);
+            //     loop++; 
+            // }
         }
     }
 }
