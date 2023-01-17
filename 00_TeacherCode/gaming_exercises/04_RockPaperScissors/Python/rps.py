@@ -1,4 +1,4 @@
-# 04_RockPaperScissors, Ryan Kelley, v1.1b
+# 04_RockPaperScissors, Ryan Kelley, v2.0a
 import random 
 
 # Declare Variables 
