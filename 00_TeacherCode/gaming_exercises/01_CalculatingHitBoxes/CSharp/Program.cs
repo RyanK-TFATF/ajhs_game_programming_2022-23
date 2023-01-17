@@ -9,7 +9,7 @@ namespace _01_CalculatingHitBoxes
         static void Main(string[] args)
         {
             // Variable Declarataions       
-            int hitBoxType = 0; // 1 = 2D hit box, 2 = 3D hit box
+            // int hitBoxType = 0; // 1 = 2D hit box, 2 = 3D hit box
 
             // Hit Box A Measurements 
             int hitBoxALength = 0; 

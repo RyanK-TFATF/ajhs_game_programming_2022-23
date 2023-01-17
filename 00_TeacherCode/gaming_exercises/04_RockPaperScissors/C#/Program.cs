@@ -30,10 +30,11 @@ namespace _04_RockPaperScissors
             Console.WriteLine("+*************************************+");
         }
 
-        static string CPUChoice()
+        /* static string CPUChoice()
         {
             return 
         }
+        */ 
         static void Main(string[] args)
         {
             // DisplayMenu();
