@@ -8,9 +8,9 @@ p1Score = 0
 cpuScore = 0 
 
 choices = [
-    "rock",
-    "paper",
-    "scissors"
+    "r",
+    "p",
+    "s"
 ]
 
 # Define Functions 
@@ -31,57 +31,64 @@ def displayInstructions():
 
 # displayInstructions()
 
-def cpuChoice(): 
+def cpuRPS(): 
     return choices[random.randint(0, 2)]
 
 #print(cpuChoice())
 
-def playerChoice():
+def playerRPS():
     print("Ok, it's time to play Rock, Paper Scissors!")
     choice = input("Choose one and type rock, paper, or scissors.")
     print(f"You have selected {choice}.")
     while True: 
-        correct = input("Is that correct? y / n\n")
+        correct = input("Is that correct? Yes / No\n")
+        correct = correct[0].lower()        
         if correct == "y":
             break
         else: 
             choice = input("Choose one and type rock, paper, or scissors.\n")
+    choice = choice[0].lower()    
     return choice 
 
-#playerChoice() 
+#print(playerRPS()) 
 
 def determineWinner(p1Choice, cpuChoice):
     print(f"You have chosen {p1Choice}.  The CPU chose {cpuChoice}.")
-    if p1Choice == "rock" and cpuChoice == "paper":
+    if p1Choice == "r" and cpuChoice == "p":
         print(f"Paper beats rock, so you have lost!\n")
-        cpuScore += 1
-    elif p1Choice == "rock" and cpuChoice == "scissors":        
+        winner = "cpu"
+    elif p1Choice == "r" and cpuChoice == "s":        
         print(f"Rock beats scissors, so you have won!\n")
-        p1Score += 1
-    elif p1Choice == "rock" and cpuChoice == "rock":        
+        winner = "player"
+    elif p1Choice == "r" and cpuChoice == "r":        
         print(f"This is a draw!\n")
-    elif p1Choice == "paper" and cpuChoice == "paper":
+        winner = "draw"
+    elif p1Choice == "p" and cpuChoice == "p":
         print(f"This is a draw!\n")        
-    elif p1Choice == "paper" and cpuChoice == "scissors":        
+        winner = "draw"
+    elif p1Choice == "p" and cpuChoice == "s":        
         print(f"Scissors beats paper, so you have lost!\n")
-        cpuScore += 1
-    elif p1Choice == "paper" and cpuChoice == "rock":        
+        winner = "cpu"
+    elif p1Choice == "p" and cpuChoice == "r":        
         print(f"Paper beats rock, so you have won!\n")
-        p1Score += 1
-    elif p1Choice == "scissors" and cpuChoice == "paper":
+        winner = "player"
+    elif p1Choice == "s" and cpuChoice == "p":
         print(f"Scissors beats paper, so you have won!\n")        
-        p1Choice += 1
-    elif p1Choice == "scissors" and cpuChoice == "scissors":        
+        winner = "winner"
+    elif p1Choice == "s" and cpuChoice == "s":        
         print(f"This is a draw!\n")          
-    elif p1Choice == "scissors" and cpuChoice == "rock":        
+        winner = "draw"
+    elif p1Choice == "s" and cpuChoice == "r":        
         print(f"Rock beats scissors, so you have lost!\n")
-        cpuScore += 1
+        winner = "cpu"
     else:
         print("Something terrible has happened!  Please restart.\n")
         exit()
-    return p1Score, cpuScore
+    return winner 
         
-    
-cpuChoice = cpuChoice()
-p1Choice = playerChoice()
-determineWinner(p1Choice, cpuChoice)
+x = 0 
+while x < 100:    
+    cpuChoice = cpuRPS()
+    p1Choice = cpuRPS()
+    determineWinner(p1Choice, cpuChoice)
+    x += 1 
