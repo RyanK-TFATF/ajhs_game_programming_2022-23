@@ -37,6 +37,7 @@ namespace _04_RockPaperScissors
             int randChoice = r.Next(0, 3);    
             return randChoice;      
         }
+        
         static void Main(string[] args)
         {
             // DisplayMenu();
