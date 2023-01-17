@@ -1,9 +1,9 @@
-# 04_RockPaperScissors, Ryan Kelley, v0.5a
+# 04_RockPaperScissors, Ryan Kelley, v0.
 import random 
 
 # Declare Variables 
 playerChoice = ""
-playerScore = 0
+p1Score = 0
 
 cpuChoice = ""
 cpuScore = 0 
@@ -11,9 +11,9 @@ cpuScore = 0
 draws = 0 
 
 choices = [
-    "rock", 
-    "paper", 
-    "scissors"
+    "Rock", 
+    "Paper", 
+    "Scissors"
 ]
 
 # Game Functions 
@@ -40,7 +40,7 @@ def displayInstructions():
 def cpuRPS(): 
     return choices[random.randint(0, 2)]
 
-cpuChoice = cpuRPS()
+#cpuChoice = cpuRPS()
 
 # Player Choice 
 def playerRPS(): 
@@ -76,7 +76,7 @@ def playerRPS():
 
 #playerRPS()
 
-def roundWinner(playerChoice, cpuChoice):
+def determineRoundWinner(playerChoice, cpuChoice):
     print(f"You have chosen {playerChoice}.\n")
     print(f"The CPU has chosen {cpuChoice}.\n")
     if playerChoice == "Rock" and cpuChoice == "Rock": 
@@ -110,3 +110,36 @@ def roundWinner(playerChoice, cpuChoice):
         print("Unable to determine a winner.  Please restart.") 
         exit()
     return roundWinner 
+
+def calcScore(winner): 
+    if winner == "player":
+        p1Score = 1
+        return p1Score
+    elif winner == "cpu":
+        cpuScore = 1
+        return cpuScore
+    elif winner == "draw":
+        draws = 1
+        return draws
+    else:
+        print("Unable to determine winner.  Please restart game.\n")
+        exit()
+
+def playGame(p1Score, cpuScore, draws):
+    x = 0 
+    while x < 100000: 
+        cpuChoice = cpuRPS()
+        p1Choice = cpuRPS()
+        roundWin = determineRoundWinner(p1Choice, cpuChoice)
+        if roundWin == "player":
+            p1Score += calcScore(roundWin)
+        if roundWin == "cpu":
+            cpuScore += calcScore(roundWin)
+        if roundWin == "draw":
+            draws += calcScore(roundWin)
+        print(f"Player Score: {p1Score}\n")
+        print(f"CPU Score: {cpuScore}\n")
+        print(f"Draws: {draws}\n")
+        x += 1
+
+playGame(p1Score, cpuScore, draws)
