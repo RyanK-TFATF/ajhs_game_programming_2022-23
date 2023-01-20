@@ -105,7 +105,7 @@ def matchWinner(p1Score, cpuScore):
 def playGame(p1Score, cpuScore, draws):    
     while True:    
         cpuChoice = cpuRPS()
-        p1Choice = cpuRPS()
+        p1Choice = playerRPS()
         roundWinner = determineRoundWinner(p1Choice, cpuChoice)
         if roundWinner == "player":
             p1Score += calcScore(roundWinner) #, p1Score, cpuScore, draws)    
