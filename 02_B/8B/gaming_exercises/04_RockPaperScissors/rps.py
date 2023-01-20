@@ -8,10 +8,12 @@ playerScore = 0
 cpuChoice = ""
 cpuScore = 0 
 
+draws = 0 
+
 choices = [
-    "rock",
-    "paper",
-    "scissors"
+    "Rock",
+    "Paper",
+    "Scissors"
 ]
 
 # Function Definitions 
@@ -71,26 +73,59 @@ def determineWinner(playerChoice, cpuChoice):
     print(f"The CPU has chosen {cpuChoice}.\n")
     if playerChoice == "Rock" and cpuChoice == "Rock": 
         print("It is a draw. Womp womp.\n")
+        winner = "draw"
     elif playerChoice == "Rock" and cpuChoice == "Paper": 
         print("The CPU wins, scrub.\n")
+        winner = "cpu"
     elif playerChoice == "Rock" and cpuChoice == "Scissors": 
         print("A winner is you!\n")
+        winner = "player"
     elif playerChoice == "Paper" and cpuChoice == "Rock": 
         print("A winner is you!\n")
+        winner = "player"
     elif playerChoice == "Paper" and cpuChoice == "Paper": 
         print("It is a draw. Womp womp.\n")        
+        winner = "draw"
     elif playerChoice == "Paper" and cpuChoice == "Scissors": 
         print("The CPU wins, scrub.\n")
-
-    
-
-
-
-
+        winner = "cpu"
+    elif playerChoice == "Scissors" and cpuChoice == "Rock": 
+        print("The CPU wins, scrub.\n")
+        winner = "cpu"
+    elif playerChoice == "Scissors" and cpuChoice == "Paper": 
+        print("A winner is you!\n")        
+        winner = "player"
+    elif playerChoice == "Scissors" and cpuChoice == "Scissors":        
+        print("It is a draw. Womp womp.\n")        
+        winner = "draw"
     else: 
         print("There is a fatal error and winner cannot be determined.\n")
         print("Your computer will now explode.  Good luck.\n")
         exit()
+    return winner 
+
+def calcScore(winner):
+    if winner == "player": 
+        playerScore = 1
+        return playerScore 
+    elif winner == "cpu":
+        cpuScore = 1
+        return cpuScore
+    else: 
+        draws = 1
+        return draws
+
+def determineMatchWinner(playerScore, cpuScore): 
+    if playerScore == 5: 
+        print("Congrats!  You have beaten the CPU!\n")    
+        return True 
+    elif cpuScore == 5:
+        print("You scrub.  You lost to the CPU.\n")
+        return True 
+    else: 
+        return False 
+
+        
 
     
     
