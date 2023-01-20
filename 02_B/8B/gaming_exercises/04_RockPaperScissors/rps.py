@@ -65,10 +65,11 @@ def playerRPS():
             break 
         else: 
             choice = input("Please choose Rock, Paper, or Scissors and push ENTER.\n")
+    return choice 
 
 #playerRPS()
 
-def determineWinner(playerChoice, cpuChoice):
+def determineRoundWinner(playerChoice, cpuChoice):
     print(f"You have chosen {playerChoice}.\n")
     print(f"The CPU has chosen {cpuChoice}.\n")
     if playerChoice == "Rock" and cpuChoice == "Rock": 
@@ -116,16 +117,42 @@ def calcScore(winner):
         return draws
 
 def determineMatchWinner(playerScore, cpuScore): 
-    if playerScore == 5: 
+    if playerScore == 50000: 
         print("Congrats!  You have beaten the CPU!\n")    
         return True 
-    elif cpuScore == 5:
+    elif cpuScore == 50000:
         print("You scrub.  You lost to the CPU.\n")
         return True 
     else: 
         return False 
 
+def playGame(playerScore, cpuScore, draws): 
+    displayMenu()
+    while True: 
+        cpuChoice = cpuRPS()
+        playerChoice = cpuRPS()
+        roundWin = determineRoundWinner(playerChoice, cpuChoice)
+        if roundWin == "player": 
+            playerScore += calcScore(roundWin)
+        if roundWin == "cpu": 
+            cpuScore += calcScore(roundWin)
+        if roundWin == "draw": 
+            draws += calcScore(roundWin)
         
+        print(f"Player Score: {playerScore}")
+        print(f"CPU Score: {cpuScore}")
+        print(f"Draws: {draws}")
+
+        if determineMatchWinner(playerScore, cpuScore) == True: 
+            break 
+        
+playGame(playerScore, cpuScore, draws)
+
+        
+
+
+
+    
 
     
     
