@@ -8,10 +8,12 @@ playerScore = 0
 cpuChoice = ""
 cpuScore = 0 
 
+draws = 0 
+
 choices = [
-    "rock",
-    "paper",
-    "scissors"
+    "Rock",
+    "Paper",
+    "Scissors"
 ]
 
 # Function Declarations 
@@ -59,20 +61,64 @@ def playerRPS():
 
 # playerRPS()
 
-def determineWinner(playerChoice, cpuChoice):
+def determineRoundWinner(playerChoice, cpuChoice):
     print(f"You have selected {playerChoice}.\n")
     print(f"The CPU has selected {cpuChoice}.\n")
     if playerChoice == "Rock" and cpuChoice == "Rock": 
         print("That is a draw!\n")
+        winner = "draw"
     elif playerChoice == "Rock" and cpuChoice == "Paper": 
         print("The CPU wins!\n")
+        winner = "cpu"
     elif playerChoice == "Rock" and cpuChoice == "Scissors": 
         print("You win!\n")
-    # Use elif statements to determine the winner if the player chose Paper, and then Scissors. 
-    
-    else: 
-        print("Unable to determine a winner.  Please restart the game!\n")
+        winner = "player"
+    elif playerChoice == "Paper" and cpuChoice == "Rock": 
+        print("You win!\n")        
+        winner = "player"
+    elif playerChoice == "Paper" and cpuChoice == "Paper": 
+        print("That is a draw!\n")        
+        winner = "draw"
+    elif playerChoice == "Paper" and cpuChoice == "Scissors": 
+        print("The CPU wins!\n")
+        winner = "cpu"
+    elif playerChoice == "Scissors" and cpuChoice == "Rock": 
+        print("The CPU wins!\n")
+        winner = "cpu"
+    elif playerChoice == "Scissors" and cpuChoice == "Paper": 
+        print("You win!\n")        
+        winner = "player"
+    elif playerChoice == "Scissors" and cpuChoice == "Scissors":         
+        print("That is a draw!\n")
+        winner = "draw"
+    else:
+        print("Error Code 0512: Error in determineRoundWinner() Function")
         exit()
+    return winner 
+
+def calcScore(winner):
+    if winner == "player":
+        playerScore = 1
+        return playerScore
+    elif winner == "cpu":
+        cpuScore = 1
+        return cpuScore
+    else:
+        draws = 1
+        return draws
+
+def determineMatchWinner(playerScore, cpuScore):
+    if playerScore == 5: 
+        print("Congratulations, a winner is you!  You have defeated the CPU.")
+        return True
+    elif cpuScore == 5:
+        print("What a scrub, you lost to the machine.")
+        return True 
+    else: 
+        return False 
+
+    
+    
 
     
     
