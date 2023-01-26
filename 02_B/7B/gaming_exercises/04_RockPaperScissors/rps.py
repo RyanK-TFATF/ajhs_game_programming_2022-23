@@ -117,7 +117,30 @@ def determineMatchWinner(playerScore, cpuScore):
     else: 
         return False 
 
-    
+def playRPS(playerScore, cpuScore, draws):
+    displayMenu()
+    while True: 
+        cpuChoice = cpuRPS()
+        playerChoice = playerRPS()
+        roundWin = determineRoundWinner(playerChoice, cpuChoice)
+        if roundWin == "player":
+            playerScore += calcScore(roundWin)
+        elif roundWin == "cpu":
+            cpuScore += calcScore(roundWin)
+        elif roundWin == "draw":
+            draws += calcScore(roundWin)
+        else: 
+            print("Error Code 1234 in playRPS()")
+        
+        print(f"Player Score: {playerScore}")
+        print(f"CPU Score: {cpuScore}")
+        print(f"Draws: {draws}")
+
+        if determineMatchWinner(playerScore, cpuScore) == True:
+            break 
+        
+
+
     
 
     
