@@ -117,10 +117,10 @@ def calcScore(winner):
         return draws
 
 def determineMatchWinner(playerScore, cpuScore): 
-    if playerScore == 50000: 
+    if playerScore == 1000000000: 
         print("Congrats!  You have beaten the CPU!\n")    
         return True 
-    elif cpuScore == 50000:
+    elif cpuScore == 1000000000:
         print("You scrub.  You lost to the CPU.\n")
         return True 
     else: 
