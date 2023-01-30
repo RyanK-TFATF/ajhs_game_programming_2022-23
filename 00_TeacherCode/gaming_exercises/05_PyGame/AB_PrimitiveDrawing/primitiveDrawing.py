@@ -1,4 +1,4 @@
-# Primitive Drawing, Ryan Kelley, v0.6
+# Primitive Drawing, Ryan Kelley, v0.7
 import pygame, sys
 from pygame.locals import *
 
@@ -26,5 +26,20 @@ pygame.draw.circle(DISPLAYSURF, BLUE, (300, 50), 20, 0)
 pygame.draw.ellipse(DISPLAYSURF, RED, (300, 250, 40, 80), 1)
 pygame.draw.rect(DISPLAYSURF, RED, (200, 150, 100, 50))
 
+pixObj = pygame.PixelArray(DISPLAYSURF)
+pixObj[480][380] = BLACK
+pixObj[482][382] = BLACK
+pixObj[484][384] = BLACK
+pixObj[486][386] = BLACK
+pixObj[488][388] = BLACK
+del pixObj
+
+# Run Game Loop 
+while True:
+    for event in pygame.event.get(): 
+        if event.type == QUIT: 
+            pygame.quit()
+            sys.exit()
+    pygame.display.update()
 
 
