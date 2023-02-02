@@ -1,4 +1,4 @@
-# Memory Game, Ryan Kelley, v1.0 -- based on a project by Al Sweigart.  
+# Memory Game, Ryan Kelley, v1.1 -- based on a project by Al Sweigart.  
 
 import pygame, sys, random
 from pygame.locals import *
@@ -43,3 +43,26 @@ OVAL = 'oval'
 ALLCOLORS = (RED, GREEN, BLUE, YELLOW, ORANGE, PURPLE, CYAN)
 ALLSHAPES = (DONUT, SQUARE, DIAMOND, LINES, OVAL)
 assert len(ALLCOLORS) * len(ALLSHAPES) * 2 >= BOARDWIDTH * BOARDHEIGHT, "Board is too big for number of shapes/colors defined."
+
+def main(): 
+    global FPSCLOCK, DISPLAYSURF # global keyword allows the variable to be accessed by any other function. 
+    pygame.init()
+    FPSCLOCK = pygame.time.Clock()
+    DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+
+    # Mouse Cursor Location 
+    mousex = 0 
+    mousey = 0 
+
+    # Game Caption 
+    pygame.display.set_caption('Memory Game')
+
+    # Board Setup 
+    mainBoard = getRandomizedBoard()
+    revealedBoxes = generateRevealedBoxesData(False)
+
+    firstSelection = None # Store the (x, y) coordinates of the first box that is clicked. 
+
+    # Fill in Board Background and Start Animation 
+    DISPLAYSURF.fill(BGCOLOR)
+    startGameAnimation(mainBoard)
