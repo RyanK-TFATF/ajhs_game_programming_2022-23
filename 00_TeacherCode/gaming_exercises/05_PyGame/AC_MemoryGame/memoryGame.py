@@ -1,4 +1,4 @@
-# Memory Game, Ryan Kelley, v1.1 -- based on a project by Al Sweigart.  
+# Memory Game, Ryan Kelley, v1.2 -- based on a project by Al Sweigart.  
 
 import pygame, sys, random
 from pygame.locals import *
@@ -66,3 +66,57 @@ def main():
     # Fill in Board Background and Start Animation 
     DISPLAYSURF.fill(BGCOLOR)
     startGameAnimation(mainBoard)
+
+    while True: 
+        mouseClicked = False # Tracks whether mouse has been clicked. 
+
+        DISPLAYSURF.fill(BGCOLOR)
+        drawBoard(mainBoard, revealedBoxes)
+
+        for event in pygame.event.get():
+            if event.type == QUIT or (event.type == KEYUP and event.key == K_ESCAPE):
+                pygame.quit()
+                sys.exit()
+            elif event.type == MOUSEMOTION: # Scan for motion of the mouse. 
+                mousex, mousey = event.pos 
+            elif event.type == MOUSEBUTTONUP: 
+                mousex, mousey = event.pos
+                mouseClicked = True 
+        
+        boxx, boxy = getBoxAtPixel(mousex, mousey) # Determine location of the box that was clicked. 
+        if boxx != None and boxy != None: # If both are None, there was a box under the mouse. 
+            if not revealedBoxes[boxx][boxy]:
+                drawHighlightBox(boxx, boxy)
+            if not revealedBoxes[boxx][boxy] and mouseClicked: 
+                revealBoxesAnimation(mainBoard, [(boxx, boxy)])
+                revealedBoxes[boxx][boxy] = True # Mark the box as being revelead. 
+                if firstSelection == None: # Check if this the first box to be clicked. 
+                    firstSelection = (boxx, boxy)
+                else: # The current box is the second box if we get to the else: block. 
+                    icon1shape, icon1color = getShapeAndColor(mainBoard, firstSelection[0], firstSelection[1])
+                    icon2shape, icon2color = getShapeAndColor(mainBoard, boxx, boxy)
+
+                    if icon1shape != icon2shape or icon1color != icon2color: # Check for shape and color matches. 
+                        pygame.time.wait(1000) # Value is in milliseconds. 
+                        coverBoxesAnimation(mainBoard, [(firstSelection[0], firstSelection[1], (boxx, boxy))])
+                        revealedBoxes[firstSelection[0]][firstSelection[1]] = False
+                        revealedBoxes[boxx][boxy] = False 
+                    elif hasWon(revealedBoxes):
+                        gameWonAnimation(mainBoard)
+                        pygame.time.wait(2000)
+
+                        # Reset the Board
+                        mainBoard = getRandomizedBoard()
+                        revealedBoxes = generateRevealedBoxesData(False)
+
+                        # Reveal the Board for 1 Second
+                        drawBoard(mainboard, revealedBoxes)
+                        pygame.display.update()
+                        pygame.time.wait(1000)
+
+                        # Replay Star Game Animation 
+                        starGameAnimation(mainBoard)
+                    firstSelection = None
+        
+        pygame.display.update()
+        FPSCLOCK.tick(FPS)
