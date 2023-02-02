@@ -1,4 +1,4 @@
-# Memory Game, Ryan Kelley, v1.3 -- based on a project by Al Sweigart.  
+# Memory Game, Ryan Kelley, v1.4 -- based on a project by Al Sweigart.  
 
 import pygame, sys, random
 from pygame.locals import *
@@ -126,3 +126,26 @@ def generateReaveledBoxesData(val):
     for i in range(BOARDWIDTH):
         revealedBoxes.append([val] * BOARDHEIGHT)
     return revealedBoxes
+
+def generateRandomizedBoard():
+    icons = []
+    for color in ALLCOLORS:
+        for shape in ALLSHAPES:
+            icons.append((shape, color))
+
+    random.shuffle(icons) # Randomize, aka shuffle, the list of icons. 
+    numIconsUsed = int(BOARDWIDTH * BOARDHEIGHT / 2) # Calculate number of icons needed. 
+    icons = icons[:numIconsUsed] * 2 # Create two of each icon used. 
+
+    # Create the Board and Randomly Place Icons 
+    board = []
+    for x in range(BOARDWIDTH):
+        column = []
+        for y in range(BOARDHEIGHT):
+            column.append(icons[0])
+            del icons[0] # Remove icon after adding, so we don't double up. 
+        board.append(column)
+    return board 
+
+
+    
