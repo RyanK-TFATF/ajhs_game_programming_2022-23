@@ -1,4 +1,4 @@
-# Memory Game, Ryan Kelley, v1.2 -- based on a project by Al Sweigart.  
+# Memory Game, Ryan Kelley, v1.3 -- based on a project by Al Sweigart.  
 
 import pygame, sys, random
 from pygame.locals import *
@@ -120,3 +120,9 @@ def main():
         
         pygame.display.update()
         FPSCLOCK.tick(FPS)
+
+def generateReaveledBoxesData(val): 
+    revealedBoxes = [] # Create an empty list of revealed boxes. 
+    for i in range(BOARDWIDTH):
+        revealedBoxes.append([val] * BOARDHEIGHT)
+    return revealedBoxes
