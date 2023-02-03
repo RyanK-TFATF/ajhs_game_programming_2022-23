@@ -1,4 +1,4 @@
-# Memory Game, Ryan Kelley, v1.4 -- based on a project by Al Sweigart.  
+# Memory Game, Ryan Kelley, v1.5 -- based on a project by Al Sweigart.  
 
 import pygame, sys, random
 from pygame.locals import *
@@ -147,5 +147,23 @@ def generateRandomizedBoard():
         board.append(column)
     return board 
 
+def splitIntoGroupsOf(groupSize, theList): 
+    result = [] # Create an empty list named result. 
+    for i in range(0, len(theList), groupSize):
+        result.append(theList[i:i + groupSize])
+    return result 
 
+def leftTopCoordsOfBox(boxx, boxy):
+    left = boxx * (BOXSIZE + GAPSIZE) + XMARGIN
+    top = boxy * (BOXSIZE + GAPSIZE) + YMARGIN
+    return (left, top)
+
+def getBoxAtPixel(x, y): 
+    for boxx in range(BOARDWIDTH):
+        for boxy in range(BOARDHEIGHT):
+            left, top = leftTopCoordsOfBox(boxx, boxy)
+            boxRect = pygame.Rect(left, top, BOXSIZE, BOXSIZE)
+            if boxRect.collidepoint(x, y):
+                return (boxx, boxy)
+    return (None, None)
     
