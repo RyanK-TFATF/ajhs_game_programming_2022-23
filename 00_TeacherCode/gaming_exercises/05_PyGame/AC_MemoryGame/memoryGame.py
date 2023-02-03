@@ -1,4 +1,4 @@
-# Memory Game, Ryan Kelley, v1.6 -- based on a project by Al Sweigart.  
+# Memory Game, Ryan Kelley, v1.7 -- based on a project by Al Sweigart.  
 
 import pygame, sys, random
 from pygame.locals import *
@@ -187,5 +187,27 @@ def drawIcon(shape, color, boxx, boxy):
     elif shape == OVAL: 
         pygame.draw.ellipse(DISPLAYSURF, color, (left, top + quarter, BOXSIZE, half))
 
+def getShapeAndColor(board, boxx, boxy):
+    return board[boxx][boxy][0], board[boxx][boxy][1]
+
+def drawBoxCovers(board, boxes, coverage): 
+    for box in boxes: 
+        left, top = leftTopCoordsOfBox(box[0], box[1])
+        pygame.draw.rect(DISPLAYSURF, BGCOLOR, (left, top, BOXSIZE, BOXSIZE))
+        shape, color = getShapeAndColor(board, box[0], box[1])
+        drawIcon(shape, color, box[0], box[1])
+        if coverage > 0: 
+            pygame.draw.rect(DISPLAYSURF, BOXCOLOR, (left, top, coverage, BOXSIZE))
+    pygame.display.update()
+    FPSCLOCK.tick(FPS)
+
+def revealBoxesAnimation(board, boxesToReveal):
+    for coverage in range(BOXSIZE, (-REVEALSPEED) - 1, - REVEALSPEED):
+        drawBoxCovers(board, boxesToReveal, coverage)
+
+def coverBoxesAnimation(board, boxesToCover):
+    for coverage in range(0, BOXSIZE + REVEALSPEED, REVEALSPEED):
+        drawBoxCovers(board, boxesToCover, coverage)
+    
 
 
