@@ -1,4 +1,4 @@
-# Memory Game, Ryan Kelley, v1.8 -- based on a project by Al Sweigart.  
+# Memory Game, Ryan Kelley, v1.85 -- based on a project by Al Sweigart.  
 
 import pygame, sys, random
 from pygame.locals import *
@@ -223,4 +223,18 @@ def drawHighlightBox(boxx, boxy):
     left, top = leftTopCoordsOfBox(boxx, boxy)
     pygame.draw.rect(DISPLAYSURF, HIGHLIGHTCOLOR, (left -5, top -5, BOXSIZE + 10, BOXSIZE + 10), 4)
 
+def startGameAnimation(board): 
+    # Randomly Reveal 8 Boxes at at time. 
+    coveredBoxes = generateReaveledBoxesData(False)
+    boxes = [] 
+    for x in range(BOARDWIDTH):
+        for y in range(BOARDHEIGHT):
+            boxes.append((x, y))
+    random.shuffle(boxes)
+    boxGroups = splitIntoGroupsOf(8, boxes)
+
+    drawBoard(board, coveredBoxes)
+    for boxGroup in boxGroups: 
+        revealBoxesAnimation(board, boxGroup)
+        coverBoxesAnimation(board, boxGroup)
 
