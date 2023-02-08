@@ -1,4 +1,4 @@
-# Memory Game, Ryan Kelley, v1.85 -- based on a project by Al Sweigart.  
+# Memory Game, Ryan Kelley, v1.90 -- based on a project by Al Sweigart.  
 
 import pygame, sys, random
 from pygame.locals import *
@@ -237,4 +237,24 @@ def startGameAnimation(board):
     for boxGroup in boxGroups: 
         revealBoxesAnimation(board, boxGroup)
         coverBoxesAnimation(board, boxGroup)
+
+def gameWonAnimation(board):
+    # Flash the background when player wins. 
+    coveredBoxes = generateReaveledBoxesData(True)
+    color1 = LIGHTBGCOLOR
+    color2 = BGCOLOR
+
+    for i in range(13):
+        color1, color2 = color2, color1 # Swap the two colors. 
+        DISPLAYSURF.fill(color1)
+        drawBoard(board, coveredBoxes)
+        pygame.display.update()
+        pygame.time.wait(300)
+
+def hasWon(revealedBoxes):
+    # Return True if all boxes are revealed, False if not. 
+    for i in revealedBoxes:
+        if False in i: 
+            return False
+    return True
 
