@@ -1,4 +1,4 @@
-# Memory Game, Ryan Kelley, v1.95 -- based on a project by Al Sweigart.  
+# Memory Game, Ryan Kelley, v1.99 -- based on a project by Al Sweigart.  
 
 import pygame, sys, random
 from pygame.locals import *
@@ -255,3 +255,6 @@ def hasWon(revealedBoxes):
         if False is i: 
             return False 
     return True
+
+if __name__ == '__main__': 
+    main() 
