@@ -1,4 +1,4 @@
-# Memory Game, Ryan Kelley, v1.90 -- based on a project by Al Sweigart.  
+# Memory Game, Ryan Kelley, v1.91 -- based on a project by Al Sweigart.  
 
 import pygame, sys, random
 from pygame.locals import *
@@ -58,7 +58,7 @@ def main():
     pygame.display.set_caption('Memory Game')
 
     # Board Setup 
-    mainBoard = getRandomizedBoard()
+    mainBoard = generateRandomizedBoard()
     revealedBoxes = generateRevealedBoxesData(False)
 
     firstSelection = None # Store the (x, y) coordinates of the first box that is clicked. 
@@ -106,11 +106,11 @@ def main():
                         pygame.time.wait(2000)
 
                         # Reset the Board
-                        mainBoard = getRandomizedBoard()
+                        mainBoard = generateRandomizedBoard()
                         revealedBoxes = generateRevealedBoxesData(False)
 
                         # Reveal the Board for 1 Second
-                        drawBoard(mainboard, revealedBoxes)
+                        drawBoard(mainBoard, revealedBoxes)
                         pygame.display.update()
                         pygame.time.wait(1000)
 
@@ -121,7 +121,7 @@ def main():
         pygame.display.update()
         FPSCLOCK.tick(FPS)
 
-def generateReaveledBoxesData(val): 
+def generateRevealedBoxesData(val): 
     revealedBoxes = [] # Create an empty list of revealed boxes. 
     for i in range(BOARDWIDTH):
         revealedBoxes.append([val] * BOARDHEIGHT)
@@ -225,7 +225,7 @@ def drawHighlightBox(boxx, boxy):
 
 def startGameAnimation(board): 
     # Randomly Reveal 8 Boxes at at time. 
-    coveredBoxes = generateReaveledBoxesData(False)
+    coveredBoxes = generateRevealedBoxesData(False)
     boxes = [] 
     for x in range(BOARDWIDTH):
         for y in range(BOARDHEIGHT):
@@ -237,24 +237,4 @@ def startGameAnimation(board):
     for boxGroup in boxGroups: 
         revealBoxesAnimation(board, boxGroup)
         coverBoxesAnimation(board, boxGroup)
-
-def gameWonAnimation(board):
-    # Flash the background when player wins. 
-    coveredBoxes = generateReaveledBoxesData(True)
-    color1 = LIGHTBGCOLOR
-    color2 = BGCOLOR
-
-    for i in range(13):
-        color1, color2 = color2, color1 # Swap the two colors. 
-        DISPLAYSURF.fill(color1)
-        drawBoard(board, coveredBoxes)
-        pygame.display.update()
-        pygame.time.wait(300)
-
-def hasWon(revealedBoxes):
-    # Return True if all boxes are revealed, False if not. 
-    for i in revealedBoxes:
-        if False in i: 
-            return False
-    return True
 
