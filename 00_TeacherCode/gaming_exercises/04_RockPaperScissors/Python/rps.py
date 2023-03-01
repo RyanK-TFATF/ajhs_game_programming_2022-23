@@ -9,9 +9,9 @@ cpuScore = 0
 draws = 0
 
 choices = [
-    "r",
-    "p",
-    "s"
+    "rock",
+    "paper",
+    "scissors"
 ]
 
 # Define Functions 
@@ -44,36 +44,35 @@ def playerRPS():
             break
         else: 
             choice = input("Choose one and type rock, paper, or scissors.\n")
-    choice = choice[0].lower()    
     return choice 
 
 def determineRoundWinner(p1Choice, cpuChoice):
     print(f"You have chosen {p1Choice}.  The CPU chose {cpuChoice}.")
-    if p1Choice == "r" and cpuChoice == "p":
+    if p1Choice == "rock" and cpuChoice == "paper":
         print(f"Paper beats rock, so you have lost!\n")
         roundWinner = "cpu"
-    elif p1Choice == "r" and cpuChoice == "s":        
+    elif p1Choice == "rock" and cpuChoice == "scissors":        
         print(f"Rock beats scissors, so you have won!\n")
         roundWinner = "player"
-    elif p1Choice == "r" and cpuChoice == "r":        
+    elif p1Choice == "rock" and cpuChoice == "rock":        
         print(f"This is a draw!\n")
         roundWinner = "draw"
-    elif p1Choice == "p" and cpuChoice == "p":
+    elif p1Choice == "paper" and cpuChoice == "paper":
         print(f"This is a draw!\n")        
         roundWinner = "draw"
-    elif p1Choice == "p" and cpuChoice == "s":        
+    elif p1Choice == "paper" and cpuChoice == "scissors":        
         print(f"Scissors beats paper, so you have lost!\n")
         roundWinner = "cpu"
-    elif p1Choice == "p" and cpuChoice == "r":        
+    elif p1Choice == "paper" and cpuChoice == "rock":        
         print(f"Paper beats rock, so you have won!\n")
         roundWinner = "player"
-    elif p1Choice == "s" and cpuChoice == "p":
+    elif p1Choice == "scissors" and cpuChoice == "paper":
         print(f"Scissors beats paper, so you have won!\n")        
         roundWinner = "player"
-    elif p1Choice == "s" and cpuChoice == "s":        
+    elif p1Choice == "scissors" and cpuChoice == "scissors":        
         print(f"This is a draw!\n")          
         roundWinner = "draw"
-    elif p1Choice == "s" and cpuChoice == "r":        
+    elif p1Choice == "scissors" and cpuChoice == "rock":        
         print(f"Rock beats scissors, so you have lost!\n")
         roundWinner = "cpu"
     else:
