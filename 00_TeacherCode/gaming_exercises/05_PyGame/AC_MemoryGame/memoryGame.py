@@ -27,7 +27,6 @@ YELLOW = (255, 255, 0)
 ORANGE = (255, 128, 0)
 PURPLE = (255, 0, 255)
 CYAN = (0, 255, 255)
-
 BGCOLOR = NAVYBLUE
 LIGHTBGCOLOR = GRAY
 BOXCOLOR = WHITE
@@ -60,7 +59,6 @@ def main():
     # Board Setup 
     mainBoard = generateRandomizedBoard()
     revealedBoxes = generateRevealedBoxesData(False)
-
     firstSelection = None # Store the (x, y) coordinates of the first box that is clicked. 
 
     # Fill in Board Background and Start Animation 
