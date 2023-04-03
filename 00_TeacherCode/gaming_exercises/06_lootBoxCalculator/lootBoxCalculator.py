@@ -43,7 +43,7 @@ def main():
 
 
     while numBoxesOpened <= 100: 
-        while numItemsOpened <= numItemsPerBox: 
+        while numItemsOpened < numItemsPerBox: 
             itemRoll = randint(1, 100)       
         
             if rareGuaranteed == True and rareOpened == False:
@@ -53,19 +53,19 @@ def main():
                 #print(rareItemsOpened)
                 rareOpened = True
         
-            if itemRoll <= rareChance:
+            elif itemRoll <= rareChance:
                 theItemIndex = randint(0, len(rareItemsAvailable) - 1)
                 itemOpened = rareItemsAvailable[theItemIndex]             
                 rareItemsOpened.append(itemOpened)            
                 numItemsOpened += 1      
 
-            if itemRoll <= uncommonChance: 
+            elif itemRoll <= uncommonChance: 
                 theItemIndex = randint(0, len(uncommonItemsAvailable) - 1)
                 itemOpened = uncommonItemsAvailable[theItemIndex] 
                 uncommonItemsOpened.append(itemOpened)            
                 numItemsOpened += 1           
 
-            if itemRoll <= commonChance: 
+            elif itemRoll <= commonChance: 
                 theItemIndex = randint(0, len(commonItemsAvailable) - 1)
                 itemOpened = commonItemsAvailable[theItemIndex]             
                 commonItemsOpened.append(itemOpened)
