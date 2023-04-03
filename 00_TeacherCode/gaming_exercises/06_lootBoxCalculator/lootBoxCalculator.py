@@ -1,4 +1,4 @@
-# Loot Box Cost Calculator, Ryan Kelley, v0.2 
+# Loot Box Cost Calculator, Ryan Kelley, v0.3 
 from random import randint
 # import sys, os for file access
 # open file to save lootbox info. 
@@ -16,32 +16,62 @@ def main():
 
     # Uncommon Items
     numUncommon = int(input("How many uncommon items are available in your game?\n"))
-    uncommonChance = float(input("What is the percentage chance of getting an uncommon item in the loot box?  Enter as a decimal.\n"))
-    uncommonItems = createUncommonItems(numUncommon)
+    uncommonChance = int(input("What is the percentage chance of getting an uncommon item in the loot box?  Enter an integer number without a % sign..\n"))  
+    uncommonItemsAvailable = createUncommonItems(numUncommon)
     uncommonItemsOpened = []
     
     # Rare Items
     numRare = int(input("How many rare items are available in your game?\n"))
-    rareChance = float(input("What is the percentage chance of getting a rare item in the loot box?  Enter as a decimal.\n"))
-    rareItems = createRareItems(numRare)
+    rareChance = int(input("What is the percentage chance of getting a rare item in the loot box?  Enter an integer number without a % sign..\n"))  
+    rareItemsAvailable = createRareItems(numRare)
     rareItemsOpened = []
     
     # Are you guaranteed at least one rare item per loot box? 
-    rareGuaranteed = int(input("Are you guaranteed at least one rare item per loot box? Enter 0 for No, 1 for yes.\n"))
-    if rareGuaranteed != 0 or rareGuaranteed != 1:        
-        rareGuaranteed = int(input("Are you guaranteed at least one rare item per loot box? Enter 0 for No, 1 for yes.\n"))
+    rareOpened = False
+    rareGuaranteed = int(input("Are you guaranteed at least one rare item per loot box? Enter 0 for No, 1 for yes.\n"))    
     if rareGuaranteed == 0:
         rareGuaranteed = False        
     elif rareGuaranteed == 1:
         rareGuaranteed = True
+    #print(rareGuaranteed)
     
     # Loot Box Structure
     numItemsPerBox = int(input("How many items are in each box?\n"))           
+    numItemsOpened = 0
+    numBoxesOpened = 0 
+    costPerBox = int(input("What is the cost per single loot box?  Round answer to the nearest dollar, do not include the $.\n"))
 
-    if randint(1,100) <= commonChance: 
-        commonItemsOpened.append(commonItemsAvailable[randint(0, commonItemsAvailable.len())])
-        print(commonItemsOpened)
 
+    while numItemsOpened < numItemsPerBox: 
+        if rareGuaranteed == True and rareOpened == False:
+            theItemIndex = randint(0, len(rareItemsAvailable) - 1)
+            itemOpened = rareItemsAvailable[theItemIndex] 
+            rareItemsOpened.append(itemOpened)
+            print(rareItemsOpened)
+            rareOpened = True
+
+        elif randint(1,100) <= rareChance:
+            theItemIndex = randint(0, len(rareItemsAvailable) - 1)
+            itemOpened = rareItemsAvailable[theItemIndex]             
+            rareItemsOpened.append(itemOpened)            
+
+        elif randint(1,100) <= commonChance: 
+            theItemIndex = randint(0, len(commonItemsAvailable) - 1)
+            itemOpened = commonItemsAvailable[theItemIndex]             
+            commonItemsOpened.append(itemOpened)
+            
+
+        elif randint(1,100) <= uncommonChance: 
+            theItemIndex = randint(0, len(uncommonItemsAvailable) - 1)
+            itemOpened = uncommonItemsAvailable[theItemIndex] 
+            uncommonItemsOpened.append(itemOpened)           
+            
+        
+        numItemsOpened += 1
+    
+    print(commonItemsOpened)
+    print(uncommonItemsOpened)
+    print(rareItemsOpened)            
 
 # Common Item Functions 
 def createCommonItems(num):
@@ -51,7 +81,7 @@ def createCommonItems(num):
     while len(commonItems) < num:
         commonItems.append("Common Item #" + str(itemCount))
         itemCount += 1
-    print(commonItems)
+    #print(commonItems)
     return commonItems 
 
 # Unommon Item Functions 
@@ -62,7 +92,7 @@ def createUncommonItems(num):
     while len(uncommonItems) < num:
         uncommonItems.append("Uncommon Item #" + str(itemCount))
         itemCount += 1
-    print(uncommonItems)
+    #print(uncommonItems)
     return uncommonItems
 
 # Rare Item Functions 
@@ -73,7 +103,7 @@ def createRareItems(num):
     while len(rareItems) < num:
         rareItems.append("Rare Item #" + str(itemCount))
         itemCount += 1
-    print(rareItems)
+    #print(rareItems)
     return rareItems
 
 
