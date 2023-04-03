@@ -1,4 +1,4 @@
-# Loot Box Cost Calculator, Ryan Kelley, v0.3 
+# Loot Box Cost Calculator, Ryan Kelley, v0.4 
 from random import randint
 # import sys, os for file access
 # open file to save lootbox info. 
@@ -42,36 +42,40 @@ def main():
     costPerBox = int(input("What is the cost per single loot box?  Round answer to the nearest dollar, do not include the $.\n"))
 
 
-    while numItemsOpened < numItemsPerBox: 
+    while numItemsOpened <= numItemsPerBox: 
+        itemRoll = randint(1, 100)       
+        
         if rareGuaranteed == True and rareOpened == False:
             theItemIndex = randint(0, len(rareItemsAvailable) - 1)
             itemOpened = rareItemsAvailable[theItemIndex] 
             rareItemsOpened.append(itemOpened)
-            print(rareItemsOpened)
+            #print(rareItemsOpened)
             rareOpened = True
-
-        elif randint(1,100) <= rareChance:
+        
+        if itemRoll <= rareChance:
             theItemIndex = randint(0, len(rareItemsAvailable) - 1)
             itemOpened = rareItemsAvailable[theItemIndex]             
             rareItemsOpened.append(itemOpened)            
+            numItemsOpened += 1      
 
-        elif randint(1,100) <= commonChance: 
+        if itemRoll <= uncommonChance: 
+            theItemIndex = randint(0, len(uncommonItemsAvailable) - 1)
+            itemOpened = uncommonItemsAvailable[theItemIndex] 
+            uncommonItemsOpened.append(itemOpened)            
+            numItemsOpened += 1           
+
+        if itemRoll <= commonChance: 
             theItemIndex = randint(0, len(commonItemsAvailable) - 1)
             itemOpened = commonItemsAvailable[theItemIndex]             
             commonItemsOpened.append(itemOpened)
-            
-
-        elif randint(1,100) <= uncommonChance: 
-            theItemIndex = randint(0, len(uncommonItemsAvailable) - 1)
-            itemOpened = uncommonItemsAvailable[theItemIndex] 
-            uncommonItemsOpened.append(itemOpened)           
-            
-        
-        numItemsOpened += 1
+            numItemsOpened += 1           
+    
+    
     
     print(commonItemsOpened)
     print(uncommonItemsOpened)
     print(rareItemsOpened)            
+    print(f"Number of Boxes Opened {numBoxesOpened}")
 
 # Common Item Functions 
 def createCommonItems(num):
