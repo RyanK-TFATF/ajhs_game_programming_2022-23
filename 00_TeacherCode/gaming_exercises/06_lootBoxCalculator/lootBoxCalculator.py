@@ -4,12 +4,12 @@
 # open file to save lootbox info. 
 
 def main(): 
-    
+    percentage = 100 
     craftingMaterials = 0 
 
     # Common Items
     numCommon = int(input("How many common items are available in your game?\n"))
-    commonChance = float(input("What is the percentage chance of getting a common item in the loot box?  Enter as a decimal.\n"))
+    commonChance = float(input("What is the percentage chance of getting a common item in the loot box?  Enter as a decimal.\n"))    
     commonItemsAvailable = createCommonItems(numCommon)
     commonItemsOpened = []
 
