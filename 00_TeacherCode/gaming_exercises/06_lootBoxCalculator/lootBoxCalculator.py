@@ -1,4 +1,4 @@
-# Loot Box Cost Calculator, Ryan Kelley, v0.4 
+# Loot Box Cost Calculator, Ryan Kelley, v0.4a 
 from random import randint
 # import sys, os for file access
 # open file to save lootbox info. 
@@ -42,34 +42,37 @@ def main():
     costPerBox = int(input("What is the cost per single loot box?  Round answer to the nearest dollar, do not include the $.\n"))
 
 
-    while numItemsOpened <= numItemsPerBox: 
-        itemRoll = randint(1, 100)       
+    while numBoxesOpened <= 100: 
+        while numItemsOpened <= numItemsPerBox: 
+            itemRoll = randint(1, 100)       
         
-        if rareGuaranteed == True and rareOpened == False:
-            theItemIndex = randint(0, len(rareItemsAvailable) - 1)
-            itemOpened = rareItemsAvailable[theItemIndex] 
-            rareItemsOpened.append(itemOpened)
-            #print(rareItemsOpened)
-            rareOpened = True
+            if rareGuaranteed == True and rareOpened == False:
+                theItemIndex = randint(0, len(rareItemsAvailable) - 1)
+                itemOpened = rareItemsAvailable[theItemIndex] 
+                rareItemsOpened.append(itemOpened)
+                #print(rareItemsOpened)
+                rareOpened = True
         
-        if itemRoll <= rareChance:
-            theItemIndex = randint(0, len(rareItemsAvailable) - 1)
-            itemOpened = rareItemsAvailable[theItemIndex]             
-            rareItemsOpened.append(itemOpened)            
-            numItemsOpened += 1      
+            if itemRoll <= rareChance:
+                theItemIndex = randint(0, len(rareItemsAvailable) - 1)
+                itemOpened = rareItemsAvailable[theItemIndex]             
+                rareItemsOpened.append(itemOpened)            
+                numItemsOpened += 1      
 
-        if itemRoll <= uncommonChance: 
-            theItemIndex = randint(0, len(uncommonItemsAvailable) - 1)
-            itemOpened = uncommonItemsAvailable[theItemIndex] 
-            uncommonItemsOpened.append(itemOpened)            
-            numItemsOpened += 1           
+            if itemRoll <= uncommonChance: 
+                theItemIndex = randint(0, len(uncommonItemsAvailable) - 1)
+                itemOpened = uncommonItemsAvailable[theItemIndex] 
+                uncommonItemsOpened.append(itemOpened)            
+                numItemsOpened += 1           
 
-        if itemRoll <= commonChance: 
-            theItemIndex = randint(0, len(commonItemsAvailable) - 1)
-            itemOpened = commonItemsAvailable[theItemIndex]             
-            commonItemsOpened.append(itemOpened)
-            numItemsOpened += 1           
-    
+            if itemRoll <= commonChance: 
+                theItemIndex = randint(0, len(commonItemsAvailable) - 1)
+                itemOpened = commonItemsAvailable[theItemIndex]             
+                commonItemsOpened.append(itemOpened)
+                numItemsOpened += 1           
+        numBoxesOpened += 1
+        
+
     
     
     print(commonItemsOpened)
