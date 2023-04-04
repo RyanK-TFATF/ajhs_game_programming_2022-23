@@ -191,6 +191,7 @@ namespace _02_Collections
             Console.WriteLine("Does the myArrayList 2 Contain 500?");
             Console.WriteLine(myArrayList2.Contains(500)); // Should print false 
             Console.WriteLine("END .Contains() EXAMPLE");
+            
         }
     }
 }
