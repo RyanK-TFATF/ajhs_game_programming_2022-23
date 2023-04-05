@@ -1,18 +1,26 @@
-# Loot Box Cost Calculator, Ryan Kelley, v0.4a 
+# Loot Box Cost Calculator, Ryan Kelley, v0.5b 
 from random import randint
 # import sys, os for file access
 # open file to save lootbox info. 
 
 def main(): 
     
+    # Simulation assumes that duplicate items will award crafting materials instead.  
     craftingMaterials = 0 
 
-    # Common Items
-    numCommon = int(input("How many common items are available in your game?\n"))
-    commonChance = int(input("What is the percentage chance of getting a common item in the loot box?  Enter an integer number without a % sign..\n"))    
+    # Rare Items
+    numRare = int(input("How many rare items are available in your game?\n"))
+    rareChance = int(input("What is the percentage chance of getting a rare item in the loot box?  Enter an integer number without a % sign..\n"))  
+    rareItemsAvailable = createRareItems(numRare)
+    rareItemsOpened = []    
     
-    commonItemsAvailable = createCommonItems(numCommon)
-    commonItemsOpened = []
+    # Rare Guaranteed Packs?
+    rareOpened = False # Used for tracking the guaranteed rare in a pack. 
+    rareGuaranteed = int(input("Are you guaranteed at least one rare item per loot box? Enter 0 for No, 1 for yes.\n"))    
+    if rareGuaranteed == 0:
+        rareGuaranteed = False        
+    elif rareGuaranteed == 1:
+        rareGuaranteed = True
 
     # Uncommon Items
     numUncommon = int(input("How many uncommon items are available in your game?\n"))
@@ -20,20 +28,10 @@ def main():
     uncommonItemsAvailable = createUncommonItems(numUncommon)
     uncommonItemsOpened = []
     
-    # Rare Items
-    numRare = int(input("How many rare items are available in your game?\n"))
-    rareChance = int(input("What is the percentage chance of getting a rare item in the loot box?  Enter an integer number without a % sign..\n"))  
-    rareItemsAvailable = createRareItems(numRare)
-    rareItemsOpened = []
-    
-    # Are you guaranteed at least one rare item per loot box? 
-    rareOpened = False
-    rareGuaranteed = int(input("Are you guaranteed at least one rare item per loot box? Enter 0 for No, 1 for yes.\n"))    
-    if rareGuaranteed == 0:
-        rareGuaranteed = False        
-    elif rareGuaranteed == 1:
-        rareGuaranteed = True
-    #print(rareGuaranteed)
+    # Common Items -- For this simlutation, we will assume any item that is not rare or uncommon is common, and do not ask for % chance.
+    numCommon = int(input("How many common items are available in your game?\n"))        
+    commonItemsAvailable = createCommonItems(numCommon)
+    commonItemsOpened = []      
     
     # Loot Box Structure
     numItemsPerBox = int(input("How many items are in each box?\n"))           
@@ -42,35 +40,48 @@ def main():
     costPerBox = int(input("What is the cost per single loot box?  Round answer to the nearest dollar, do not include the $.\n"))
 
 
-    while numBoxesOpened <= 100: 
-        while numItemsOpened < numItemsPerBox: 
-            itemRoll = randint(1, 100)       
+    
+    while numItemsOpened < numItemsPerBox: 
+        itemRoll = randint(1, 100)       
         
-            if rareGuaranteed == True and rareOpened == False:
-                theItemIndex = randint(0, len(rareItemsAvailable) - 1)
-                itemOpened = rareItemsAvailable[theItemIndex] 
-                rareItemsOpened.append(itemOpened)
-                #print(rareItemsOpened)
-                rareOpened = True
-        
-            elif itemRoll <= rareChance:
-                theItemIndex = randint(0, len(rareItemsAvailable) - 1)
-                itemOpened = rareItemsAvailable[theItemIndex]             
+        if rareGuaranteed == True and rareOpened == False:
+            theItemIndex = randint(0, len(rareItemsAvailable) - 1)
+            itemOpened = rareItemsAvailable[theItemIndex] 
+            if itemOpened in rareItemsOpened:
+                craftingMaterials += 100
+            else:                    
                 rareItemsOpened.append(itemOpened)            
-                numItemsOpened += 1      
+            rareOpened = True
+            numItemsOpened += 1            
 
-            elif itemRoll <= uncommonChance: 
-                theItemIndex = randint(0, len(uncommonItemsAvailable) - 1)
-                itemOpened = uncommonItemsAvailable[theItemIndex] 
-                uncommonItemsOpened.append(itemOpened)            
-                numItemsOpened += 1           
+        elif itemRoll <= rareChance:
+            theItemIndex = randint(0, len(rareItemsAvailable) - 1)
+            itemOpened = rareItemsAvailable[theItemIndex] 
+            if itemOpened in rareItemsOpened:
+                craftingMaterials += 100
+            else:                    
+                rareItemsOpened.append(itemOpened)                          
+            numItemsOpened += 1      
 
-            elif itemRoll <= commonChance: 
-                theItemIndex = randint(0, len(commonItemsAvailable) - 1)
-                itemOpened = commonItemsAvailable[theItemIndex]             
-                commonItemsOpened.append(itemOpened)
-                numItemsOpened += 1           
-        numBoxesOpened += 1
+        elif itemRoll > rareChance and itemRoll <= uncommonChance: 
+            theItemIndex = randint(0, len(uncommonItemsAvailable) - 1)
+            itemOpened = uncommonItemsAvailable[theItemIndex] 
+            if itemOpened in uncommonItemsOpened:
+                craftingMaterials += 50
+            else:                    
+                uncommonItemsOpened.append(itemOpened)              
+            numItemsOpened += 1         
+
+        else:
+            theItemIndex = randint(0, len(commonItemsAvailable) - 1)
+            itemOpened = commonItemsAvailable[theItemIndex]             
+            if itemOpened in commonItemsOpened:
+                craftingMaterials += 25
+            else:                    
+                commonItemsOpened.append(itemOpened)              
+            numItemsOpened += 1           
+    
+    numBoxesOpened += 1
         
 
     
@@ -78,7 +89,9 @@ def main():
     print(commonItemsOpened)
     print(uncommonItemsOpened)
     print(rareItemsOpened)            
-    print(f"Number of Boxes Opened {numBoxesOpened}")
+    print(f"Crafting Materials Opened {craftingMaterials}\n")
+    print(f"Number of Items Opened {numItemsOpened}\n")
+    print(f"Number of Boxes Opened {numBoxesOpened}\n")
 
 # Common Item Functions 
 def createCommonItems(num):
