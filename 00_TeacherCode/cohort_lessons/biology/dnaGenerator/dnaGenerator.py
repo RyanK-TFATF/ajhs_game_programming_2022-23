@@ -32,3 +32,18 @@ for i in range(0, len(dnaCodons)):
         print(f"The {dnaCodons[i]} codon was NOT found in the generated sequence.\n")
     else: 
         print(f"The {dnaCodons[i]} codon was found!  The first instance starts at index {dnaSequence.find(dnaCodons[i])}.\n") # Return the index of the first instance of the codon.  
+
+
+def copy_DNA_string(base_sequence0):
+
+    for each_base in base_sequence0: 
+        if each_base == "A":
+            base_sequence1 = base_sequence1 + "T"
+        elif each_base == "T":
+            base_sequence1 = base_sequence1 + "A"
+        elif each_base == "G":
+            base_sequence1 = base_sequence1 + "C"
+        else:
+            base_sequence1 = base_sequence1 + "G"
+        
+    return base_sequence1
