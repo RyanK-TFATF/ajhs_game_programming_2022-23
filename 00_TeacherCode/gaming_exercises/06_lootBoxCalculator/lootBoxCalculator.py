@@ -1,5 +1,6 @@
 # Loot Box Cost Calculator, Ryan Kelley, v0.5b 
 from random import randint
+import time
 # import sys, os for file access
 # open file to save lootbox info. 
 
@@ -40,58 +41,56 @@ def main():
     costPerBox = int(input("What is the cost per single loot box?  Round answer to the nearest dollar, do not include the $.\n"))
 
 
-    
-    while numItemsOpened < numItemsPerBox: 
-        itemRoll = randint(1, 100)       
+    while len(commonItemsAvailable) > len(commonItemsOpened) or len(uncommonItemsAvailable) > len(uncommonItemsOpened) or len(rareItemsAvailable) > len(rareItemsOpened):
+        print(f"Length of commonItems available:  {len(commonItemsAvailable)} Length of commonItemsOpen: {len(commonItemsOpened)}\n")
+        print(f"Length of uncommonItems available:  {len(uncommonItemsAvailable)} Length of uncommonItemsOpen: {len(uncommonItemsOpened)}\n")
+        print(f"Length of rareItems available:  {len(rareItemsAvailable)} Length of rareItemsOpen: {len(rareItemsOpened)}\n")
+        while numItemsOpened < numItemsPerBox: 
+            itemRoll = randint(1, 100)       
         
-        if rareGuaranteed == True and rareOpened == False:
-            theItemIndex = randint(0, len(rareItemsAvailable) - 1)
-            itemOpened = rareItemsAvailable[theItemIndex] 
-            if itemOpened in rareItemsOpened:
-                craftingMaterials += 100
-            else:                    
-                rareItemsOpened.append(itemOpened)            
-            rareOpened = True
-            numItemsOpened += 1            
+            if rareGuaranteed == True and rareOpened == False:
+                theItemIndex = randint(0, len(rareItemsAvailable) - 1)
+                itemOpened = rareItemsAvailable[theItemIndex] 
+                if itemOpened in rareItemsOpened:
+                    craftingMaterials += 100
+                else:                    
+                    rareItemsOpened.append(itemOpened)            
+                rareOpened = True
+                numItemsOpened += 1            
 
-        elif itemRoll <= rareChance:
-            theItemIndex = randint(0, len(rareItemsAvailable) - 1)
-            itemOpened = rareItemsAvailable[theItemIndex] 
-            if itemOpened in rareItemsOpened:
-                craftingMaterials += 100
-            else:                    
-                rareItemsOpened.append(itemOpened)                          
-            numItemsOpened += 1      
+            elif itemRoll <= rareChance:
+                theItemIndex = randint(0, len(rareItemsAvailable) - 1)
+                itemOpened = rareItemsAvailable[theItemIndex] 
+                if itemOpened in rareItemsOpened:
+                    craftingMaterials += 100
+                else:                    
+                    rareItemsOpened.append(itemOpened)                          
+                numItemsOpened += 1      
 
-        elif itemRoll > rareChance and itemRoll <= uncommonChance: 
-            theItemIndex = randint(0, len(uncommonItemsAvailable) - 1)
-            itemOpened = uncommonItemsAvailable[theItemIndex] 
-            if itemOpened in uncommonItemsOpened:
-                craftingMaterials += 50
-            else:                    
-                uncommonItemsOpened.append(itemOpened)              
-            numItemsOpened += 1         
+            elif itemRoll > rareChance and itemRoll <= uncommonChance: 
+                theItemIndex = randint(0, len(uncommonItemsAvailable) - 1)
+                itemOpened = uncommonItemsAvailable[theItemIndex] 
+                if itemOpened in uncommonItemsOpened:
+                    craftingMaterials += 50
+                else:                    
+                    uncommonItemsOpened.append(itemOpened)              
+                numItemsOpened += 1         
 
-        else:
-            theItemIndex = randint(0, len(commonItemsAvailable) - 1)
-            itemOpened = commonItemsAvailable[theItemIndex]             
-            if itemOpened in commonItemsOpened:
-                craftingMaterials += 25
-            else:                    
-                commonItemsOpened.append(itemOpened)              
-            numItemsOpened += 1           
-    
-    numBoxesOpened += 1
-        
-
-    
-    
-    print(commonItemsOpened)
-    print(uncommonItemsOpened)
-    print(rareItemsOpened)            
-    print(f"Crafting Materials Opened {craftingMaterials}\n")
-    print(f"Number of Items Opened {numItemsOpened}\n")
+            else:
+                theItemIndex = randint(0, len(commonItemsAvailable) - 1)
+                itemOpened = commonItemsAvailable[theItemIndex]             
+                if itemOpened in commonItemsOpened:
+                    craftingMaterials += 25
+                else:                    
+                    commonItemsOpened.append(itemOpened)              
+                numItemsOpened += 1           
+        numBoxesOpened += 1
+        numItemsOpened = 0 
+       
+             
+    print(f"Crafting Materials Opened {craftingMaterials}\n")    
     print(f"Number of Boxes Opened {numBoxesOpened}\n")
+    print(f"Total Cost of Boxes: ${numBoxesOpened * costPerBox:,}.\n")
 
 # Common Item Functions 
 def createCommonItems(num):
