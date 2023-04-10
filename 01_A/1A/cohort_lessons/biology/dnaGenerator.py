@@ -1,4 +1,4 @@
-# DNA Generator, Ryan Kelley, v0.1
+# DNA Generator, Ryan Kelley, v0.2
 
 # Import the random module. 
 from random import randint 
@@ -22,5 +22,5 @@ while basesGenerated < basesRequested:
     dnaSequence += dnaBases[randint(0, 3)]
     basesGenerated += 1
 
-print(dnaSequence)
+#print(dnaSequence)
 
