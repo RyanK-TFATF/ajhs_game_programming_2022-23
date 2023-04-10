@@ -8,7 +8,7 @@ startTime = time.time()
 from random import randint
 
 dnaBases = ["A", "G", "C", "T"] # Adenine, Guanine, Cytosine, Thymine
-rnaCodons = ["AUG", "TAG", "GAT", "TTT", "AGC"]
+rnaCodons = ["AUG", "TAG"]
 # ATG is the START codon, TAG is one of the stop codons.  
 # Codon information referenced here:  https://www.genome.gov/genetics-glossary/Codon and https://en.wikipedia.org/wiki/DNA_and_RNA_codon_tables#Inverse_DNA_codon_table
 
@@ -51,14 +51,16 @@ def transcribeRNA(baseSequence):
 # Using a list for the codons allows for the use of a for loop to search for each codon. 
 def translateRNA(rnaSequence):
     for i in range(0, len(rnaCodons)):
-        if dnaSequence.find(rnaCodons[i]) == -1: # .find() returns -1 if not found. 
+        if rnaSequence.find(rnaCodons[i]) == -1: # .find() returns -1 if not found. 
             print(f"The {rnaCodons[i]} codon was NOT found in the generated sequence.\n")
         else: 
             print(f"The {rnaCodons[i]} codon was found!  The first instance starts at index {rnaSequence.find(rnaCodons[i])}.\n") # Return the index of the first instance of the codon. 
 
 
-dnaSequence = generateDNASequence() # Generate a DNA sequence and store it in the dnaSequence0 variable. 
-rnaSequence = transcribeRNA(dnaSequence) # Transcribe a new DNA string using dnaSequence0 as the original. 
-translateRNA(dnaSequence) # Search dnaSequence0 for any instances of the codons defined above. 
+def main():
+    dnaSequence = generateDNASequence() # Generate a DNA sequence and store it in the dnaSequence0 variable. 
+    rnaSequence = transcribeRNA(dnaSequence) # Transcribe a new DNA string using dnaSequence0 as the original. 
+    translateRNA(rnaSequence) # Search dnaSequence0 for any instances of the codons defined above. 
 
+main() 
 print("Execution Time: %s seconds" % (time.time() - startTime))
