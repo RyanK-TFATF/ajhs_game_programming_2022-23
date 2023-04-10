@@ -1,4 +1,4 @@
-# DNA Generator, Ryan Kelley, v0.2
+# DNA Generator, Ryan Kelley, v0.3
 
 # Import the random module. 
 from random import randint 
@@ -23,4 +23,23 @@ while basesGenerated < basesRequested:
     basesGenerated += 1
 
 #print(dnaSequence)
+
+# Copy the Strand 
+dnaCopy = ""
+
+for eachBase in dnaSequence:
+    if eachBase == "A":
+        dnaCopy += "T"
+    elif eachBase == "C":
+        dnaCopy += "G"
+    elif eachBase == "G":
+        dnaCopy += "C"
+    elif eachBase == "T":
+        dnaCopy += "A"
+    else: 
+        print("Unable to identify base pair, please restart.\n")
+        exit()
+
+print(dnaSequence)
+print(dnaCopy)
 
