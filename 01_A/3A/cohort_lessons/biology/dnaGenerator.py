@@ -1,0 +1,60 @@
+# DNA Sequence Generator, ryan kelley, v0.1
+
+# Execution Timer 
+import time 
+startTime = time.time()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+print("Execution Time: %s Seconds" % (time.time() - startTime))
