@@ -1,4 +1,4 @@
-# Ryan Kelley, DNA Base Pair Generator and Transcriber, v0.3a 
+# Ryan Kelley, DNA Base Pair Generator and Transcriber, v0.4a 
 
 # This block of code is used to measure execution time. 
 import time 
@@ -11,6 +11,74 @@ dnaBases = ["A", "G", "C", "T"] # Adenine, Guanine, Cytosine, Thymine
 rnaCodons = ["AUG", "TAG"]
 # ATG is the START codon, TAG is one of the stop codons.  
 # Codon information referenced here:  https://www.genome.gov/genetics-glossary/Codon and https://en.wikipedia.org/wiki/DNA_and_RNA_codon_tables#Inverse_DNA_codon_table
+
+# Codon Chart Protein Dictionary
+codonChart = {
+    "GGU": "Glycine",
+    "GGC": "Glycine",
+    "GGA": "Glycine",
+    "GGG": "Glycine",
+    "GAG": "Glutamic Acid",
+    "GAA": "Glutamic Acid",
+    "GAC": "Aspartic Acid",
+    "GAU": "Aspartic Acid",
+    "GCU": "Alanine",
+    "GCC": "Alanine",
+    "GCA": "Alanine",
+    "GCG": "Alanine",
+    "GUU": "Valine",
+    "GUC": "Valine",
+    "GUA": "Valine",
+    "GUG": "Valine",
+    "UUU": "Phenlyalanine",
+    "UUC": "Phenlyalanine",
+    "UUA": "Leucine",
+    "UUG": "Leucine",
+    "UCU": "Serine",
+    "UCC": "Serine",
+    "UCA": "Serine",
+    "UCG": "Serine",
+    "UAU": "Tyrosine",
+    "UAC": "Tyrosine",
+    "UAA": "STOP",
+    "UAG": "STOP",
+    "UGU": "Cysteine",
+    "UGC": "Cysteine",
+    "UGA": "STOP",
+    "UGG": "Tryptophan",
+    "CUU": "Leucine",
+    "CUC": "Leucine",
+    "CUA": "Leucine",
+    "CUG": "Leucine",
+    "CCU": "Proline",
+    "CCC": "Proline",
+    "CCA": "Proline",
+    "CCG": "Proline",
+    "CAU": "Histidine",
+    "CAC": "Histidine",
+    "CAA": "Glutamine",
+    "CAG": "Glutamine",
+    "CGU": "Arginine",
+    "CGC": "Arginine",
+    "CGA": "Arginine",
+    "CGG": "Arginine",
+    "AUU": "Isoleucine",
+    "AUC": "Isoleucine",
+    "AUA": "Isoleucine",
+    "AUG": "Methionine",
+    "ACU": "Threonine",
+    "ACC": "Threonine",
+    "ACA": "Threonine",
+    "ACG": "Threonine",
+    "AAU": "Asparagine",
+    "AAC": "Asparagine",
+    "AAA": "Lysine",
+    "AAG": "Lysine",
+    "AGU": "Serine",
+    "AGC": "Serine",
+    "AGA": "Arginine",
+    "AGG": "Arginine"
+}
 
 # while loop to generate the DNA sequence. 
 def generateDNASequence():
@@ -58,9 +126,9 @@ def translateRNA(rnaSequence):
 
 
 def main():
-    dnaSequence = generateDNASequence() # Generate a DNA sequence and store it in the dnaSequence0 variable. 
-    rnaSequence = transcribeRNA(dnaSequence) # Transcribe a new DNA string using dnaSequence0 as the original. 
-    translateRNA(rnaSequence) # Search dnaSequence0 for any instances of the codons defined above. 
+    dnaSequence = generateDNASequence() # Generate a DNA sequence and store it in the dnaSequence variable. 
+    rnaSequence = transcribeRNA(dnaSequence) # Transcribe a new DNA string using dnaSequence as the original. 
+    translateRNA(rnaSequence) # Search dnaSequence for any instances of the codons defined above. 
 
 main() 
 print("Execution Time: %s seconds" % (time.time() - startTime))
