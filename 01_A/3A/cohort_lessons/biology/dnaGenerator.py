@@ -1,5 +1,4 @@
 # DNA Sequence Generator, ryan kelley, v0.2
-
 # Execution Timer 
 import time 
 startTime = time.time()
@@ -7,16 +6,12 @@ startTime = time.time()
 # Setup Random Number Generator 
 # from modulename import functionname 
 from random import randint 
-
 dnaBases = ["A", "C", "G", "T"] 
 
 def generateDNASequence():
     basesGenerated = 0 # How many bases have we made?
-
     basesNeeded = int(input("How many bases do you need?  Enter an integer.\n"))
-
     dnaSequence = ""
-
     while basesGenerated < basesNeeded: 
         dnaSequence += dnaBases[randint(0, 3)]
         basesGenerated += 1
@@ -25,8 +20,7 @@ def generateDNASequence():
     return dnaSequence 
 
 def transcribeRNA(dnaSequence):
-    rnaSequence = ""
-    
+    rnaSequence = ""    
     for eachBase in dnaSequence:
         if eachBase == "A":
             rnaSequence += "U"
@@ -38,59 +32,10 @@ def transcribeRNA(dnaSequence):
             rnaSequence += "A"
         else:
             print("Error transcribing RNA.  Base not identified.")
-
     print(f"\nGenerated RNA Sequence: \n{rnaSequence}\n")
     return rnaSequence 
 
 dnaSequence = generateDNASequence() 
 transcribeRNA(dnaSequence)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 print("Execution Time: %s Seconds" % (time.time() - startTime))
