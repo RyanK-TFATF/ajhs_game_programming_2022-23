@@ -16,7 +16,7 @@ namespace _01_SummationCalculator
             upperLimit = Convert.ToInt32(Console.ReadLine());
             for (n = lowerLimit; n <= upperLimit; n++)
             {
-                sum += 2 * n; // Update this line to reflect the equation for which you are solving. 
+                sum += (n * n) / (3 * n); // Update this line to reflect the equation for which you are solving. 
                 Console.WriteLine(sum);
             }
                             
