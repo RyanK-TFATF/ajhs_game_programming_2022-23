@@ -3,64 +3,22 @@
 # Code Execution Timing 
 import time 
 startTime = time.time() 
-x = 0 
-while x < 100000: 
-    x += 1
 
-print(x) 
+# Random Number Generation 
+# from modulename import functionname 
+from random import randint 
 
+# DNA Bases
+dnaBases = ["A", "C", "G", "T"] 
 
+def generateDNASequence():
+    # Bases Generated
+    basesGenerated = 0 
 
+    # Bases Requested
+    basesRequested = int(input("How many bases do you need? Must be an integer!\n"))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    dnaSequence = ""
 
 
 
