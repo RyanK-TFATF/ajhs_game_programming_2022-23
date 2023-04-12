@@ -1,5 +1,10 @@
 # DNA Generator, Ryan Kelley, v0.3
 
+# Import Execution Timing Code 
+import time 
+startTime = time.time()
+
+
 # Import the random module. 
 from random import randint 
 # from the random module, import ONLY the randint function.
@@ -43,3 +48,4 @@ for eachBase in dnaSequence:
 print(dnaSequence)
 print(dnaCopy)
 
+print("Execution Time %s Seconds" % (time.time() - startTime))
