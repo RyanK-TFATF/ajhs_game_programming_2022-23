@@ -24,7 +24,7 @@ def generateDNASequence():
         dnaSequence += dnaBases[randint(0, 3)]
         basesGenerated += 1
     
-    print(f"\nDNA Sequence: \n{dnaSequence}\n\n")
+    print(f"\nDNA Sequence: \n{dnaSequence}\n")
     return dnaSequence
 
 dnaSequence = generateDNASequence()
@@ -44,8 +44,24 @@ def transcribeRNA(dnaSequence):
         else: 
             print("Unable to identify base during transcription.\n")
             exit()
+    print(f"\nRNA Sequence: \n{rnaSequence}\n")
+    return rnaSequence
 
-    
+rnaSequence = transcribeRNA(dnaSequence)
+
+saveData = open("dnaData.txt", "w")
+saveData.write(dnaSequence + "  " + str(time.time()) + "\n")
+saveData.write(rnaSequence + "  " + str(time.time()) + "\n")
+saveData.close()
+# File Modes 
+# "x" -- Creates a new file, exits with Error Message if exists.
+# "a" -- Creates file if not there, appends to file if is there.
+# "w" -- Creates file if not there, OVERWRITES if is there.
+
+
+
+
+
 
 
 
