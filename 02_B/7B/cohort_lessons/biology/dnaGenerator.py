@@ -29,9 +29,23 @@ def generateDNASequence():
 
 dnaSequence = generateDNASequence()
 
+def transcribeRNA(dnaSequence):
+    rnaSequence = ""
 
+    for eachBase in dnaSequence: 
+        if eachBase == "A":
+            rnaSequence += "U"
+        elif eachBase == "C":
+            rnaSequence += "G"
+        elif eachBase == "G":
+            rnaSequence += "C"
+        elif eachBase == "T":
+            rnaSequence += "A"
+        else: 
+            print("Unable to identify base during transcription.\n")
+            exit()
 
-
+    
 
 
 
