@@ -1,7 +1,7 @@
 # DNA Generator, Ryan Kelley, v0.0 
 
 # Code Execution Timing 
-import time 
+import time, datetime 
 startTime = time.time() 
 
 # Random Number Generation 
@@ -18,8 +18,16 @@ def generateDNASequence():
     # Bases Requested
     basesRequested = int(input("How many bases do you need? Must be an integer!\n"))
 
+    # Store the Bases
     dnaSequence = ""
 
+    while basesGenerated <= basesRequested:
+        dnaSequence += dnaBases[randint(0, 3)]
+        basesGenerated += 1 
+
+    print(f"DNA Sequence: \n{dnaSequence}\n")    
+
+generateDNASequence()
 
 
 
