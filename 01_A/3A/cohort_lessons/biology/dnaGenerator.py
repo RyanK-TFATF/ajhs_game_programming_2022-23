@@ -1,6 +1,6 @@
 # DNA Sequence Generator, ryan kelley, v0.2
 # Execution Timer 
-import time 
+import time, datetime
 startTime = time.time()
 
 # Setup Random Number Generator 
@@ -36,6 +36,19 @@ def transcribeRNA(dnaSequence):
     return rnaSequence 
 
 dnaSequence = generateDNASequence() 
-transcribeRNA(dnaSequence)
+rnaSequence = transcribeRNA(dnaSequence)
+
+#variableToSave = open(FILENAME, MODE)
+# FILENAME should in " " and should have name and extenstion, ex: "myfile.txt"
+# "r" READ-ONLY MODE
+# "x" --CREATES FILE, IF FILE EXISTS, EXIT WITH ERROR CODE 
+# "w" -- CREATES FILE, IF FILE EXISTS, OVERWRITE CONTENTS
+# "a" -- CREATES, IF FILE EXISTS, APPEND TO END OF FILE 
+saveData = open("dnaData3A.txt", "a")
+saveData.write("DNA Sequence\n" + dnaSequence + "\n" + str(datetime.datetime.now()) + "\n")
+saveData.write("RNA Sequence\n" + rnaSequence + "\n" + str(datetime.datetime.now()) + "\n")
+# Write the RNA Sequence to the file. 
+saveData.close()
+
 
 print("Execution Time: %s Seconds" % (time.time() - startTime))
