@@ -1,7 +1,7 @@
 # Ryan Kelley, DNA Base Pair Generator and Transcriber, v0.4a 
 
 # This block of code is used to measure execution time. 
-import time 
+import time, datetime 
 startTime = time.time()
 
 # Import the randint Method from the random module. 
@@ -95,7 +95,7 @@ def generateDNASequence():
         dnaSequence += dnaBases[int(randint(0,3))] # This simulates picking the base at random and adding it to the sequence.  Start with 0 so the first element can be chosen! 
         basesGenerated += 1 # Increment the number of bases generated. 
     
-    print(f"\nGenerated DNA Sequence: \n{dnaSequence}\n\n")    
+    #print(f"\nGenerated DNA Sequence: \n{dnaSequence}\n\n")    
     return dnaSequence
 
 # Copy the original DNA sequence using transcription rules. 
@@ -113,7 +113,7 @@ def transcribeRNA(baseSequence):
         else:
             print("Error!  Transcription not possible due to unidentified base.\n")
         
-    print(f"\nTranscribed DNA Sequence: \n{rnaSequence}\n\n")
+    #print(f"\nTranscribed DNA Sequence: \n{rnaSequence}\n\n")
     return rnaSequence
 
 # Using a list for the codons allows for the use of a for loop to search for each codon. 
@@ -125,10 +125,23 @@ def translateRNA(rnaSequence):
             print(f"The {rnaCodons[i]} codon was found!  The first instance starts at index {rnaSequence.find(rnaCodons[i])}.\n") # Return the index of the first instance of the codon. 
 
 
+
 def main():
     dnaSequence = generateDNASequence() # Generate a DNA sequence and store it in the dnaSequence variable. 
     rnaSequence = transcribeRNA(dnaSequence) # Transcribe a new DNA string using dnaSequence as the original. 
     translateRNA(rnaSequence) # Search dnaSequence for any instances of the codons defined above. 
+    
+    # File Saving Example 
+    fileName = "dnaData" + str(time.time()) + ".txt"
+    saveData = open(fileName, "a")
+    # FILENAME should be a legal file name in quotes.  "dnaData.txt"
+    # File Modes
+    # "x" -- CREATES FILE, IF FILE EXISTS, EXIT WITH ERROR MSG.
+    # "w" -- CREATES FILE, IF FILE EXISTS, OVERWRITE CONTENTS.
+    # "a" -- CREATES FILES, IF FILE EXISTS, APPEND TO END OF FILE.
+    saveData.write(dnaSequence + " " + str(datetime.datetime.now()) + "\n")
+    saveData.write(rnaSequence + " " + str(datetime.datetime.now()) + "\n")
+    saveData.close()
 
 main() 
 print("Execution Time: %s seconds" % (time.time() - startTime))
