@@ -22,14 +22,11 @@ def getValue(card):
 def rollDice(numDice, sizeDice):
     sum = 0
     numRolls = 0 
-    while numRolls != numDice:
+    while numRolls < numDice:
         sum += randint(1, sizeDice)
         numRolls += 1
     print(sum)
     return sum 
 
-while True:
-    sum = rollDice(4, 8)
-    if sum == 4:
-        break 
+
 
