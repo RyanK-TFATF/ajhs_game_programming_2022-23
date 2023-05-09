@@ -33,9 +33,4 @@ def rollDice(numDice, sizeDice):
     return sum 
 
 
-rollDice(3, 6)
-rollDice(10, 4)
-rollDice(5, 1000)
-rollDice(50000, 4)
-
 

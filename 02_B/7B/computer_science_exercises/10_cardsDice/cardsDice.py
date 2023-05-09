@@ -25,11 +25,52 @@ def rollDice(numDice, sizeDice):
     print(sum)
     return sum 
 
-rollDice(1, 6)
-rollDice(2, 20)
-rollDice(4, 10)
-rollDice(1, 100)
-rollDice(10, 1000)
-rollDice(1, 4)
-rollDice(8, 8)
+def main():
+    currentScore = 0 
+    shuffleDeck(7)
+    drawCard(5)
+
+    for eachCard in yourHand: 
+        value = getValue(card)
+        if value >= 2 or value <= 10: 
+            currentScore += value 
+        elif value == 11:  # Jack 
+            currentScore += rollDice(1, 6)
+        elif value == 12:  # Queen
+            currentScore += rollDice(1, 8)
+        elif value == 13:  # King
+            currentScore += rollDice(1, 10)
+        elif value == 14:  # Ace
+            currentScore += rollDice(1, 12)
+        else:
+            print("Card not identified.")
+            currentScore = 0
+    startTimer(120)
+
+    while timeRemaining > 0: # One itty bitty grain of sand up top means run the loop!
+        drawCard(1)
+        value = getValue(card)
+        if value >= 2 or value <= 10: 
+            currentScore -= value 
+        elif value == 11:  # Jack 
+            currentScore -= rollDice(1, 6)
+        elif value == 12:  # Queen
+            currentScore -= rollDice(1, 8)
+        elif value == 13:  # King
+            currentScore -= rollDice(1, 10)
+        elif value == 14:  # Ace
+            currentScore -= rollDice(1, 12)
+        else:
+            print("Card not identified.")
+            currentScore = 0
+
+    if currentScore % 2 == 0:
+        getCandy(10, 10)
+    else: 
+        getCandy(20)
+
+    
+
+
+
 
