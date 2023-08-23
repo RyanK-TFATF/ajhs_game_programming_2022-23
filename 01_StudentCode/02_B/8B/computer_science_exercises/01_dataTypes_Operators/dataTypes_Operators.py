@@ -28,6 +28,15 @@ isFireType = False
 weaponEquipped = True 
 pvpEnabled = False 
 
+# Arithmetic Operators 
+# PEMDAS APPLIES JUST LIKE IN MATH CLASS! 
+print(3 + -1) # Addition 
+print(0 - 25) # Subtraction 
+print(1 * -1) # Multiplication 
+print(3 / -1) # Division 
+print(3 ** 4) # Exponents 
+print(18 % 4) # Modulus -- Divides, then returns remainder, most commonly used to determine even/odd
+
 
 
 
