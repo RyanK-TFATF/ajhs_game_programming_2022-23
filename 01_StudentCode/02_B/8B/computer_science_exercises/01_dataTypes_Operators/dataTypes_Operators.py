@@ -1,4 +1,4 @@
-# Data Types and Operators, Ryan Kelley, v0.0 
+# Data Types and Operators, Ryan Kelley, v0.3 
 
 # Variable Rules 
 # CANNOT START WITH A NUMBER!!!!!!!!!!!!
@@ -37,6 +37,37 @@ print(3 / -1) # Division
 print(3 ** 4) # Exponents 
 print(18 % 4) # Modulus -- Divides, then returns remainder, most commonly used to determine even/odd
 
+# Comparison Operators 
+# Evaluate the expression, then return True or False 
+print(5 > 3) # Greater Than 
+print(7 >= -1) # Greater Than or Equal to 
+print(-1 < -2) # Less Than
+print(0 <= 0) # Less Than or Equal To 
+print(5 == 3) # Is Equal To 
+print(-99 != 99) # Not Equal To 
 
+# Assignment Operators 
+myVariable = "myValue" # Assign variable on left the value on the right, throw out any current value.
+myOtherVariable = (10 + 5)
 
+myVariableAgain = 1
+myVariableAgain = 5
+print(myVariableAgain)
 
+# Addition Assignment -- Add the value on the right, keeping any current value
+myWallet = 0 
+myWallet += 1 
+myWallet += 5
+print(myWallet)
+
+# Same Effect 
+x = 0
+x += 1
+x = x + 1
+
+# Logical Operators 
+print(3 > 5 and 4 < 3) # AND requires ALL expressions to be True.
+print(3 > 2 and 4 < 3) 
+print(3 > 2 and 4 != 3)
+print(3 > 2 and 4 != 3 and favColor == "Blue" and temp == -5)
+# When writing and expressions, put the value most likely to be False first! 
