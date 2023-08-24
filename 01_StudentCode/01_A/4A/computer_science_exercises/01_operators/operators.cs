@@ -54,24 +54,43 @@ namespace Operators
             Console.WriteLine(myInt4);
 
             // Assignment Operators 
-            // =
+            // =  THIS ASSIGNMET OPERATOR THROWS OUT OLD VALUES
+            myInt3 = 5; 
+            // These assignment operators keep old values!!             
             // +=
+            myInt3 += -1;
             // -=
+            myInt3 -= 2;
             // *= 
+            myInt3 *= 3;            
             // /= 
+            myInt3 /= 2; 
+            Console.WriteLine(myInt3); 
 
             // Comparison Operators 
             // Is Equal To 
-            // Greater Than
-            // Greater Than or Equal To 
-            // Less Than
-            // Less Than or Equal To 
+            Console.WriteLine(5 == 4); 
             // Not Equal To 
+            Console.WriteLine(3 != 2);
+            // Greater Than
+            Console.WriteLine(5 > 3);
+            // Greater Than or Equal To 
+            Console.WriteLine(55 >= 75); 
+            // Less Than
+            Console.WriteLine(-1 < -2);
+            // Less Than or Equal To 
+            Console.WriteLine(1 <= 5); 
+            
 
             // Logical Operators
-            // And
-            // Or
-            // Not 
+            // And -- ALL CONDITIONS MUST BE TRUE FOR WHOLE STATEMENT TRUE
+            Console.WriteLine(3 > 2 && 2 == 2); // True and True = True
+            Console.WriteLine(3 > 2 && 5 > 6); // True and False = False
+            // Or -- ONE condition must be true for the whole statement to be true. 
+            Console.WriteLine(5 < 9 || 5 != 4); // True or True == True
+            Console.WriteLine(9 < 10 || 3 > 5); // True or False == True
+            // Not -- Find the 'opposite' value. 
+            Console.WriteLine(!True); // 
 
         }
     }
