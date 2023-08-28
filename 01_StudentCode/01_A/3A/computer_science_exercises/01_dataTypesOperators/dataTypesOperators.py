@@ -49,11 +49,11 @@ print(-10 > -5 or 15 < 10) # (False or False) == False
 
 # not -- 'opposite' value 
 favColor = "Green"
-print(favColor == not (favColor is "Blue"))
+print(favColor == (favColor is "Blue"))
 
 print(4 > 3 and 1 != 2 and 5 < 3)
 # True and True and False 
 
-print(keyUp == True and keyLeft == True or keyDown == False)
+# print(keyUp == True and keyLeft == True or keyDown == False)
 
 
