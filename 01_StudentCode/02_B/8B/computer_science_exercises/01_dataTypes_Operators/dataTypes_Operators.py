@@ -69,5 +69,19 @@ x = x + 1
 print(3 > 5 and 4 < 3) # AND requires ALL expressions to be True.
 print(3 > 2 and 4 < 3) 
 print(3 > 2 and 4 != 3)
-print(3 > 2 and 4 != 3 and favColor == "Blue" and temp == -5)
+#print(3 > 2 and 4 != 3 and favColor == "Blue" and temp == -5)
 # When writing and expressions, put the value most likely to be False first! 
+
+# Logical OR -- Requires ONE expression to be True.
+print(5 > 2 or 2 < -2)
+print(3 != 3 or 5 == 5)
+
+# AND OR Combined 
+print("Line 81")
+print(3 > 2 or 4 < 3 and 5 != 7)
+# print(True and False and True)
+
+# NOT Logical Operator 
+print(not (3 > 2))
+print(not (not (not (5 != 3))))
+
