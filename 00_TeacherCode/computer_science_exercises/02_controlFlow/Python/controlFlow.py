@@ -3,5 +3,7 @@
 
 favColor = "Green"
 luckyNumber = 10 
+myGPA = 3.55
 myAge = 43
 pineappleOnPizza = True 
+
