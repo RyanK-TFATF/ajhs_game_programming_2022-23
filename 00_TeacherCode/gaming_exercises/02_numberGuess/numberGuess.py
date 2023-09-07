@@ -27,8 +27,8 @@ for numGuesses in range(10):
         break
 # After z times through the loop, the loop exits and the code continues to exectute the next statements.
 
-if player_guess == rand_num:
-    num_guess += 1
-    print()
-else:
-    print()
+# if player_guess == rand_num:
+#     num_guess += 1
+#     print()
+# else:
+#     print()
