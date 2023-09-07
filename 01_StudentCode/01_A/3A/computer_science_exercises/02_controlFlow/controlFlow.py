@@ -3,7 +3,7 @@
 # DECLARATIONS 
 favColor = "Blue"
 luckyNumber = 25
-myGPA = 2.33
+myGPA = 3.0
 myAge = 43 
 pineappleOnPizza = True 
 
@@ -14,6 +14,10 @@ if luckyNumber > 30:
 if favColor != "Green":
     print("Your favorite color stinks.")
 
-
+# if-else Statement  
+if myGPA > 3.0: 
+    print("Congratulations on making the honor roll!")
+else: 
+    print("You did not make the honor roll.")
 
 
