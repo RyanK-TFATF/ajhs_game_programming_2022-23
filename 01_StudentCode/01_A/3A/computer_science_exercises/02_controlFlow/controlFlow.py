@@ -44,7 +44,7 @@ else:
 if pineappleOnPizza == True: 
     print("You have strange tastes.  I bet you're old.")
     if myAge > 50:
-        print("What was it like riding to school on a dinosaur?")
+        print("What was it like riding to school on a dinosaur?")                
     else: 
         print("Ok, you're still young enough to be cool.")
 else:
