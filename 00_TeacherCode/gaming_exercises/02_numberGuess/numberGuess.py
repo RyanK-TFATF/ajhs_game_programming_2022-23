@@ -9,20 +9,22 @@ numGuesses = 0  # Initialize this variable to 0.
 
 # Use print() to print a STRING containing player_name.
 
-randNum = random.randint(x, y) # Replace x and y with integers.  X must be less than Y, and Y must be less than 101. 
+#randNum = random.randint(x, y) # Replace x and y with integers.  X must be less than Y, and Y must be less than 101. 
 # random.randint(x, y) returns a random integer between (and including) x and y.
 
 # Use print() to print a STRING with player_name, explain the program will pick a random number from x to y and number of guesses. 
 
-for numGuesses in range(10):    
+
+for numGuesses in range(): # Replace z with the number of guesses you want the player to receive. 
     
     # Use input() to let the player guess a number.  Make sure to convert it using int()!.
 
     # You will create an if/elif/else statement on the next lines to check the number.
-    if:  
+    if True:  
+        pass
         
-    elif :
-        
+    elif False:
+        pass        
     else:
         break
 # After z times through the loop, the loop exits and the code continues to exectute the next statements.
