@@ -52,6 +52,17 @@ namespace controlFlow
                 Console.WriteLine("You should probably study!");                
             }
 
+            // Nested Statements 
+            if (pineappleOnPizza == true) {
+                Console.WriteLine("Eww, that's gross. You must be a boomer.  How old are you?");
+                if (myAge > 60) {
+                    Console.WriteLine("Just as I suspected! What was it like having a dinosaur growing up?");
+                } else {
+                    Console.WriteLine("Ok, so you're not a boomer but still have no taste in food.");
+                }
+            } else {
+                Console.WriteLine("Glad to see you have common sense!"); 
+            }
 
         }
     }
