@@ -8,7 +8,7 @@ myAge = 66
 pineappleOnPizza = True 
 
 # if Statement 
-if luckyNumber > 30:
+if luckyNumber > 30: # luckyNumber > 30 is a CONDITIONAL EXPRESSION 
     print("Wow, what a great number!")
 
 if favColor != "Green":
@@ -50,3 +50,29 @@ if pineappleOnPizza == True:
 else:
     print("Ok good, you eat pizza like a normal human.")    
      
+# while Loop -- Think MUSICAL CHAIRS -- Best used when you DO NOT know how many times the loop must run. 
+# loopCounter = 0 
+# while loopCounter <= 100: 
+#     print(f"The current loop count is {loopCounter}.")
+#     loopCounter += 1
+# # loopCounter is equal to 99 after finishing! 
+# while loopCounter > 0: 
+#     print(f"The current loop count is {loopCounter}.")
+#     loopCounter -= 1 
+
+loopCounter = 0 
+# while loopCounter >= 0: 
+#     print(f"The current loop count is {loopCounter}.")
+#     if loopCounter % 2 == 0:
+#         print(f"{loopCounter} is even!")
+#     else: 
+#         print(f"{loopCounter} is odd!")
+#     loopCounter += 1
+
+# for Loop -- Think Go Fish!  Used when you know number of iterations needed.
+for eachNumber in range(10): 
+    # eachNumber is known as the 'iterable variable' 
+    # range(x) specifies the numbers from 0 to x, NOT INCLUSIVE 
+    print(eachNumber) 
+
+
