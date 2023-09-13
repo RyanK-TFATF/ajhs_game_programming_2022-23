@@ -43,26 +43,37 @@ if isCorrect == "yes":
 else: 
     playerName = input("What should I call you?\nType your name and press enter.\n")    
 
-# GENERATE SECRET NUMBER
-secretNumber = random.randint(0, 20) # INCLUSIVE
-#print(secretNumber)
-
 # PLAYER GUESS 
 print("You need to guess a number from 0 to 20.  You have four guesses!\n")
       
-while playerScore != 3 or cpuScore != 3: 
+while playerScore != 3 and cpuScore != 3: 
     #pass  Tells Python to skip this block without giving an error. 
-    playerGuess = input("Think of your number, type it in and then push ENTER.\n")
-    print(f"You have picked {playerGuess}.  Let's see if it is a match!\n")
-    if playerGuess == secretNumber: 
-        playerScore += 1 
-        print("A winner is you! It's a match!\n")
-    else: 
-        for guesses in range(4): 
+    secretNumber = random.randint(0, 20) # INCLUSIVE
+    #print(secretNumber)
+    print(f"Player Score: {playerScore}\nCPU Score: {cpuScore}\n")
+    numGuesses = 0
+    for guesses in range(4): 
+        print(f"You have {4 - numGuesses} guesses left this round!\n")        
+        playerGuess = int(input("Think of your number, type it in and then push ENTER.\n"))
+        # int() converts whatever is input into an INTEGER 
+        print(f"You have picked {playerGuess}.  Let's see if it is a match!\n")
+        if playerGuess == secretNumber: 
+            playerScore += 1 
+            print("A winner is you! It's a match!\n")
+            break # immediately exit a loop! 
+            #MOVE HERE
+        else:         
             if playerGuess < secretNumber: 
                 print("Your guess is too low!\n")
             else: 
                 print("Your guess is too high!\n")
+        numGuesses += 1          
+    if playerGuess != secretNumber: 
+        cpuScore += 1
+        print("The CPU was able to trick you and win this round!\n")
 
-
+if playerScore >= 3: 
+    print("You have won three rounds, so you win the game!\n")
+else: 
+    print("Git gud scrub, the CPU was able to smash you!\n")
 
