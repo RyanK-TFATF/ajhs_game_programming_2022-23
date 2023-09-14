@@ -32,3 +32,43 @@ print("""
         *~~~~~~~~~~~~~~~~~~~~~~~~~~~*
       
       """)
+
+# CPU SECRET NUMBER GENERATION 
+
+# GAME LOOP 
+print("You need to guess a number from 0 to 20 and you have four guesses.\nIf you guess it right, you get a point.\nIf you can't get it in four guesses, the CPU gets a pouint.\n")
+
+while playerScore != 3 and cpuScore != 3: 
+    # pass -- Tells Python to skip this block of code.  
+    print(f"Player Score: {playerScore}\nCPU Score: {cpuScore}.\n")
+    secretNumber = random.randint(0, 20)
+    #print(secretNumber)
+
+    numGuesses = 0 
+    for guesses in range(4): 
+        print(f"You have {4 - numGuesses} guesses remaining.\n")
+        playerGuess = int(input("Type a number from 0 to 20 and press ENTER.\n"))
+        # input() saves all data as a STRING by default. 
+        # int() will convert to an INTEGER
+        # float() will convert to a FLOAT  
+        print(f"You have chosen {playerGuess}.  Let's see if you're right!\n")
+        if playerGuess == secretNumber: 
+            print("Whoa dude, what a guess!  You got it!\n")
+            playerScore += 1 
+            break # IMMEDIATELY EXIT ANY LOOP YOU ARE IN! 
+        else: 
+            print("You did not guess correctly.\n")
+            if playerGuess > secretNumber: 
+                print("Your guess is too high.\n")
+            else: 
+                print("Your guess is too low.\n")
+        numGuesses += 1
+    if playerGuess != secretNumber: 
+        cpuScore += 1
+        print("The CPU wins a point since you ran out of guesses.\n")         
+
+if playerScore >= 3: 
+    print("Winner, winner, chicken dinner!  You scored 3 points first!\n")
+else: 
+    print("Yo, you lost to a computer.  You are a scrub.\n")
+        
