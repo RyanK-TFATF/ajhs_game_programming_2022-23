@@ -1,39 +1,105 @@
-# Number Guess, Ryan Kelley, v1.0
-import random # What library will allow you to generate random numbers?
+# Pick the secret number from a range for the possible numbers (i.e. 0-10, 0-100, 100-200)
+# Provide the player X number of guesses, based on range of numbers.  
+# First player to score at least 3 points is declared the winner. 
+    # Player guesses the number. 
+    # Compare guess to secret number. 
+    # If the guess is correct what should happen?
+        # Award the player a point. 
+        # Print a 'win' message on the screen. 
+    # If the guess is incorrect, what should happen? 
+        # Indicate if guess is high/low compared to secret number. 
+    # If the player does not guess correctly before hitting limit, what happens?
+        # Award a point to the CPU. 
+        # Print a loss message.  
 
-numGuesses = 0  # Initialize this variable to 0.
-playerGuess = 0 # Initialize this variable to 0. 
-# Use print() to display a STRING introducing the game.
 
-# Use input() to assign this variable a value.
+# Guess a Number, Ryan Kelley, v0.0 
+import random 
 
-# Use print() to print a STRING containing player_name.
-x, y = 0
-secretNum = random.randint(x, y) # Replace x and y with integers.  X must be less than Y, and Y must be less than 101. 
-# random.randint(x, y) returns a random integer between (and including) x and y.
-
-# Use print() to print a STRING with player_name, explain the program will pick a random number from x to y and number of guesses. 
+# DECLARATIONS 
+secretNumber = -1 # Range: 0 -- 20 
+playerName = "" # empty string 
 playerScore = 0 
-while playerScore < 3: 
-    for guesses in range(): # Replace z with the number of guesses you want the player to receive. 
-    
-    # Use input() to let the player guess a number.  Make sure to convert it using int()!.
+cpuScore = 0 
+numGuesses = 0 
+playerGuess = -1 
+difficulty = None
+numAttempts = None
 
-    # You will create an if/elif/else statement on the next lines to check the number.
-        if True:  
-            pass
-        
-        elif False:
-            pass        
-        else:
+print("""
+        +==============================+
+        |                              |
+        |        Guess the Number      |
+        |              by              |
+        |            Ryan K.           |
+        |             2023             |
+        +==============================+   
+    """)
+
+playerName = input("What should I call you?\nType your name and press enter.\n")
+# VERIFY INPUT WHENEVER POSSIBLE! 
+print(f"You want me to call you {playerName}.  Is that correct?")
+isCorrect = input("Please type yes if correct, no if not correct.\n")
+if isCorrect == "yes": 
+    print(f"Ok {playerName}, let's continue!")
+else: 
+    playerName = input("What should I call you?\nType your name and press enter.\n")    
+
+print("Next you will select a difficulty setting.\nEasy Mode: Range 0 to 10 with 5 guesses.\nNormal Mode: Range 0 to 20 with 5 guesses.\nHard Mode: Range 0 to 20 with 3 guesses.\n")
+difficulty = input("Please type Easy, Normal, or Hard then press ENTER.\n")
+if difficulty == "Easy":
+    numAttempts = 5
+    x = 0 
+    y = 10 
+elif difficulty == "Normal":
+    numAttempts = 5
+    x = 0 
+    y = 20
+elif difficulty == "Hard":
+    numAttempts = 3
+    x = 0 
+    y = 20
+else: 
+    print("Difficulty not identified, defaulting to Normal.\n")
+    numAttempts = 5
+    x = 0 
+    y = 20
+
+    
+
+# PLAYER GUESS 
+print(f"You need to guess a number from {x} to {y}.  You have {numAttempts} guesses!\n")
+      
+while playerScore != 3 and cpuScore != 3: 
+    #pass  Tells Python to skip this block without giving an error. 
+    # GENERATE SECRET NUMBER
+    secretNumber = random.randint(x, y) # INCLUSIVE
+    print(secretNumber)
+    print(f"Player Score: {playerScore}\nCPU Score: {cpuScore}\n")
+    numGuesses = 0 
+    for guesses in range(numAttempts):         
+        print(f"You have {numAttempts - numGuesses} remaining this round.\n")
+        playerGuess = int(input("Think of your number, type it in and then push ENTER.\n"))
+        print(f"You have picked {playerGuess}.  Let's see if it is a match!\n")
+        if playerGuess == secretNumber: 
+            playerScore += 1 
+            print("A winner is you! It's a match!\n")
             break
-    # After z times through the loop, the loop exits and the code continues to exectute the next statements.
+        else:         
+            if playerGuess < secretNumber: 
+                print("Your guess is too low!\n")
+            else: 
+                print("Your guess is too high!\n")
+        numGuesses += 1
+            
+    if playerGuess != secretNumber:
+        print("You did not guess correctly before running out of guesses, the CPU wins.\n")
+        cpuScore += 1
 
-if playerGuess == secretNum:    
-    pass
-#   print()
-#playerScore += 1
-   # else:
-    #   print()
-    
-        
+            
+
+if playerScore >= 3:
+    print("You scored three points first, well done!")
+else:
+    print("The CPU has scored three points first and defeated you.")
+

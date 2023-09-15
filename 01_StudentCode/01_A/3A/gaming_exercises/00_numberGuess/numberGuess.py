@@ -60,8 +60,7 @@ while playerScore != 3 and cpuScore != 3:
         if playerGuess == secretNumber: 
             playerScore += 1 
             print("A winner is you! It's a match!\n")
-            break # immediately exit a loop! 
-            #MOVE HERE
+            break # immediately exit a loop!             
         else:         
             if playerGuess < secretNumber: 
                 print("Your guess is too low!\n")
