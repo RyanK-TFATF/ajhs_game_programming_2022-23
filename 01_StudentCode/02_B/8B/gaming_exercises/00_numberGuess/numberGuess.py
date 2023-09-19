@@ -22,6 +22,10 @@ playerScore = 0
 cpuScore = 0 
 numGuesses = 0 
 playerName = ""
+difficulty = "" 
+rangeMin = -1 
+rangeMax = -1 
+numAttempts = -1 
 
 print("""
         *~~~~~~~~~~~~~~~~~~~~~~~~~~~*
@@ -37,17 +41,23 @@ print("""
 
 # GAME LOOP 
 print("You need to guess a number from 0 to 20 and you have four guesses.\nIf you guess it right, you get a point.\nIf you can't get it in four guesses, the CPU gets a pouint.\n")
+# ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH MATCH. 
+# print() an explanation of your three difficulty levels. 
+# Use input() to store difficulty in difficulty variable.
+# assign values to numAttempts, rangeMin, and rangeMax based on choice. 
 
 while playerScore != 3 and cpuScore != 3: 
     # pass -- Tells Python to skip this block of code.  
+
     print(f"Player Score: {playerScore}\nCPU Score: {cpuScore}.\n")
-    secretNumber = random.randint(0, 20)
+    secretNumber = random.randint(rangeMin, rangeMax)
     #print(secretNumber)
+    # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH ROUND. 
 
     numGuesses = 0 
     for guesses in range(4): 
         print(f"You have {4 - numGuesses} guesses remaining.\n")
-        playerGuess = int(input("Type a number from 0 to 20 and press ENTER.\n"))
+        playerGuess = int(input("Type a number from 0 to 20 and press ENTER.\n"))  
         # input() saves all data as a STRING by default. 
         # int() will convert to an INTEGER
         # float() will convert to a FLOAT  
