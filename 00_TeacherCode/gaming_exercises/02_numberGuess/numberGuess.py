@@ -25,6 +25,8 @@ numGuesses = 0
 playerGuess = -1 
 difficulty = None
 numAttempts = None
+rangeMin = -1
+rangeMax = -1 
 
 print("""
         +==============================+
