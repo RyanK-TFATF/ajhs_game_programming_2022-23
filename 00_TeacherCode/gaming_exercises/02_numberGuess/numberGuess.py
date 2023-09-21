@@ -29,8 +29,9 @@ numAttempts = None
 rangeMin = -1
 rangeMax = -1 
 
-lossSound = 'sfx/gameOver.wav'
-winsound.PlaySound(lossSound, winsound.SND_FILENAME)
+lossSound = 'sfx/numberGuess/gameOver.wav'
+winSound = None 
+
 
 print("""
         +==============================+
@@ -100,6 +101,7 @@ while playerScore != 3 and cpuScore != 3:
             
     if playerGuess != secretNumber:
         print("You did not guess correctly before running out of guesses, the CPU wins.\n")
+        winsound.PlaySound(lossSound, winsound.SND_FILENAME)
         cpuScore += 1
 
             
