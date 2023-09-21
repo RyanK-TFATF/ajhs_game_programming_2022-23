@@ -15,6 +15,7 @@
 
 # Guess a Number, Ryan Kelley, v0.0 
 import random, tracemalloc, winsound
+from PIL import Image 
 tracemalloc.start()
 
 # DECLARATIONS 
@@ -29,8 +30,10 @@ numAttempts = None
 rangeMin = -1
 rangeMax = -1 
 
-lossSound = 'sfx/numberGuess/gameOver.wav'
-winSound = None 
+loserSound = 'sfx/numberGuess/gameOver.wav'
+winnerSound = None 
+
+imageWin = Image.open('img/numberGuess/win.jpg')
 
 
 print("""
@@ -101,13 +104,14 @@ while playerScore != 3 and cpuScore != 3:
             
     if playerGuess != secretNumber:
         print("You did not guess correctly before running out of guesses, the CPU wins.\n")
-        winsound.PlaySound(lossSound, winsound.SND_FILENAME)
+        winsound.PlaySound(loserSound, winsound.SND_FILENAME)
         cpuScore += 1
 
             
 
 if playerScore >= 3:
     print("You scored three points first, well done!")
+    imageWin.show() 
 else:
     print("The CPU has scored three points first and defeated you.")
 
