@@ -14,7 +14,8 @@
 
 
 # Guess a Number, Ryan Kelley, v0.0 
-import random 
+import random, tracemalloc
+tracemalloc.start()
 
 # DECLARATIONS 
 secretNumber = -1 # Range: 0 -- 20 
@@ -60,7 +61,7 @@ elif difficulty == "Normal":
 elif difficulty == "Hard":
     numAttempts = 3
     x = 0 
-    y = 20
+    y = 30
 else: 
     print("Difficulty not identified, defaulting to Normal.\n")
     numAttempts = 5
@@ -105,3 +106,6 @@ if playerScore >= 3:
 else:
     print("The CPU has scored three points first and defeated you.")
 
+print("Memory Usage: (Current, Peak)")
+print(tracemalloc.get_traced_memory())
+tracemalloc.stop()
