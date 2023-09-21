@@ -34,6 +34,7 @@ loserSound = 'sfx/numberGuess/gameOver.wav'
 winnerSound = None 
 
 imageWin = Image.open('img/numberGuess/win.jpg')
+imageLoss = None 
 
 
 print("""
@@ -74,8 +75,7 @@ else:
     numAttempts = 5
     x = 0 
     y = 20
-
-    
+   
 
 # PLAYER GUESS 
 print(f"You need to guess a number from {x} to {y}.  You have {numAttempts} guesses!\n")
@@ -114,6 +114,7 @@ if playerScore >= 3:
     imageWin.show() 
 else:
     print("The CPU has scored three points first and defeated you.")
+    imageLoss.show() 
 
 print("Memory Usage: (Current, Peak)")
 print(tracemalloc.get_traced_memory())
