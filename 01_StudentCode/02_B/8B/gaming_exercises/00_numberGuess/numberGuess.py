@@ -46,16 +46,19 @@ print("You need to guess a number from 0 to 20 and you have four guesses.\nIf yo
 # Use input() to store difficulty in difficulty variable.
 # assign values to numAttempts, rangeMin, and rangeMax based on choice. 
 
-while playerScore != 3 and cpuScore != 3: 
+while playerScore != 3 and cpuScore != 3: # START THE MATCH (GAME)
+    # Difficulty code needs to be BEFORE the round starts.  
     # pass -- Tells Python to skip this block of code.  
 
     print(f"Player Score: {playerScore}\nCPU Score: {cpuScore}.\n")
     secretNumber = random.randint(rangeMin, rangeMax)
+    # Whenever you assign a specific value to something, it's called "hard coded".
     #print(secretNumber)
     # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH ROUND. 
-
+    
     numGuesses = 0 
-    for guesses in range(4): 
+    for guesses in range(4): # START THE ROUND! 
+        # PUT DIFFICULTY CODE 
         print(f"You have {4 - numGuesses} guesses remaining.\n")
         playerGuess = int(input("Type a number from 0 to 20 and press ENTER.\n"))  
         # input() saves all data as a STRING by default. 
