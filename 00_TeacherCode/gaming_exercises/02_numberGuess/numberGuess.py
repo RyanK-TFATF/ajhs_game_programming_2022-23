@@ -14,7 +14,7 @@
 
 
 # Guess a Number, Ryan Kelley, v0.0 
-import random, tracemalloc
+import random, tracemalloc, winsound
 tracemalloc.start()
 
 # DECLARATIONS 
@@ -28,6 +28,9 @@ difficulty = None
 numAttempts = None
 rangeMin = -1
 rangeMax = -1 
+
+lossSound = 'sfx/gameOver.wav'
+winsound.PlaySound(lossSound, winsound.SND_FILENAME)
 
 print("""
         +==============================+
