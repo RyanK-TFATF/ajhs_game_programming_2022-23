@@ -82,7 +82,7 @@ namespace controlFlow
             for (int i = 100; i > -1; i--) {
                 Console.WriteLine("" + i);
             }
-            */ 
+            
             // Nested loops 
             // Outer Loop
             for (int i = 1; i <= 2; i++) {
@@ -99,7 +99,23 @@ namespace controlFlow
                 Console.WriteLine("" + x);
                 x++; 
             }
-
+            
+            // Special Keywords 
+            // break will immediately exit a LOOP or an IF/ELSE IF/ELSE block.
+            for (int i = 0; i < 101; i++) {
+                Console.WriteLine("" + i);
+                if (i == 50) {
+                    break;
+                }
+            }
+            */ 
+            // continue will SKIP the current iteration and then finish the loop.
+            for (int i = 0; i < 101; i++) {
+                Console.WriteLine("" + i);
+                if (i == 50) {
+                    continue;
+                }
+            }
 
         }
     }
