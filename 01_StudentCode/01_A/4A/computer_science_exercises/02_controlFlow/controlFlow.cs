@@ -13,7 +13,7 @@ namespace controlFlow
             float myGPA = 1.33F;
             int myAge = 43; 
             bool pineappleOnPizza = true; 
-
+            /*
             // if Statements -- Check for a single condition!
             if (favColor == "Green") {
                 Console.WriteLine("Green with envy!");
@@ -63,6 +63,43 @@ namespace controlFlow
             } else {
                 Console.WriteLine("Glad to see you have common sense!"); 
             }
+            */ 
+            // for Loop -- Best for when you know # of iterations needed.
+            /* 
+                for (statement1; statement2; statement3) {
+                Code to loop.
+            }
+            statement1 is executed ONCE BEFORE the loop starts. 
+            statement2 is a CONDITIONAL that is checked EVERYTIME BEFORE loop starts. 
+            statement3 is executed EVERYTIME after the loop executes. 
+            */ 
+            /*
+            for (int i = 0; i < 101; i++) {
+                Console.WriteLine("" + i);
+            }
+
+            // Create your own loop that counts down from 100 to 0. 
+            for (int i = 100; i > -1; i--) {
+                Console.WriteLine("" + i);
+            }
+            */ 
+            // Nested loops 
+            // Outer Loop
+            for (int i = 1; i <= 2; i++) {
+                Console.WriteLine("Outer: " + i); 
+
+                for (int j = 1; j <= 3; j++) {
+                    Console.WriteLine("Inner: " + j);
+                }
+            }
+
+            // while loop -- Best used when # of iterations needed is unknown
+            int x = 0; 
+            while (x < 1000) {
+                Console.WriteLine("" + x);
+                x++; 
+            }
+
 
         }
     }
