@@ -1,0 +1,14 @@
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\gaming_exercises\02_numberGuess\C#\numberGuess\obj\Debug\net7.0\numberGuess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\gaming_exercises\02_numberGuess\C#\numberGuess\obj\Debug\net7.0\numberGuess.AssemblyInfoInputs.cache
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\gaming_exercises\02_numberGuess\C#\numberGuess\obj\Debug\net7.0\numberGuess.AssemblyInfo.cs
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\gaming_exercises\02_numberGuess\C#\numberGuess\obj\Debug\net7.0\numberGuess.csproj.CoreCompileInputs.cache
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\gaming_exercises\02_numberGuess\C#\numberGuess\bin\Debug\net7.0\numberGuess.exe
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\gaming_exercises\02_numberGuess\C#\numberGuess\bin\Debug\net7.0\numberGuess.deps.json
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\gaming_exercises\02_numberGuess\C#\numberGuess\bin\Debug\net7.0\numberGuess.runtimeconfig.json
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\gaming_exercises\02_numberGuess\C#\numberGuess\bin\Debug\net7.0\numberGuess.dll
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\gaming_exercises\02_numberGuess\C#\numberGuess\bin\Debug\net7.0\numberGuess.pdb
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\gaming_exercises\02_numberGuess\C#\numberGuess\obj\Debug\net7.0\numberGuess.dll
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\gaming_exercises\02_numberGuess\C#\numberGuess\obj\Debug\net7.0\refint\numberGuess.dll
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\gaming_exercises\02_numberGuess\C#\numberGuess\obj\Debug\net7.0\numberGuess.pdb
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\gaming_exercises\02_numberGuess\C#\numberGuess\obj\Debug\net7.0\numberGuess.genruntimeconfig.cache
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\gaming_exercises\02_numberGuess\C#\numberGuess\obj\Debug\net7.0\ref\numberGuess.dll
