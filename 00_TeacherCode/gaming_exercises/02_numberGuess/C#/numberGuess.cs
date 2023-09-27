@@ -54,20 +54,22 @@ namespace numberGuess
                 numGuesses = 4; 
             } else if (difficulty == "Normal") {                
                 rangeMin = 0; 
-                rangeMax = 10; 
+                rangeMax = 25; 
                 numGuesses = 4; 
             } else if (HARD MODE) {
-                // Code to run. 
+                rangeMin = 0; 
+                rangeMax = 50; 
+                numGuesses = 3;                 
             } else { 
                 // Code to run if no difficulty is selected.                 
+                Console.WriteLine("No difficulty selected correctly, defaulting to Normal.\n");
+                rangeMin = 0; 
+                rangeMax = 25; 
+                numGuesses = 4; 
             }
             Console.WriteLine("Minimum: " + rangeMin);
             Console.WriteLine("Maximum: " + rangeMax);
             Console.WriteLine("Num. Guesses: " + numGuesses); 
-
-
-
-
         }
     }
 }
