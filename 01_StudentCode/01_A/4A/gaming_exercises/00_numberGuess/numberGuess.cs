@@ -1,4 +1,4 @@
-// Ryan Kelley, Program Template, v0.01
+﻿// Ryan Kelley, Program Template, v0.01
 /*
 Generate secret number from a defined range of numbers (i.e. 0-10, 0-50, 0-100)
 Print game instructions including range and num. of guesses allowed. 
@@ -44,7 +44,7 @@ namespace numberGuess
             Console.WriteLine("Easy Mode: Range is 0 - 10 with 4 guesses.\nNormal Mode: Range is 0 - 25 with 4 guesses.\nHard Mode: range is 0 - 50 with 3 guesses.\n");
             
             // DIFFICULTY SELECTION 
-            Console.WriteLine("Please type Easy, Normal, or Hard and press ENTER.\n");
+            Console.WriteLine("Please type Easy, Normal, or Hard and press ENTER.");
             difficulty = Console.ReadLine();
             // Console.ReadLine() will save to STRING by default. 
             Console.WriteLine("You have selected " + difficulty); 
@@ -54,20 +54,38 @@ namespace numberGuess
                 numGuesses = 4; 
             } else if (difficulty == "Normal") {                
                 rangeMin = 0; 
-                rangeMax = 10; 
+                rangeMax = 25; 
                 numGuesses = 4; 
-            } else if (HARD MODE) {
-                // Code to run. 
+            } else if (difficulty == "Hard") {
+                rangeMin = 0; 
+                rangeMax = 50; 
+                numGuesses = 3;                 
             } else { 
                 // Code to run if no difficulty is selected.                 
+                Console.WriteLine("No difficulty selected correctly, defaulting to Normal.\n");
+                rangeMin = 0; 
+                rangeMax = 25; 
+                numGuesses = 4; 
             }
             Console.WriteLine("Minimum: " + rangeMin);
             Console.WriteLine("Maximum: " + rangeMax);
             Console.WriteLine("Num. Guesses: " + numGuesses); 
 
+            // START THE MATCH! 
+            while (playerScore != 3 && cpuScore != 3) {
+                // Any code you want to run BEFORE each round goes here. 
+                
+                secretNumber 
 
 
+                // START EACH ROUND 
+                for (int i = 0; i < numGuesses ; i++) { 
+                    // Code to guess number goes here.  
+                    
+                }
 
+
+            }
         }
     }
 }

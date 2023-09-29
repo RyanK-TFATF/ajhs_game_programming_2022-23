@@ -35,6 +35,7 @@ namespace numberGuess
             int numGuesses = 0; // Number of guesses player is ALLOWED. 
             int numAttempts = 0; // Number of guesses TAKEN. 
             int playerScore = 0;
+            int playerGuess = 0;
             int cpuScore = 0; 
             string difficulty = "";
             int rangeMin = -1;
@@ -74,15 +75,42 @@ namespace numberGuess
             // START THE MATCH! 
             while (playerScore != 3 && cpuScore != 3) {
                 // Any code you want to run BEFORE each round goes here. 
-
-
+                Random rndNum = new Random();
+                secretNumber = rndNum.Next(rangeMin, rangeMax);
+                Console.WriteLine(secretNumber);
+                Console.WriteLine("Player Score: " + playerScore + "\n");
+                Console.WriteLine("CPU Score: " + cpuScore + "\n");    
+                numAttempts = 0; 
                 // START EACH ROUND 
                 for (int i = 0; i < numGuesses ; i++) { 
                     // Code to guess number goes here.  
-                    
+                    Console.WriteLine("You have used " + numAttempts + " attempts this round!\n");                    
+                    Console.WriteLine("Please type your guess and press ENTER\n");
+                    playerGuess = System.Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(playerGuess);
+                    if (playerGuess == secretNumber) {
+                        playerScore += 1;
+                        Console.WriteLine("You guessed correctly!\nYou scored a point!\n");
+                        break;
+                    } else {
+                        if (playerGuess > secretNumber) {
+                            Console.WriteLine("Your guess is too high!\n");
+                        } else {
+                            Console.WriteLine("Your guess is too low!\n");
+                        }
+                    }
+                    numAttempts += 1;
                 }
+                if (playerGuess != secretNumber) {
+                    cpuScore += 1;
+                    Console.WriteLine("You guessed incorrectly and ran out of attempts.  CPU scores a point!\n");
+                }
+            }
 
-
+            if (playerScore >= 3) {
+                Console.WriteLine("You have scored three points, you win the match!\n");                
+            } else {
+                Console.WriteLine("The CPU scored three points, you lose the match!\n");                
             }
         }
     }
