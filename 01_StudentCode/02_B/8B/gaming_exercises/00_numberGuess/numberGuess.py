@@ -45,7 +45,7 @@ print("You need to guess a number from 0 to 20 and you have four guesses.\nIf yo
 # print() an explanation of your three difficulty levels. 
 # Use input() to store difficulty in difficulty variable.
 # assign values to numAttempts, rangeMin, and rangeMax based on choice. 
-
+    
 while playerScore != 3 and cpuScore != 3: # START THE MATCH (GAME)
     # Difficulty code needs to be BEFORE the round starts.  
     # pass -- Tells Python to skip this block of code.  
