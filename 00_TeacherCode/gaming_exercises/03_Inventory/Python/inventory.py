@@ -78,3 +78,9 @@ def hasItem(item, inventory):
 #hasItem("blue", doorKeys)
 #hasItem("purple", doorKeys)
 
+enemy1 = "Potato"
+enemy2 = "Banana"
+enemy3 = "Scary"
+
+enemies = [enemy1, enemy2, enemy3]
+print(enemies)
