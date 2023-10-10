@@ -41,7 +41,7 @@ weapons = [
 ]
 
 def displayWeapons(weaponList):
-    weaponCounter= 0 
+    weaponCounter = 0 
     while weaponCounter < len(weapons): 
         if weaponCounter == 0 and weapons[weaponCounter] == True:
             print("You are equipped with a chainsaw.")
