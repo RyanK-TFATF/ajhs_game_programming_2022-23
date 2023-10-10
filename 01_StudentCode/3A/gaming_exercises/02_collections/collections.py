@@ -41,17 +41,63 @@ weaponList = [
 #     weaponNum += 1
 
 # ITEM EXISTS IN INVENTORY 
-doorKeys = [
-    "red",
-    "blue",
-    "green", 
-    "yellow"
+# doorKeys = [
+#     "red",
+#     "blue",
+#     "green", 
+#     "yellow"
+# ]
+# item = input("Which key do you require?\n").lower()
+# if item in doorKeys: 
+#     print(f"You have the {item} key!\n")
+# else:
+#     print(f"You do not have the {item} key.")
+
+
+### RANDOM ENEMY GENERATOR ### 
+
+enemyBase = [
+    "Goblin",
+    "Dragon", 
+    "Zombie",
+    "Gnome",
+    "Troll"
 ]
-item = input("Which key do you require?\n").upper().lower()
-if item in doorKeys: 
-    print(f"You have the {item} key!\n")
-else:
-    print(f"You do not have the {item} key.")
+
+enemyType = [
+    "Warrior",
+    "Wizard",
+    "Assassin",
+    "Berserker",
+    "Paladin"
+]
+
+enemyPrefix = [
+    "Fire-Breathing",
+    "Gargantuan",
+    "Invisible",
+    "Vampiric",
+    "Exploding"
+]
+
+import random, time
+
+# Index Range (0, 4) 
+enemyNames = [] 
+while len(enemyNames) < 100:
+    enemyBaseGen = enemyBase[random.randint(0,4)]
+    enemyTypeGen = enemyType[random.randint(0,4)]
+    enemyPrefixGen = enemyPrefix[random.randint(0,4)]    
+    newEnemy = enemyPrefixGen + " " + enemyBaseGen + " " + enemyTypeGen
+    
+    if newEnemy in enemyNames:         
+        print("Enemy exists.")
+    else: 
+        enemyNames.append(newEnemy)
+    time.sleep(0.10)
+
+print(enemyNames)
+
 
 
 
