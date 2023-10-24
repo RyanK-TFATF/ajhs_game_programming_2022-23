@@ -40,6 +40,7 @@ def rollDice(num, size):
         numRolled += 1
         print(f"Roll #: {numRolled}\nResult: {roll}\nSum: {sum}")
         
+        
     print(sum)
     return sum
 
