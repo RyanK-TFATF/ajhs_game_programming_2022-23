@@ -1,6 +1,6 @@
 # Hangman Game by Ryan Kelley, v0.0 
 import random 
-words = 'cat bat rat sat mat fat pat apple banana potato tomato pasta fettucine linguine marina mozzarella cheese energy missile plane bazooka phytoplankton mitochondria antidisestablishmentarianism supercalifragilisticexpiealadocius cow pig skunk moose'.split()
+words = 'cat bat rat sat mat fat pat apple banana potato tomato pasta fettucine linguine marinara dog moose mozzarella cheese energy missile plane bazooka phytoplankton mitochondria antidisestablishmentarianism supercalifragilisticexpiealadocius cow pig skunk lateral medial average explosion boom zoom doom loom mom dad baby brother sister equal equity hippopotamus platypus mushy mashed laugh egotistical'.split()
 
 # VARIABLE_NAMES in ALL-CAPS ARE CONSTANTS AND NOT MEANT TO CHANGE! 
 HANGMAN_BOARD = ['''
