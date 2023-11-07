@@ -40,13 +40,47 @@ namespace MethodsParameters
             Console.WriteLine("You have ordered" + num + "eggs cooked " + style + ".\n");
         }
 
+        // Using Defaults for Parameters
+        static void MakeBurger(int num = 1)
+        {
+            Console.WriteLine("I am going to cook " + num + "hamburgers.\n");
+        }
+
+        // Named Arguments 
+        static void AllMyChildren(string child1, string child2, string child3)
+        {
+            Console.WriteLine("My favorite child is " + child3);
+        }
+
+        // METHOD OVERLOADING 
+        // Find Sum of Int 
+        static int FindSum(int x, int y)
+        {
+            int sum = x + y; 
+            Console.WriteLine("Sum: " + sum); 
+            return sum; 
+        }
+        
+        // Find Sum of Double 
+        static double FindSum(double x, double y)
+        {
+            double sum = x + y; 
+            Console.WriteLine("Sum: " + sum); 
+            return sum; 
+        }
 
         static void Main(string[] args)
         {
             //MyMethod();    
             //DoubleUp(); 
             //MakePancakes(); 
-            MakeEggs(10, "sunny side up"); 
+            //MakeEggs(10, "sunny side up"); 
+            //MakeBurger(); 
+            //MakeBurger(10); 
+            //AllMyChildren(child3: "Steve", child2: "Susan", child1: "Chewbacca");
+            FindSum(1, 5); // TWO INTEGERS
+            FindSum(9.5, 2.4); // TWO DOUBLES
+            FindSum(5, 2.5);  // ONE OF EACH 
         }
     }
 }
