@@ -1,6 +1,14 @@
 // Ryan Kelley, Program Template, v0.01
 using System; 
-
+/*
+Void Method
+Method with Return
+Method with Parameter
+Method with Multiple Parameters
+Method with Default Parameters
+Method Class using Named Arguments
+Method Overloading 
+*/
 namespace MethodsParameters 
 {
     class MethodsParameters
