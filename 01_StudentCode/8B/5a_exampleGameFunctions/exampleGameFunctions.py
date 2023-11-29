@@ -24,13 +24,4 @@ def catchBall(throwQuality, passCatchScore, weather):
         return ballIntercepted  
     return ballCaught
 
-catchBall(4.25, 107, 'Rainy')
 
-def chooseFighter(x, y, z): 
-print("Player 1Please choose a fighter!")
-if row = 5 and column = 10: 
-    player1Fighter = 'Billy'
-
-print("Player 2Please choose a fighter!")
-if row = 5 and column = 10: 
-    player1Fighter = 'Billy'

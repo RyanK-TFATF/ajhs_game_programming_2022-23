@@ -58,6 +58,12 @@ namespace MethodsParameters
         static void AllMyChildren(string child1, string child2, string child3)
         {
             Console.WriteLine("My favorite child is " + child3);
+            string child = "Billy"
+            New childreArray  = ["Billy", "Susie", "Guadalupe"]
+            for (int i = 0; i < 100; i++)
+            {
+                Console.WriteLine(childrenArray[i])
+            }
         }
 
         // METHOD OVERLOADING 
@@ -86,9 +92,10 @@ namespace MethodsParameters
             //MakeBurger(); 
             //MakeBurger(10); 
             //AllMyChildren(child3: "Steve", child2: "Susan", child1: "Chewbacca");
-            FindSum(1, 5); // TWO INTEGERS
-            FindSum(9.5, 2.4); // TWO DOUBLES
-            FindSum(5, 2.5);  // ONE OF EACH 
+            // FindSum(1, 5); // TWO INTEGERS
+            AllMyChildren(["Billy"]); 
+            // FindSum(9.5, 2.4); // TWO DOUBLES
+            // FindSum(5, 2.5);  // ONE OF EACH 
         }
     }
 }

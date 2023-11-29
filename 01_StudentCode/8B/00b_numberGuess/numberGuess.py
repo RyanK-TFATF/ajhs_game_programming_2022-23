@@ -16,7 +16,7 @@
 import random # Import the random module to our code. 
 
 # DECLARATIONS 
-secretNumber = -1
+secretNumber = 
 playerGuess = -1 
 playerScore = 0 
 cpuScore = 0 
