@@ -42,7 +42,7 @@ class Animals:
 
 animal1 = Animals(25, "5'3\"", "blonde", "Jennifer", 150, "July 01")
 examplePerson.tooOld() 
-anmimal1.tooOld() 
+# anmimal1.tooOld() 
 # print(examplePerson)
 
 # # Changing Properties After Creating Object
@@ -59,11 +59,14 @@ anmimal1.tooOld()
 # Deleting Whole Objects 
 print(examplePerson1)
 del examplePerson1
-print(examplePerson1)
+# print(examplePerson1)
 # Delete objects that are no longer needed to free up memory. 
 
-class Food: 
-    pass # I am not done yet, don't freak out. 
+examplePerson.weakness = "Krpytonite"
+print(examplePerson.weakness)
+
+
+
 
 
 

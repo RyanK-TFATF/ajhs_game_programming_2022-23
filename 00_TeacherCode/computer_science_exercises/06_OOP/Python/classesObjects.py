@@ -1,4 +1,6 @@
 # Classes and Objects Practice Code, Ryan Kelley, v0.0 
+import testmodule
+testmodule.testFunction()
 
 class Person: 
     def __init__(self, age, height, weight, name):
