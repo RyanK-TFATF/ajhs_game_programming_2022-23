@@ -10,7 +10,7 @@ def execStop():
     return stopTime
 
 def execTime(startTime, stopTime): 
-    return f"Execution Time: {startTime - stopTime} seconds.\n"
+    return f"Execution Time: {stopTime - startTime} seconds.\n"
 
 
 
