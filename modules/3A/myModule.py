@@ -1,4 +1,4 @@
-# Dice Roll Module by Ryan Kelley, v1.0 
+# My Module by Ryan Kelley, v1.0 
 import random, time 
 
 # Verified Working as of 12-13-23 
@@ -32,7 +32,6 @@ def isExploding(roll, sizeRoll):
         isExploding = False             
     return isExploding
     
-
 # Confirmed Working as of 12-13-23  
 def isDouble(roll1, roll2):     
     if roll1 == roll2: 

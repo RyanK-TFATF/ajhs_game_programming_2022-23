@@ -1,4 +1,3 @@
-import dice 
 import perfmon  
 start = perfmon.execStart() 
 print(start)
