@@ -1,5 +1,5 @@
 # My Module by Ryan Kelley, v1.0 
-import random, time 
+import random, time, tracemalloc
 
 # Verified Working as of 12-13-23 
 def rollDice(numRoll, sizeRoll): 
@@ -40,5 +40,27 @@ def isDouble(roll1, roll2):
         isDouble = False 
     return isDouble 
 
+def getTime(): 
+    return time.time() 
+
+def execTime(start, stop): 
+    return f"Execution Time: {stop - start} seconds.\n"
+
+def memStart(): 
+    return tracemalloc.start() 
+
+def memStop():
+    memUsage = tracemalloc.stop()
+    return memUsage 
+
+test = memStart()
+x = 0 
+while x < 100000:
+    x += 1
+print(memStop())
+
+
+def memUsage(start, stop): 
+    return f"Current Memory Usage: {start}\n Highest Memory Usage: {stop}\n"
 
 
