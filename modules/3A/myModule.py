@@ -46,21 +46,6 @@ def getTime():
 def execTime(start, stop): 
     return f"Execution Time: {stop - start} seconds.\n"
 
-def memStart(): 
-    return tracemalloc.start() 
 
-def memStop():
-    memUsage = tracemalloc.stop()
-    return memUsage 
-
-test = memStart()
-x = 0 
-while x < 100000:
-    x += 1
-print(memStop())
-
-
-def memUsage(start, stop): 
-    return f"Current Memory Usage: {start}\n Highest Memory Usage: {stop}\n"
 
 
