@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "LK+RNP/vEWfowy7i6DOd0cV07c3p1hYRTXr8TgGPw4PAEgMHXSpmw+X2Rz7SeoMl59q6bQ/cztyFsG/ejDd3Fw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kelleyr\\Downloads\\GitHub\\ajhs_game_programming_2022-23\\00_TeacherCode\\tristanPractice\\tristanPractice.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kelleyr\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

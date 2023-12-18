@@ -1,0 +1,16 @@
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\obj\Debug\net5.0\tristanPractice.csprojAssemblyReference.cache
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\obj\Debug\net5.0\tristanPractice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\obj\Debug\net5.0\tristanPractice.AssemblyInfoInputs.cache
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\obj\Debug\net5.0\tristanPractice.AssemblyInfo.cs
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\obj\Debug\net5.0\tristanPractice.csproj.CoreCompileInputs.cache
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\bin\Debug\net5.0\tristanPractice.exe
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\bin\Debug\net5.0\tristanPractice.deps.json
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\bin\Debug\net5.0\tristanPractice.runtimeconfig.json
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\bin\Debug\net5.0\tristanPractice.runtimeconfig.dev.json
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\bin\Debug\net5.0\tristanPractice.dll
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\bin\Debug\net5.0\ref\tristanPractice.dll
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\bin\Debug\net5.0\tristanPractice.pdb
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\obj\Debug\net5.0\tristanPractice.dll
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\obj\Debug\net5.0\ref\tristanPractice.dll
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\obj\Debug\net5.0\tristanPractice.pdb
+C:\Users\kelleyr\Downloads\GitHub\ajhs_game_programming_2022-23\00_TeacherCode\tristanPractice\obj\Debug\net5.0\tristanPractice.genruntimeconfig.cache
