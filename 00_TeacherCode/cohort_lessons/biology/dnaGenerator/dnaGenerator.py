@@ -5,7 +5,7 @@ import time, datetime
 startTime = time.time()
 
 # Import the randint Method from the random module. 
-from random import randint
+from random import randint, choice
 
 dnaBases = ["A", "G", "C", "T"] # Adenine, Guanine, Cytosine, Thymine
 rnaCodons = ["AUG", "TAG"]
@@ -92,7 +92,7 @@ def generateDNASequence():
     dnaSequence = "" 
     
     while basesGenerated < requestedBases:         
-        dnaSequence += dnaBases[int(randint(0,3))] # This simulates picking the base at random and adding it to the sequence.  Start with 0 so the first element can be chosen! 
+        dnaSequence += choice(dnaBases) # [int(randint(0,3))] # This simulates picking the base at random and adding it to the sequence.  Start with 0 so the first element can be chosen! 
         basesGenerated += 1 # Increment the number of bases generated. 
     
     #print(f"\nGenerated DNA Sequence: \n{dnaSequence}\n\n")    
@@ -129,6 +129,7 @@ def translateRNA(rnaSequence):
 def main():
     dnaSequence = generateDNASequence() # Generate a DNA sequence and store it in the dnaSequence variable. 
     rnaSequence = transcribeRNA(dnaSequence) # Transcribe a new DNA string using dnaSequence as the original. 
+    print(dnaSequence)
     translateRNA(rnaSequence) # Search dnaSequence for any instances of the codons defined above. 
     
     # File Saving Example 
