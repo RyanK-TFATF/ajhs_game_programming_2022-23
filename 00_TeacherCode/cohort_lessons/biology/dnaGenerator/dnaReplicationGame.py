@@ -1,66 +1,84 @@
-# Ryan Kelley, DNA Replication Game, v0.0a 
+# DNA Replication Game, Ryan Kelley, v0.0a 
 
-# Import the time and datetime modules.  
-import time, datetime 
+# Import Entire Module
+import time, datetime # BRING THE WHOLE TOOL BOX
 
-# Import the choice method ONLY from the random module. 
-from random import choice
+# Import Specific Method from a Module 
+from random import choice # BRING JUST THE TOOL YOU NEED
 
-# Create a list of the possible bases. 
-dnaBases = ["A", "G", "C", "T"] # Adenine, Guanine, Cytosine, Thymine
+dnaBases = ["A", "T", "G", "C"] # Adenine, Thymine, Guanine, Cytosine
 
-
-# Game Introduction Function 
 def gameIntro() -> None: 
     pass
 
-# while loop to generate the DNA sequence. 
-def genDNA() -> str:
-    # Variable to count how many bases have been generated. 
-    basesGenerated = 0
-
-    # Variable to control while loop, allows user to specify the number of bases to generate. 
-    requestedBases = int(input("How many DNA bases do you require in the sequence?  Type an integer value and press ENTER.\n"))
-    
-    # Create an empty string variable to store the DNA sequence. 
-    dnaSequence = "" 
-    
-    while basesGenerated < requestedBases:         
-        dnaSequence += choice(dnaBases) # [int(randint(0,3))] # This simulates picking the base at random and adding it to the sequence.  Start with 0 so the first element can be chosen! 
-        basesGenerated += 1 # Increment the number of bases generated. 
-    
-    #print(f"\nGenerated DNA Sequence: \n{dnaSequence}\n\n")    
+def genDNA() -> str: 
+    basesGenerated = 0 
+    basesRequested = int(input("Please enter a positive integer value for the number of bases to generate.\n"))
+    dnaSequence = ""    
+    while basesGenerated < basesRequested: 
+        dnaSequence += choice(dnaBases)
+        basesGenerated += 1     
     return dnaSequence
 
 def genRNA(dnaSequence: str) -> tuple: 
-    print(f"The DNA Sequence is {dnaSequence}.\n")    
-    print("You will now generate the RNA sequence.  Remember, Adenine on the DNA pairs with U on the RNA.\n")
-    # Start Time
+    print(f"The DNA Sequence is {dnaSequence}.\n")
+    print("You need to enter the correct RNA sequence based on this DNA sequence.\n")
+    print("Remember, the RNA base will have a U base to match with an A base from DNA.\n")
+    # START TIMER 
     rnaStart = time.time()
-    rnaSequence = input("Please enter the correct RNA sequence.  Leave no spaces between bases.  When finished, push enter.\n")
-    rnaStop = time.time()
+    rnaSequence = input("Please type the correct RNA sequence with no spaces. Then press enter.\n")
+    rnaStop = time.time() 
     rnaTime = rnaStop - rnaStart 
-    
-    # End Time 
-    return (rnaSequence, rnaTime)
+    return (rnaSequence, rnaTime) # Tuples are ORDERED (index), UNCHANGEABLE, Allows Duplicates
 
+def checkSequence(dnaSequence: str, rnaSequence: str) -> bool: 
+    isMatch = True 
+    print(f"isMatch: {isMatch}\n")        
+    time.sleep(1)
+    for eachBase in range(len(rnaSequence)): 
+        print(f"Index {eachBase}\nDNA Sequence: {dnaSequence[eachBase]}\nRNA Sequence: {rnaSequence[eachBase]}\n")
+        if rnaSequence[eachBase] == "U" and dnaSequence[eachBase] != "T":
+            isMatch = False
+            break
+        elif rnaSequence[eachBase] == "C" and dnaSequence[eachBase] != "G":
+            isMatch = False
+            break
+        elif rnaSequence[eachBase] == "T" and dnaSequence[eachBase] != "A":
+            isMatch = False
+            break
+        elif rnaSequence[eachBase] == "G" and dnaSequence[eachBase] != "C":
+            isMatch = False
+            break
+    print(f"isMatch: {isMatch}\n")        
+    time.sleep(1)
+    return isMatch 
 
+def checkSequenceZip(dnaSequence: str, rnaSequence: str) -> bool: 
+    isMatch = True 
+    print(f"isMatch: {isMatch}\n")        
+    time.sleep(1)
+    for rnaBase, dnaBase in zip(rnaSequence[0], dnaSequence): 
+        print(f"DNA Sequence: {dnaBase}\nRNA Sequence: {rnaBase}\n")
+        if rnaBase == "U" and dnaBase != "T":
+            isMatch = False
+            break
+        elif rnaBase == "C" and dnaBase != "G":
+            isMatch = False
+            break
+        elif rnaBase == "T" and dnaBase != "A":
+            isMatch = False
+            break
+        elif rnaBase == "G" and dnaBase != "C":
+            isMatch = False
+            break
+    print(f"isMatch: {isMatch}\n")        
+    time.sleep(1)
+    return isMatch 
 
+dna = genDNA()
+# print(dna)
 
-def main():
-    dnaSequence = genDNA() # Generate a DNA sequence and store it in the dnaSequence variable. 
-        
-    # File Saving Example 
-    fileName = "dnaData" + str(time.time()) + ".txt"
-    saveData = open(fileName, "a")
-    # FILENAME should be a legal file name in quotes.  "dnaData.txt"
-    # File Modes
-    # "x" -- CREATES FILE, IF FILE EXISTS, EXIT WITH ERROR MSG.
-    # "w" -- CREATES FILE, IF FILE EXISTS, OVERWRITE CONTENTS.
-    # "a" -- CREATES FILES, IF FILE EXISTS, APPEND TO END OF FILE.
-    saveData.write(dnaSequence + " " + str(datetime.datetime.now()) + "\n")
-    saveData.write(rnaSequence + " " + str(datetime.datetime.now()) + "\n")
-    saveData.close()
+rna = genRNA(dna)  
+# print(rna)
 
-main() 
-print("Execution Time: %s seconds" % (time.time() - startTime))
+print(checkSequence(dna, rna[0]))
