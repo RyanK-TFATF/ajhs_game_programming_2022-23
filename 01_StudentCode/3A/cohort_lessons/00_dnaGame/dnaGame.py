@@ -20,7 +20,7 @@ def genDNA() -> str:
         basesGenerated += 1     
     return dnaSequence
 
-def genRNA(dnaSequence: str) -> tuple: 
+def doTranscription(dnaSequence: str) -> tuple: 
     print(f"The DNA Sequence is {dnaSequence}.\n")
     print("You need to enter the correct RNA sequence based on this DNA sequence.\n")
     print("Remember, the RNA base will have a U base to match with an A base from DNA.\n")
@@ -47,31 +47,41 @@ def checkSequence(dnaSequence: str, rnaSequence: str) -> bool:
     return isMatch 
 
 def calcScore(time: float, dnaSequence: str) -> int: 
-    score = 0 
+    score = 0
+    # More Effecient to Start With Lowest -> Highest Possible Score?  
+    # Reverse the if-elif-else block order and change to >  
     if time < 1.0: 
-        score += 10000 # HIGHEST POSSIBLE POINTS AWARDED HERE 
-    elif time ?:        
-        score += ?
-    elif time ?: 
-        score += ?
-    elif time ?:
-        score += ?
-    elif time ?:
-        score += ?
+        score += 100000 # HIGHEST POSSIBLE POINTS HERE 
+    elif time < 3.0:        
+        score += 90000
+    elif time < 5.0: 
+        score += 80000
+    elif time < 7.0:
+        score += 70000
+    elif time < 10.0:
+        score += 60000
+    elif time < 15.0:
+        score += 50000
+    elif time < 25.0:
+        score += 40000
+    elif time < 40.0:
+        score += 30000
     else: 
-        # LOWEST POSSIBLE POINTS AWARDED HERE
+        score += 25000 # LOWEST POSSIBLE POINTS HERE
 
     # DNA Sequence Length Multiplier
     # If you want to give a bonus, make the multiplier > 1.0
     # If you want to penalize, make the multipler < 1.0  
-    if len(dnaSequence) >= 25: 
+    if len(dnaSequence) >= 50: 
+        score *= 10.0
+    elif len(dnaSequence) >= 25:
+        score *= 5.0 
+    elif len(dnaSequence) >= 10:
         score *= 2.0
-    elif len(dnaSequence) >= ?:
-        score *= ? 
-    elif len(dnaSequence) >= ?:
-        score *= ? 
+    elif len(dnaSequence) >= 5:
+        score *= 1.25
     else: 
-        score *= ? 
+        score *= 0.5 
     return score 
 
 dna = genDNA()
