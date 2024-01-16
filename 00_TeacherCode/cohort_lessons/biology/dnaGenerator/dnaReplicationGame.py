@@ -54,11 +54,11 @@ def checkSequence(dnaSequence: str, rnaSequence: str) -> bool:
     return isMatch 
 
 def checkSequenceZip(dnaSequence: str, rnaSequence: str) -> bool: 
-    isMatch = True 
+    isMatch = False 
     print(f"isMatch: {isMatch}\n")        
     time.sleep(1)
     for rnaBase, dnaBase in zip(rnaSequence[0], dnaSequence): 
-        print(f"DNA Sequence: {dnaBase}\nRNA Sequence: {rnaBase}\n")
+        print(f"\nRNA Sequence: {rnaBase}\nDNA Sequence: {dnaBase}\n")
         if rnaBase == "U" and dnaBase != "T":
             isMatch = False
             break
@@ -81,4 +81,4 @@ dna = genDNA()
 rna = genRNA(dna)  
 # print(rna)
 
-print(checkSequence(dna, rna[0]))
+print(checkSequenceZip(dna, rna[0]))
