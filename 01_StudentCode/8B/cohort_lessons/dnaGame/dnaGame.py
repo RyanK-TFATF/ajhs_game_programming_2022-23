@@ -96,11 +96,11 @@ def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float, score: int) ->
     # "x" mode -- CREATE FILE, IF FILE EXISTS, EXIT WITH ERROR
     # "w" mode -- CREATE FILE, IF FILE EXISTS, OVERWRITE IT
     # "a" mode -- CREATE FILE, IF FILE EXISTS, APPEND TO IT
+    saveData.write(f"\nScore Generated: {datetime.datetime.now()}\n")
+    saveData.write(f"Player: {fullName}\n")
     saveData.write(f"DNA Sequence: {dnaSequence}\nRNA Sequence: {rnaSequence}\n")
     saveData.write(f"Transcription Time: {rnaTime}\n")
-    saveData.write(f"Score: {score}\n")
-    saveData.write(f"{fullName}\n")
-    saveData.write(f"{datetime.datetime.now()}\n")
+    saveData.write(f"Score: {score}\n")    
     saveData.close() 
 
 

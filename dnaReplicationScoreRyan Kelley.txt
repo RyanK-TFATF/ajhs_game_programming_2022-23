@@ -1,0 +1,13 @@
+Score Generated: 2024-01-19 12:14:24.087926
+Player: Ryan Kelley
+DNA Sequence: ATCCCGACTC
+RNA Sequence: UAGGGCUGAG
+Transcription Time: 10.509565114974976
+Score: 700000.0
+
+Score Generated: 2024-01-19 12:15:25.736312
+Player: Ryan Kelley
+DNA Sequence: GGGTTCCATCCAGAGATTTACTAAA
+RNA Sequence: CCCAAGGUAGGUCUCUAAAUGAUUU
+Transcription Time: 24.824259519577026
+Score: 2000000.0
