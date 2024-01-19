@@ -1,6 +1,0 @@
-DNA Sequence: GAATC
-RNA Sequence: CUUAG
-Transcription Time: 14.678752899169922
-Score: 700000.0
-Ryan  Kelley
-2024-01-18 13:56:23.099445
